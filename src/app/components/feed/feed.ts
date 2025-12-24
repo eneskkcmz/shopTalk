@@ -90,6 +90,13 @@ import { CommentsModal } from '../comments-modal/comments-modal';
                       <h4 class="font-bold text-gray-900 dark:text-white leading-tight hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{{ post.user?.name || 'Anonim' }}</h4>
                       <p class="text-xs font-medium text-gray-400 dark:text-gray-500 mt-0.5 flex items-center gap-1">
                           <span class="bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400 px-1.5 py-0.5 rounded text-[10px] uppercase tracking-wide">{{ post.category || 'Diğer' }}</span>
+                          @if (post.location) {
+                            <span>•</span>
+                            <span class="flex items-center gap-0.5 text-gray-500 dark:text-gray-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                {{ post.location }}
+                            </span>
+                          }
                           <span>•</span>
                           {{ getTimeLeft(post.timestamp) }}
                       </p>
@@ -101,23 +108,40 @@ import { CommentsModal } from '../comments-modal/comments-modal';
               </button>
             </div>
   
-  
-            <!-- Image Container -->
-            <div class="relative w-full aspect-[4/5] bg-gray-100 dark:bg-gray-900 overflow-hidden group-hover:shadow-inner transition-all cursor-zoom-in"
-                 (click)="openImageViewer(post.imageUrl)">
-               <!-- Full URL handling -->
-               <img [src]="getImageUrl(post.imageUrl)" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-  
-               <!-- Gradient Overlay -->
-               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 pointer-events-none"></div>
-  
-               <!-- Floating Description -->
-               <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 pointer-events-none">
-                  <p class="text-white text-lg font-medium leading-snug drop-shadow-md">
-                      {{ post.description }}
-                  </p>
-               </div>
-            </div>
+
+             <!-- Image Container -->
+              <div class="relative w-full aspect-[4/5] bg-gray-100 dark:bg-gray-900 overflow-hidden group-hover:shadow-inner transition-all cursor-zoom-in"
+                   (click)="openImageViewer(post.imageUrl, post.mediaType)">
+                <!-- Full URL handling -->
+                @if (post.mediaType === 'video') {
+                  <video [src]="getImageUrl(post.imageUrl)" 
+                         [muted]="post.isMuted !== false"
+                         autoplay loop playsinline 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                  </video>
+                  <!-- Sound Toggle Button -->
+                   <button (click)="$event.stopPropagation(); toggleMute(post)" 
+                           class="absolute top-4 right-4 z-20 p-2 bg-black/50 hover:bg-black/70 rounded-full text-white backdrop-blur-md transition-all opacity-0 group-hover:opacity-100">
+                       @if (post.isMuted !== false) {
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" x2="1" y1="1" y2="23"/></svg>
+                       } @else {
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                       }
+                   </button>
+                } @else {
+                  <img [src]="getImageUrl(post.imageUrl)" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                }
+   
+                <!-- Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+   
+                <!-- Floating Description -->
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 pointer-events-none">
+                   <p class="text-white text-lg font-medium leading-snug drop-shadow-md">
+                       {{ post.description }}
+                   </p>
+                </div>
+             </div>
   
             <!-- Timer Bar -->
             <div class="h-1.5 w-full bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
@@ -169,9 +193,9 @@ import { CommentsModal } from '../comments-modal/comments-modal';
       <div class="h-12"></div>
     </div>
   
-    <!-- Image Viewer Modal -->
+    <!-- Image/Video Viewer Modal -->
     @if (viewingImage) {
-      <div class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 dark:bg-black/80 backdrop-blur-xl transition-all duration-300 animate-fade-in"
+      <div class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-xl transition-all duration-300 animate-fade-in"
            (click)="closeImageViewer()">
            
            <div class="relative w-full h-full flex items-center justify-center overflow-hidden" (click)="$event.stopPropagation()">
@@ -181,34 +205,45 @@ import { CommentsModal } from '../comments-modal/comments-modal';
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
               </button>
   
-              <!-- Controls -->
-              <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-[110] flex items-center gap-2 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-2xl animate-slide-up">
-                  <button (click)="zoomOut()" class="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" title="Uzaklaş">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
-                  </button>
-                  <span class="text-white/90 font-medium text-xs w-12 text-center select-none">{{ (scale * 100).toFixed(0) }}%</span>
-                  <button (click)="zoomIn()" class="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" title="Yakınlaş">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
-                  </button>
-                  <div class="w-px h-5 bg-white/20 mx-1"></div>
-                  <button (click)="rotateLeft()" class="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" title="Sola Döndür">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-                  </button>
-                  <button (click)="rotateRight()" class="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" title="Sağa Döndür">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
-                  </button>
-              </div>
+              <!-- Controls (Only for images) -->
+              @if (viewingMediaType !== 'video') {
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-[110] flex items-center gap-2 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-2xl animate-slide-up">
+                    <button (click)="zoomOut()" class="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" title="Uzaklaş">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
+                    </button>
+                    <span class="text-white/90 font-medium text-xs w-12 text-center select-none">{{ (scale * 100).toFixed(0) }}%</span>
+                    <button (click)="zoomIn()" class="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" title="Yakınlaş">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
+                    </button>
+                    <div class="w-px h-5 bg-white/20 mx-1"></div>
+                    <button (click)="rotateLeft()" class="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" title="Sola Döndür">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                    </button>
+                    <button (click)="rotateRight()" class="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" title="Sağa Döndür">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+                    </button>
+                </div>
+              }
   
-              <!-- Image -->
+              <!-- Content -->
               <div class="w-full h-full flex items-center justify-center p-4 sm:p-10 transition-transform duration-200 ease-out cursor-move animate-zoom-in"
                    (mousedown)="startDrag($event)"
                    (mouseup)="stopDrag()"
                    (mouseleave)="stopDrag()"
                    (mousemove)="onDrag($event)">
-                  <img [src]="getImageUrl(viewingImage!)" 
-                       class="max-w-full max-h-full object-contain transition-transform duration-200 drop-shadow-2xl rounded-lg select-none"
-                       [style.transform]="getTransformStyle()"
-                       (click)="$event.stopPropagation()">
+                  
+                  @if (viewingMediaType === 'video') {
+                     <video [src]="getImageUrl(viewingImage!)" 
+                            controls autoplay playsinline
+                            class="max-w-full max-h-full object-contain rounded-lg drop-shadow-2xl"
+                            (click)="$event.stopPropagation()">
+                     </video>
+                  } @else {
+                     <img [src]="getImageUrl(viewingImage!)" 
+                          class="max-w-full max-h-full object-contain transition-transform duration-200 drop-shadow-2xl rounded-lg select-none"
+                          [style.transform]="getTransformStyle()"
+                          (click)="$event.stopPropagation()">
+                  }
               </div>
            </div>
       </div>
@@ -241,6 +276,7 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
 
   // Image Viewer State
   viewingImage: string | null = null;
+  viewingMediaType: 'image' | 'video' = 'image';
   scale = 1;
   rotation = 0;
   isDragging = false;
@@ -267,8 +303,9 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
   }
 
   // Image Viewer Methods
-  openImageViewer(url: string) {
+  openImageViewer(url: string, mediaType: 'image' | 'video' = 'image') {
     this.viewingImage = url;
+    this.viewingMediaType = mediaType;
     this.scale = 1;
     this.rotation = 0;
     this.translateX = 0;
@@ -368,6 +405,11 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
 
   vote(post: Post, type: 'like' | 'dislike') {
     (this.api.vote(post.id, type) as any).subscribe();
+  }
+
+  toggleMute(post: Post) {
+      // Toggle muted state. Undefined/true means muted, false means unmuted.
+      post.isMuted = post.isMuted === false ? true : false;
   }
 
   getImageUrl(url: string): string {

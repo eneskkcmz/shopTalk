@@ -74,1380 +74,1967 @@
   "comments": [
     {
       "id": 1,
-      "postId": 101,
-      "userId": 4,
-      "text": "Harika görünüyorsun!",
-      "timestamp": 1766432634812
-    },
-    {
-      "id": 2,
-      "postId": 102,
-      "userId": 9,
-      "text": "Ayakkabılar efsane.",
-      "timestamp": 1766432540533
+      "postId": 1,
+      "userId": 10,
+      "text": "Tam benlik!",
+      "timestamp": 1766493364148
     },
     {
       "id": 3,
-      "postId": 103,
-      "userId": 6,
-      "text": "Ben pek beğenmedim maalesef.",
-      "timestamp": 1766432506179
+      "postId": 1,
+      "userId": 10,
+      "text": "Ayakkabılar efsane.",
+      "timestamp": 1766493426706
+    },
+    {
+      "id": 4,
+      "postId": 1,
+      "userId": 2,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766493230847
     },
     {
       "id": 5,
-      "postId": 103,
-      "userId": 4,
-      "text": "Bu tarz sana çok yakışıyor.",
-      "timestamp": 1766432525897
+      "postId": 2,
+      "userId": 1,
+      "text": "Ayakkabılar efsane.",
+      "timestamp": 1766492157587
     },
     {
       "id": 6,
-      "postId": 97,
+      "postId": 3,
       "userId": 10,
-      "text": "Bence biraz daha farklı kombinlenebilirdi.",
-      "timestamp": 1766431612530
+      "text": "Ayakkabılar efsane.",
+      "timestamp": 1766493032169
     },
     {
       "id": 7,
-      "postId": 98,
-      "userId": 1,
-      "text": "Saçınla çok güzel durmuş.",
-      "timestamp": 1766432537749
+      "postId": 3,
+      "userId": 4,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766492658760
     },
     {
       "id": 8,
-      "postId": 98,
-      "userId": 3,
-      "text": "Fiyatı nedir?",
-      "timestamp": 1766431101518
+      "postId": 4,
+      "userId": 9,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766492461653
     },
     {
       "id": 9,
-      "postId": 98,
-      "userId": 3,
-      "text": "Mükemmel uyum.",
-      "timestamp": 1766431823387
+      "postId": 4,
+      "userId": 7,
+      "text": "Çok şık.",
+      "timestamp": 1766493004226
     },
     {
       "id": 10,
-      "postId": 99,
+      "postId": 4,
       "userId": 1,
       "text": "Bunu nereden aldın?",
-      "timestamp": 1766431945653
+      "timestamp": 1766492839932
     },
     {
       "id": 11,
-      "postId": 99,
-      "userId": 3,
-      "text": "Bunu nereden aldın?",
-      "timestamp": 1766431378509
-    },
-    {
-      "id": 12,
-      "postId": 100,
-      "userId": 6,
-      "text": "Bu tarz sana çok yakışıyor.",
-      "timestamp": 1766432467871
+      "postId": 5,
+      "userId": 2,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766493531930
     },
     {
       "id": 13,
-      "postId": 100,
-      "userId": 4,
-      "text": "Saçınla çok güzel durmuş.",
-      "timestamp": 1766432362439
-    },
-    {
-      "id": 14,
-      "postId": 101,
-      "userId": 9,
-      "text": "Biraz daha aksesuar eklenebilir.",
-      "timestamp": 1766431547423
+      "postId": 5,
+      "userId": 1,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766493559138
     },
     {
       "id": 15,
-      "postId": 101,
-      "userId": 9,
-      "text": "Bence biraz daha farklı kombinlenebilirdi.",
-      "timestamp": 1766431970818
+      "postId": 5,
+      "userId": 4,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766493516619
+    },
+    {
+      "id": 14,
+      "postId": 6,
+      "userId": 6,
+      "text": "Tam benlik!",
+      "timestamp": 1766493928457
     },
     {
       "id": 16,
-      "postId": 101,
-      "userId": 3,
-      "text": "Bunu nereden aldın?",
-      "timestamp": 1766431451065
-    },
-    {
-      "id": 17,
-      "postId": 102,
-      "userId": 8,
-      "text": "Ben pek beğenmedim maalesef.",
-      "timestamp": 1766432456287
+      "postId": 6,
+      "userId": 4,
+      "text": "Bayıldım! 😍",
+      "timestamp": 1766493797892
     },
     {
       "id": 18,
-      "postId": 102,
+      "postId": 6,
       "userId": 1,
-      "text": "Renkler çok uyumlu olmuş.",
-      "timestamp": 1766432546847
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766493702633
+    },
+    {
+      "id": 17,
+      "postId": 8,
+      "userId": 2,
+      "text": "Çok şık.",
+      "timestamp": 1766493384641
     },
     {
       "id": 19,
-      "postId": 103,
-      "userId": 8,
-      "text": "Çok şık.",
-      "timestamp": 1766431526588
+      "postId": 8,
+      "userId": 1,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766493866223
     },
     {
       "id": 20,
-      "postId": 103,
-      "userId": 9,
+      "postId": 2,
+      "userId": 6,
       "text": "Saçınla çok güzel durmuş.",
-      "timestamp": 1766431011917
+      "timestamp": 1766493588142
     },
     {
       "id": 21,
-      "postId": 104,
-      "userId": 10,
-      "text": "Biraz daha aksesuar eklenebilir.",
-      "timestamp": 1766431028711
+      "postId": 2,
+      "userId": 6,
+      "text": "Çok şık.",
+      "timestamp": 1766492641335
     },
     {
       "id": 22,
-      "postId": 104,
-      "userId": 8,
-      "text": "Saçınla çok güzel durmuş.",
-      "timestamp": 1766431758818
+      "postId": 2,
+      "userId": 10,
+      "text": "Renkler çok uyumlu olmuş.",
+      "timestamp": 1766492952341
     },
     {
       "id": 23,
-      "postId": 101,
+      "postId": 3,
       "userId": 1,
-      "text": "alma!!!",
-      "timestamp": 1766433041191
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766492639804
     },
     {
       "id": 24,
-      "postId": 105,
-      "userId": 3,
+      "postId": 7,
+      "userId": 10,
       "text": "Ayakkabılar efsane.",
-      "timestamp": 1766432465353
+      "timestamp": 1766493453902
     },
     {
       "id": 25,
-      "postId": 106,
-      "userId": 2,
-      "text": "Bayıldım! 😍",
-      "timestamp": 1766432816705
+      "postId": 7,
+      "userId": 3,
+      "text": "Renkler çok uyumlu olmuş.",
+      "timestamp": 1766493200649
     },
     {
       "id": 26,
-      "postId": 107,
-      "userId": 4,
-      "text": "Bence biraz daha farklı kombinlenebilirdi.",
-      "timestamp": 1766432576913
-    },
-    {
-      "id": 28,
-      "postId": 107,
-      "userId": 5,
+      "postId": 8,
+      "userId": 10,
       "text": "Ben pek beğenmedim maalesef.",
-      "timestamp": 1766433045350
+      "timestamp": 1766493157274
+    },
+    {
+      "id": 27,
+      "postId": 8,
+      "userId": 1,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766492709164
     },
     {
       "id": 28,
-      "postId": 108,
-      "userId": 5,
-      "text": "Biraz daha aksesuar eklenebilir.",
-      "timestamp": 1766432750302
+      "postId": 11,
+      "userId": 10,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766497190709
     },
     {
       "id": 29,
-      "postId": 97,
-      "userId": 9,
-      "text": "Link var mı?",
-      "timestamp": 1766432288896
-    },
-    {
-      "id": 30,
-      "postId": 97,
-      "userId": 3,
-      "text": "Bence biraz daha farklı kombinlenebilirdi.",
-      "timestamp": 1766432291083
+      "postId": 13,
+      "userId": 2,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766497233140
     },
     {
       "id": 31,
-      "postId": 99,
-      "userId": 1,
-      "text": "Mükemmel uyum.",
-      "timestamp": 1766431948500
-    },
-    {
-      "id": 32,
-      "postId": 99,
-      "userId": 9,
-      "text": "Link var mı?",
-      "timestamp": 1766431590471
+      "postId": 13,
+      "userId": 8,
+      "text": "Bayıldım! 😍",
+      "timestamp": 1766497002883
     },
     {
       "id": 33,
-      "postId": 99,
-      "userId": 10,
-      "text": "Bunu nereden aldın?",
-      "timestamp": 1766431279855
+      "postId": 13,
+      "userId": 9,
+      "text": "Fiyatı nedir?",
+      "timestamp": 1766497497969
     },
     {
       "id": 34,
-      "postId": 100,
-      "userId": 3,
-      "text": "Harika görünüyorsun!",
-      "timestamp": 1766431937645
+      "postId": 14,
+      "userId": 6,
+      "text": "Renkler çok uyumlu olmuş.",
+      "timestamp": 1766503596361
     },
     {
       "id": 35,
-      "postId": 100,
-      "userId": 3,
-      "text": "Fiyatı nedir?",
-      "timestamp": 1766431561260
-    },
-    {
-      "id": 36,
-      "postId": 104,
-      "userId": 7,
-      "text": "Bu tarz sana çok yakışıyor.",
-      "timestamp": 1766431708424
+      "postId": 15,
+      "userId": 1,
+      "text": "Renkler çok uyumlu olmuş.",
+      "timestamp": 1766503226660
     },
     {
       "id": 37,
-      "postId": 105,
-      "userId": 10,
-      "text": "Fiyatı nedir?",
-      "timestamp": 1766432940950
-    },
-    {
-      "id": 38,
-      "postId": 106,
-      "userId": 1,
-      "text": "Fiyatı nedir?",
-      "timestamp": 1766431723811
+      "postId": 15,
+      "userId": 8,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766503140640
     },
     {
       "id": 39,
-      "postId": 107,
-      "userId": 10,
-      "text": "Çok şık.",
-      "timestamp": 1766432663067
+      "postId": 15,
+      "userId": 2,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766503551792
+    },
+    {
+      "id": 38,
+      "postId": 17,
+      "userId": 7,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766503213359
     },
     {
       "id": 40,
-      "postId": 107,
-      "userId": 10,
-      "text": "Saçınla çok güzel durmuş.",
-      "timestamp": 1766432861418
-    },
-    {
-      "id": 41,
-      "postId": 108,
-      "userId": 5,
-      "text": "Çok şık.",
-      "timestamp": 1766431864854
+      "postId": 17,
+      "userId": 8,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766503513102
     },
     {
       "id": 42,
-      "postId": 108,
-      "userId": 4,
-      "text": "Çok şık.",
-      "timestamp": 1766432833923
+      "postId": 17,
+      "userId": 8,
+      "text": "Bence biraz daha farklı kombinlenebilirdi.",
+      "timestamp": 1766503276023
     },
     {
       "id": 43,
-      "postId": 105,
+      "postId": 20,
+      "userId": 6,
+      "text": "Çok şık.",
+      "timestamp": 1766507991608
+    },
+    {
+      "id": 45,
+      "postId": 20,
+      "userId": 3,
+      "text": "Bence biraz daha farklı kombinlenebilirdi.",
+      "timestamp": 1766507595422
+    },
+    {
+      "id": 46,
+      "postId": 22,
+      "userId": 6,
+      "text": "Renkler çok uyumlu olmuş.",
+      "timestamp": 1766512918242
+    },
+    {
+      "id": 48,
+      "postId": 22,
+      "userId": 9,
+      "text": "Bu tarz sana çok yakışıyor.",
+      "timestamp": 1766512765143
+    },
+    {
+      "id": 48,
+      "postId": 23,
+      "userId": 8,
+      "text": "Ben pek beğenmedim maalesef.",
+      "timestamp": 1766512764242
+    },
+    {
+      "id": 50,
+      "postId": 23,
       "userId": 1,
-      "text": "mükemmel almalısın",
-      "timestamp": 1766433357225
+      "text": "Çok şık.",
+      "timestamp": 1766513113009
+    },
+    {
+      "id": 52,
+      "postId": 23,
+      "userId": 5,
+      "text": "Ayakkabılar efsane.",
+      "timestamp": 1766513237406
+    },
+    {
+      "id": 51,
+      "postId": 25,
+      "userId": 6,
+      "text": "Ben pek beğenmedim maalesef.",
+      "timestamp": 1766513064635
+    },
+    {
+      "id": 53,
+      "postId": 25,
+      "userId": 7,
+      "text": "Bayıldım! 😍",
+      "timestamp": 1766512941290
+    },
+    {
+      "id": 55,
+      "postId": 25,
+      "userId": 4,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766513268790
+    },
+    {
+      "id": 56,
+      "postId": 26,
+      "userId": 5,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766516879980
+    },
+    {
+      "id": 58,
+      "postId": 26,
+      "userId": 7,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766516755412
+    },
+    {
+      "id": 58,
+      "postId": 27,
+      "userId": 8,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766516444955
+    },
+    {
+      "id": 59,
+      "postId": 28,
+      "userId": 9,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766516689703
+    },
+    {
+      "id": 60,
+      "postId": 30,
+      "userId": 1,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766520492891
+    },
+    {
+      "id": 61,
+      "postId": 31,
+      "userId": 2,
+      "text": "Bayıldım! 😍",
+      "timestamp": 1766520558027
+    },
+    {
+      "id": 63,
+      "postId": 31,
+      "userId": 1,
+      "text": "Çok şık.",
+      "timestamp": 1766520095955
+    },
+    {
+      "id": 63,
+      "postId": 32,
+      "userId": 6,
+      "text": "Fiyatı nedir?",
+      "timestamp": 1766520309185
+    },
+    {
+      "id": 65,
+      "postId": 32,
+      "userId": 3,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766520231132
+    },
+    {
+      "id": 65,
+      "postId": 33,
+      "userId": 9,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766520462603
+    },
+    {
+      "id": 66,
+      "postId": 36,
+      "userId": 7,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766524219240
+    },
+    {
+      "id": 67,
+      "postId": 37,
+      "userId": 4,
+      "text": "Bu tarz sana çok yakışıyor.",
+      "timestamp": 1766524092902
+    },
+    {
+      "id": 69,
+      "postId": 37,
+      "userId": 4,
+      "text": "Link var mı?",
+      "timestamp": 1766523868898
+    },
+    {
+      "id": 70,
+      "postId": 38,
+      "userId": 7,
+      "text": "Bayıldım! 😍",
+      "timestamp": 1766527722376
+    },
+    {
+      "id": 71,
+      "postId": 39,
+      "userId": 5,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766527449301
+    },
+    {
+      "id": 72,
+      "postId": 40,
+      "userId": 5,
+      "text": "Fiyatı nedir?",
+      "timestamp": 1766527713741
+    },
+    {
+      "id": 74,
+      "postId": 40,
+      "userId": 5,
+      "text": "Renkler çok uyumlu olmuş.",
+      "timestamp": 1766527861175
+    },
+    {
+      "id": 76,
+      "postId": 40,
+      "userId": 9,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766527858017
+    },
+    {
+      "id": 77,
+      "postId": 42,
+      "userId": 4,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766532439322
+    },
+    {
+      "id": 78,
+      "postId": 43,
+      "userId": 10,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766532594142
+    },
+    {
+      "id": 80,
+      "postId": 43,
+      "userId": 2,
+      "text": "Tam benlik!",
+      "timestamp": 1766532101519
+    },
+    {
+      "id": 82,
+      "postId": 43,
+      "userId": 7,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766532395061
+    },
+    {
+      "id": 81,
+      "postId": 44,
+      "userId": 6,
+      "text": "Tam benlik!",
+      "timestamp": 1766532168556
+    },
+    {
+      "id": 83,
+      "postId": 44,
+      "userId": 7,
+      "text": "Tam benlik!",
+      "timestamp": 1766532401841
+    },
+    {
+      "id": 85,
+      "postId": 44,
+      "userId": 6,
+      "text": "Çok şık.",
+      "timestamp": 1766532242650
+    },
+    {
+      "id": 84,
+      "postId": 45,
+      "userId": 4,
+      "text": "Bayıldım! 😍",
+      "timestamp": 1766532433641
+    },
+    {
+      "id": 86,
+      "postId": 45,
+      "userId": 5,
+      "text": "Tam benlik!",
+      "timestamp": 1766532162218
+    },
+    {
+      "id": 87,
+      "postId": 46,
+      "userId": 6,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766536946790
+    },
+    {
+      "id": 89,
+      "postId": 46,
+      "userId": 4,
+      "text": "Fiyatı nedir?",
+      "timestamp": 1766537028142
+    },
+    {
+      "id": 89,
+      "postId": 47,
+      "userId": 10,
+      "text": "Bu tarz sana çok yakışıyor.",
+      "timestamp": 1766537048168
+    },
+    {
+      "id": 90,
+      "postId": 48,
+      "userId": 7,
+      "text": "Fiyatı nedir?",
+      "timestamp": 1766536577556
+    },
+    {
+      "id": 91,
+      "postId": 49,
+      "userId": 6,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766537030513
+    },
+    {
+      "id": 92,
+      "postId": 50,
+      "userId": 10,
+      "text": "Bence biraz daha farklı kombinlenebilirdi.",
+      "timestamp": 1766541415454
+    },
+    {
+      "id": 93,
+      "postId": 52,
+      "userId": 3,
+      "text": "Fiyatı nedir?",
+      "timestamp": 1766541773048
+    },
+    {
+      "id": 95,
+      "postId": 52,
+      "userId": 3,
+      "text": "Bayıldım! 😍",
+      "timestamp": 1766541252931
+    },
+    {
+      "id": 95,
+      "postId": 53,
+      "userId": 7,
+      "text": "Çok şık.",
+      "timestamp": 1766541227546
+    },
+    {
+      "id": 97,
+      "postId": 53,
+      "userId": 2,
+      "text": "Bence biraz daha farklı kombinlenebilirdi.",
+      "timestamp": 1766541564874
+    },
+    {
+      "id": 99,
+      "postId": 53,
+      "userId": 3,
+      "text": "Tam benlik!",
+      "timestamp": 1766541768241
+    },
+    {
+      "id": 100,
+      "postId": 54,
+      "userId": 4,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766546161654
+    },
+    {
+      "id": 102,
+      "postId": 54,
+      "userId": 9,
+      "text": "Fiyatı nedir?",
+      "timestamp": 1766546211415
+    },
+    {
+      "id": 104,
+      "postId": 54,
+      "userId": 9,
+      "text": "Ayakkabılar efsane.",
+      "timestamp": 1766545730029
+    },
+    {
+      "id": 103,
+      "postId": 55,
+      "userId": 4,
+      "text": "Çok şık.",
+      "timestamp": 1766546180238
+    },
+    {
+      "id": 105,
+      "postId": 58,
+      "userId": 1,
+      "text": "Bayıldım! 😍",
+      "timestamp": 1766550797246
+    },
+    {
+      "id": 106,
+      "postId": 60,
+      "userId": 5,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766550593156
+    },
+    {
+      "id": 108,
+      "postId": 60,
+      "userId": 2,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766550305337
+    },
+    {
+      "id": 110,
+      "postId": 60,
+      "userId": 3,
+      "text": "Ben pek beğenmedim maalesef.",
+      "timestamp": 1766550586778
+    },
+    {
+      "id": 109,
+      "postId": 61,
+      "userId": 2,
+      "text": "Bence biraz daha farklı kombinlenebilirdi.",
+      "timestamp": 1766550321759
+    },
+    {
+      "id": 111,
+      "postId": 62,
+      "userId": 7,
+      "text": "Bence biraz daha farklı kombinlenebilirdi.",
+      "timestamp": 1766557660632
+    },
+    {
+      "id": 113,
+      "postId": 62,
+      "userId": 5,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766557759703
+    },
+    {
+      "id": 115,
+      "postId": 62,
+      "userId": 9,
+      "text": "Harika görünüyorsun!",
+      "timestamp": 1766557462412
+    },
+    {
+      "id": 114,
+      "postId": 64,
+      "userId": 2,
+      "text": "Ben pek beğenmedim maalesef.",
+      "timestamp": 1766557777967
+    },
+    {
+      "id": 116,
+      "postId": 64,
+      "userId": 10,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766557762223
+    },
+    {
+      "id": 118,
+      "postId": 64,
+      "userId": 3,
+      "text": "Renkler çok uyumlu olmuş.",
+      "timestamp": 1766557397796
+    },
+    {
+      "id": 117,
+      "postId": 65,
+      "userId": 8,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766557795295
+    },
+    {
+      "id": 119,
+      "postId": 65,
+      "userId": 8,
+      "text": "Çok şık.",
+      "timestamp": 1766557794627
+    },
+    {
+      "id": 121,
+      "postId": 65,
+      "userId": 4,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766557324789
+    },
+    {
+      "id": 122,
+      "postId": 67,
+      "userId": 10,
+      "text": "Harika görünüyorsun!",
+      "timestamp": 1766561047842
+    },
+    {
+      "id": 123,
+      "postId": 68,
+      "userId": 10,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766561436129
+    },
+    {
+      "id": 125,
+      "postId": 68,
+      "userId": 6,
+      "text": "Tam benlik!",
+      "timestamp": 1766561274665
+    },
+    {
+      "id": 125,
+      "postId": 69,
+      "userId": 3,
+      "text": "Fiyatı nedir?",
+      "timestamp": 1766561437933
+    },
+    {
+      "id": 126,
+      "postId": 73,
+      "userId": 4,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766562509691
+    },
+    {
+      "id": 128,
+      "postId": 73,
+      "userId": 7,
+      "text": "Bayıldım! 😍",
+      "timestamp": 1766562431627
+    },
+    {
+      "id": 130,
+      "postId": 73,
+      "userId": 6,
+      "text": "Harika görünüyorsun!",
+      "timestamp": 1766562355555
+    },
+    {
+      "id": 129,
+      "postId": 74,
+      "userId": 6,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766562569514
+    },
+    {
+      "id": 131,
+      "postId": 74,
+      "userId": 8,
+      "text": "Renkler çok uyumlu olmuş.",
+      "timestamp": 1766562366802
+    },
+    {
+      "id": 131,
+      "postId": 75,
+      "userId": 7,
+      "text": "Çok şık.",
+      "timestamp": 1766562783346
+    },
+    {
+      "id": 133,
+      "postId": 75,
+      "userId": 4,
+      "text": "Çok şık.",
+      "timestamp": 1766562765286
+    },
+    {
+      "id": 135,
+      "postId": 75,
+      "userId": 1,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766562526183
+    },
+    {
+      "id": 134,
+      "postId": 76,
+      "userId": 1,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766562347996
+    },
+    {
+      "id": 136,
+      "postId": 76,
+      "userId": 10,
+      "text": "Bence biraz daha farklı kombinlenebilirdi.",
+      "timestamp": 1766562319964
+    },
+    {
+      "id": 138,
+      "postId": 76,
+      "userId": 9,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766562467521
+    },
+    {
+      "id": 139,
+      "postId": 66,
+      "userId": 6,
+      "text": "Bu tarz sana çok yakışıyor.",
+      "timestamp": 1766562847579
+    },
+    {
+      "id": 140,
+      "postId": 67,
+      "userId": 3,
+      "text": "Tam benlik!",
+      "timestamp": 1766562665402
+    },
+    {
+      "id": 141,
+      "postId": 68,
+      "userId": 1,
+      "text": "Tam benlik!",
+      "timestamp": 1766562473732
+    },
+    {
+      "id": 142,
+      "postId": 69,
+      "userId": 2,
+      "text": "Bu tarz sana çok yakışıyor.",
+      "timestamp": 1766562233703
+    },
+    {
+      "id": 143,
+      "postId": 70,
+      "userId": 7,
+      "text": "Bu tarz sana çok yakışıyor.",
+      "timestamp": 1766561630235
+    },
+    {
+      "id": 144,
+      "postId": 71,
+      "userId": 10,
+      "text": "Harika görünüyorsun!",
+      "timestamp": 1766562332139
+    },
+    {
+      "id": 145,
+      "postId": 71,
+      "userId": 6,
+      "text": "Bence biraz daha farklı kombinlenebilirdi.",
+      "timestamp": 1766561823096
+    },
+    {
+      "id": 146,
+      "postId": 71,
+      "userId": 8,
+      "text": "Renkler çok uyumlu olmuş.",
+      "timestamp": 1766562143346
+    },
+    {
+      "id": 147,
+      "postId": 72,
+      "userId": 7,
+      "text": "Bu tarz sana çok yakışıyor.",
+      "timestamp": 1766562481154
+    },
+    {
+      "id": 148,
+      "postId": 74,
+      "userId": 5,
+      "text": "Fiyatı nedir?",
+      "timestamp": 1766561706605
+    },
+    {
+      "id": 149,
+      "postId": 74,
+      "userId": 4,
+      "text": "Link var mı?",
+      "timestamp": 1766561904321
+    },
+    {
+      "id": 150,
+      "postId": 77,
+      "userId": 4,
+      "text": "Ben pek beğenmedim maalesef.",
+      "timestamp": 1766562914120
+    },
+    {
+      "id": 152,
+      "postId": 77,
+      "userId": 3,
+      "text": "Bu tarz sana çok yakışıyor.",
+      "timestamp": 1766562778923
+    },
+    {
+      "id": 152,
+      "postId": 79,
+      "userId": 1,
+      "text": "Fiyatı nedir?",
+      "timestamp": 1766562620228
+    },
+    {
+      "id": 153,
+      "postId": 80,
+      "userId": 10,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766562949529
+    },
+    {
+      "id": 155,
+      "postId": 80,
+      "userId": 5,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766562513520
+    },
+    {
+      "id": 156,
+      "postId": 66,
+      "userId": 10,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766561438998
+    },
+    {
+      "id": 157,
+      "postId": 66,
+      "userId": 7,
+      "text": "Renkler çok uyumlu olmuş.",
+      "timestamp": 1766562976861
+    },
+    {
+      "id": 158,
+      "postId": 66,
+      "userId": 1,
+      "text": "Ben pek beğenmedim maalesef.",
+      "timestamp": 1766562697617
+    },
+    {
+      "id": 159,
+      "postId": 67,
+      "userId": 2,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766561422946
+    },
+    {
+      "id": 160,
+      "postId": 67,
+      "userId": 9,
+      "text": "Ayakkabılar efsane.",
+      "timestamp": 1766562613527
+    },
+    {
+      "id": 161,
+      "postId": 67,
+      "userId": 7,
+      "text": "Tam benlik!",
+      "timestamp": 1766561875358
+    },
+    {
+      "id": 162,
+      "postId": 69,
+      "userId": 7,
+      "text": "Ayakkabılar efsane.",
+      "timestamp": 1766561302803
+    },
+    {
+      "id": 163,
+      "postId": 69,
+      "userId": 2,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766562005817
+    },
+    {
+      "id": 164,
+      "postId": 69,
+      "userId": 7,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766561955401
+    },
+    {
+      "id": 165,
+      "postId": 70,
+      "userId": 6,
+      "text": "Tam benlik!",
+      "timestamp": 1766562136634
+    },
+    {
+      "id": 166,
+      "postId": 70,
+      "userId": 2,
+      "text": "Fiyatı nedir?",
+      "timestamp": 1766561430185
+    },
+    {
+      "id": 167,
+      "postId": 72,
+      "userId": 2,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766562846080
+    },
+    {
+      "id": 168,
+      "postId": 77,
+      "userId": 1,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766562610026
+    },
+    {
+      "id": 169,
+      "postId": 78,
+      "userId": 3,
+      "text": "Tam benlik!",
+      "timestamp": 1766561932445
+    },
+    {
+      "id": 170,
+      "postId": 79,
+      "userId": 4,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766561933071
+    },
+    {
+      "id": 171,
+      "postId": 79,
+      "userId": 7,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766561495243
+    },
+    {
+      "id": 172,
+      "postId": 79,
+      "userId": 3,
+      "text": "Bunu nereden aldın?",
+      "timestamp": 1766562659252
+    },
+    {
+      "id": 173,
+      "postId": 80,
+      "userId": 6,
+      "text": "Çok şık.",
+      "timestamp": 1766562165188
+    },
+    {
+      "id": 174,
+      "postId": 80,
+      "userId": 3,
+      "text": "Link var mı?",
+      "timestamp": 1766561887636
+    },
+    {
+      "id": 175,
+      "postId": 80,
+      "userId": 9,
+      "text": "Ben pek beğenmedim maalesef.",
+      "timestamp": 1766561493479
     }
   ],
   "posts": [
     {
       "id": 1,
       "userId": 1,
-      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
-      "description": "Bu deri ceket nasıl? Kış için düşünüyorum.",
-      "timestamp": 1766057000000,
-      "likes": 12,
-      "dislikes": 2
+      "imageUrl": "https://images.unsplash.com/photo-1550614000-4b9519e02d48?w=600&h=800&fit=crop",
+      "description": "Bugünkü kombinim nasıl?",
+      "category": "Sokak Modası",
+      "location": "Bodrum, Muğla",
+      "timestamp": 1766493918248,
+      "likes": 9,
+      "dislikes": 3
     },
     {
       "id": 2,
-      "userId": 2,
-      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
-      "description": "Yeni sneakerlarım!",
-      "timestamp": 1766056800000,
-      "likes": 45,
+      "userId": 5,
+      "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop",
+      "description": "Sokak modası denemeleri.",
+      "category": "Sokak Modası",
+      "location": "Çankaya, Ankara",
+      "timestamp": 1766493918248,
+      "likes": 4,
       "dislikes": 0
     },
     {
       "id": 3,
-      "userId": 3,
-      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop",
-      "description": "Vintage gömlek buldum, nasıl durmuş?",
-      "timestamp": 1766062400534,
-      "likes": 23,
-      "dislikes": 1
+      "userId": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&h=800&fit=crop",
+      "description": "Vintage ceketimi çok seviyorum.",
+      "category": "Özel Gün",
+      "location": "Nişantaşı, İstanbul",
+      "timestamp": 1766493918248,
+      "likes": 3,
+      "dislikes": 2
     },
     {
       "id": 4,
-      "userId": 4,
-      "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop",
-      "description": "Neon renkler bu sene moda mı?",
-      "timestamp": 1766062400534,
-      "likes": 56,
-      "dislikes": 12
+      "userId": 9,
+      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
+      "description": "Bugünkü kombinim nasıl?",
+      "category": "Özel Gün",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766493918248,
+      "likes": 0,
+      "dislikes": 4
     },
     {
       "id": 5,
-      "userId": 5,
-      "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop",
-      "description": "İş görüşmesi için bu takım uygun mu?",
-      "timestamp": 1766062400534,
-      "likes": 89,
-      "dislikes": 3
+      "userId": 3,
+      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
+      "description": "Yeni sezon parçaları denedim.",
+      "category": "Spor",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766493945036,
+      "likes": 9,
+      "dislikes": 4
     },
     {
       "id": 6,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop",
-      "description": "Akşam yemeği kombini.",
-      "timestamp": 1766062400534,
-      "likes": 120,
-      "dislikes": 5
+      "userId": 10,
+      "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop",
+      "description": "Spor şıklık.",
+      "category": "Sokak Modası",
+      "location": "Bağdat Caddesi, İstanbul",
+      "timestamp": 1766493945037,
+      "likes": 16,
+      "dislikes": 2
     },
     {
       "id": 7,
-      "userId": 7,
-      "imageUrl": "https://images.unsplash.com/photo-1593030761757-71bd90dbe3e4?w=600&h=800&fit=crop",
-      "description": "Tom Ford takım elbisem.",
-      "timestamp": 1766062400534,
-      "likes": 200,
+      "userId": 5,
+      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
+      "description": "Sokak modası denemeleri.",
+      "category": "Spor",
+      "location": "Bağdat Caddesi, İstanbul",
+      "timestamp": 1766493945037,
+      "likes": 18,
       "dislikes": 0
     },
     {
       "id": 8,
-      "userId": 8,
-      "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=800&fit=crop",
-      "description": "Mavi ayakkabılarım nasıl?",
-      "timestamp": 1766055200000,
-      "likes": 34,
-      "dislikes": 2
+      "userId": 3,
+      "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop",
+      "description": "Yeni sezon parçaları denedim.",
+      "category": "Vintage",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766493945037,
+      "likes": 1,
+      "dislikes": 4
     },
     {
       "id": 9,
-      "userId": 9,
-      "imageUrl": "https://images.unsplash.com/photo-1617137968427-85924c809a29?w=600&h=800&fit=crop",
-      "description": "Doğa yürüyüşü için yeni ekipmanlar.",
-      "timestamp": 1766062400534,
-      "likes": 15,
-      "dislikes": 8
-    },
-    {
-      "id": 10,
-      "userId": 10,
-      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
-      "description": "Ofiste bugün.",
-      "timestamp": 1766062400534,
-      "likes": 150,
-      "dislikes": 1
-    },
-    {
-      "id": 11,
       "userId": 1,
-      "imageUrl": "/uploads/1766060300541-510357289.webp",
-      "description": "Sweat sizce alınır mı?",
-      "category": "Sokak Modası",
-      "timestamp": 1766060300545,
-      "likes": 7,
-      "dislikes": 0
-    },
-    {
-      "id": 12,
-      "userId": 1,
-      "imageUrl": "/uploads/1766062491603-347875419.jpg",
-      "description": "Sizce ayakkabıyı almalı mıyım?",
+      "imageUrl": "/uploads/1766494100478-551010127.png",
+      "description": "Sporda giymek için aldım sizce nasıl?",
       "category": "Spor",
-      "timestamp": 1766062491607,
+      "location": "İstanbul, Kadıköy",
+      "timestamp": 1766494100488,
       "likes": 0,
       "dislikes": 0
     },
     {
-      "id": 13,
-      "userId": 9,
-      "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop",
+      "id": 10,
+      "userId": 7,
+      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
       "description": "Bugünkü kombinim nasıl?",
-      "category": "Spor",
-      "timestamp": 1766142754654,
-      "likes": 14,
+      "category": "Diğer",
+      "location": "Alaçatı, İzmir",
+      "timestamp": 1766497543034,
+      "likes": 19,
       "dislikes": 4
     },
     {
-      "id": 14,
-      "userId": 9,
-      "imageUrl": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&h=800&fit=crop",
-      "description": "Vintage ceketimi çok seviyorum.",
-      "category": "Spor",
-      "timestamp": 1766142754654,
+      "id": 11,
+      "userId": 8,
+      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
+      "description": "Hafta sonu rahatlığı.",
+      "category": "Sokak Modası",
+      "location": "Bodrum, Muğla",
+      "timestamp": 1766497543034,
+      "likes": 14,
+      "dislikes": 1
+    },
+    {
+      "id": 12,
+      "userId": 4,
+      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
+      "description": "Bugünkü kombinim nasıl?",
+      "category": "Vintage",
+      "location": "Karaköy, İstanbul",
+      "timestamp": 1766497543034,
       "likes": 1,
       "dislikes": 1
     },
     {
-      "id": 15,
-      "userId": 10,
-      "imageUrl": "https://images.unsplash.com/photo-1550614000-4b9519e02d48?w=600&h=800&fit=crop",
-      "description": "Ofis şıklığı diye buna derim!",
-      "category": "Ofis",
-      "timestamp": 1766142754654,
-      "likes": 15,
-      "dislikes": 0
-    },
-    {
-      "id": 16,
-      "userId": 5,
-      "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop",
-      "description": "Hafta sonu rahatlığı.",
-      "category": "Özel Gün",
-      "timestamp": 1766142754654,
-      "likes": 17,
-      "dislikes": 1
-    },
-    {
-      "id": 17,
-      "userId": 10,
-      "imageUrl": "https://images.unsplash.com/photo-1550614000-4b9519e02d48?w=600&h=800&fit=crop",
-      "description": "Sokak modası denemeleri.",
-      "category": "Spor",
-      "timestamp": 1766142754654,
-      "likes": 9,
-      "dislikes": 4
-    },
-    {
-      "id": 18,
-      "userId": 1,
-      "imageUrl": "/uploads/1766142878855-746240864.jpg",
-      "description": "Ayakkabıyı almayı düşünüyorum ne dersiniz?",
-      "category": "Spor",
-      "timestamp": 1766142878860,
-      "likes": 43,
-      "dislikes": 7
-    },
-    {
-      "id": 19,
-      "userId": 1,
-      "imageUrl": "/uploads/1766142963482-808675489.webp",
-      "description": "Ofiste giymek için bunu düşünüyorum beğendiniz mi ?",
-      "category": "Ofis",
-      "timestamp": 1766142963483,
-      "likes": 33,
-      "dislikes": 8
-    },
-    {
-      "id": 20,
-      "userId": 8,
-      "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop",
-      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
-      "category": "Spor",
-      "timestamp": 1766144552651,
-      "likes": 8,
-      "dislikes": 2
-    },
-    {
-      "id": 21,
-      "userId": 10,
-      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
-      "description": "Minimalist tarz.",
-      "category": "Sokak Modası",
-      "timestamp": 1766144552651,
-      "likes": 7,
-      "dislikes": 0
-    },
-    {
-      "id": 22,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&h=800&fit=crop",
-      "description": "Yeni sezon parçaları denedim.",
-      "category": "Sokak Modası",
-      "timestamp": 1766144552651,
-      "likes": 9,
-      "dislikes": 1
-    },
-    {
-      "id": 23,
+      "id": 13,
       "userId": 2,
-      "imageUrl": "https://images.unsplash.com/photo-1550614000-4b9519e02d48?w=600&h=800&fit=crop",
-      "description": "Minimalist tarz.",
-      "category": "Spor",
-      "timestamp": 1766144552651,
-      "likes": 3,
-      "dislikes": 4
-    },
-    {
-      "id": 24,
-      "userId": 10,
-      "imageUrl": "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&h=800&fit=crop",
-      "description": "Yeni sezon parçaları denedim.",
-      "category": "Sokak Modası",
-      "timestamp": 1766144552651,
-      "likes": 12,
-      "dislikes": 1
-    },
-    {
-      "id": 25,
-      "userId": 2,
-      "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=800&fit=crop",
-      "description": "Minimalist tarz.",
-      "category": "Özel Gün",
-      "timestamp": 1766146352643,
-      "likes": 19,
-      "dislikes": 4
-    },
-    {
-      "id": 26,
-      "userId": 9,
-      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop",
       "description": "Hafta sonu rahatlığı.",
-      "category": "Ofis",
-      "timestamp": 1766146352643,
-      "likes": 4,
-      "dislikes": 4
-    },
-    {
-      "id": 27,
-      "userId": 7,
-      "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop",
-      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
-      "category": "Ofis",
-      "timestamp": 1766146352643,
-      "likes": 0,
-      "dislikes": 1
-    },
-    {
-      "id": 28,
-      "userId": 1,
-      "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop",
-      "description": "Minimalist tarz.",
-      "category": "Özel Gün",
-      "timestamp": 1766146352643,
-      "likes": 17,
-      "dislikes": 1
-    },
-    {
-      "id": 29,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&h=800&fit=crop",
-      "description": "Düğün için bu elbise fazla mı?",
-      "category": "Sokak Modası",
-      "timestamp": 1766146352643,
-      "likes": 13,
-      "dislikes": 1
-    },
-    {
-      "id": 30,
-      "userId": 9,
-      "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=800&fit=crop",
-      "description": "Hafta sonu rahatlığı.",
-      "category": "Sokak Modası",
-      "timestamp": 1766148152644,
-      "likes": 19,
-      "dislikes": 0
-    },
-    {
-      "id": 31,
-      "userId": 1,
-      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
-      "description": "Yeni sezon parçaları denedim.",
-      "category": "Vintage",
-      "timestamp": 1766148152644,
-      "likes": 7,
-      "dislikes": 1
-    },
-    {
-      "id": 32,
-      "userId": 8,
-      "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop",
-      "description": "Minimalist tarz.",
-      "category": "Spor",
-      "timestamp": 1766148152644,
-      "likes": 18,
-      "dislikes": 3
-    },
-    {
-      "id": 33,
-      "userId": 5,
-      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
-      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
-      "category": "Sokak Modası",
-      "timestamp": 1766148152644,
-      "likes": 8,
-      "dislikes": 2
-    },
-    {
-      "id": 34,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop",
-      "description": "Bugünkü kombinim nasıl?",
-      "category": "Ofis",
-      "timestamp": 1766148152644,
-      "likes": 19,
-      "dislikes": 2
-    },
-    {
-      "id": 35,
-      "userId": 3,
-      "imageUrl": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&h=800&fit=crop",
-      "description": "Yeni sezon parçaları denedim.",
       "category": "Diğer",
-      "timestamp": 1766149825757,
-      "likes": 17,
-      "dislikes": 2
+      "location": "Bebek, İstanbul",
+      "timestamp": 1766497543034,
+      "likes": 10,
+      "dislikes": 4
     },
     {
-      "id": 36,
-      "userId": 4,
+      "id": 14,
+      "userId": 7,
       "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
-      "description": "Yeni sezon parçaları denedim.",
+      "description": "Spor şıklık.",
       "category": "Ofis",
-      "timestamp": 1766149825757,
+      "location": "Çankaya, Ankara",
+      "timestamp": 1766503679472,
       "likes": 16,
       "dislikes": 0
     },
     {
-      "id": 37,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop",
-      "description": "Yaz için bu renkler uygun mu?",
-      "category": "Spor",
-      "timestamp": 1766149825757,
-      "likes": 9,
+      "id": 15,
+      "userId": 4,
+      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
+      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "category": "Özel Gün",
+      "location": "Kadıköy, İstanbul",
+      "timestamp": 1766503679472,
+      "likes": 11,
+      "dislikes": 1
+    },
+    {
+      "id": 16,
+      "userId": 5,
+      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
+      "description": "Spor şıklık.",
+      "category": "Diğer",
+      "location": "Bebek, İstanbul",
+      "timestamp": 1766503679472,
+      "likes": 18,
       "dislikes": 2
     },
     {
-      "id": 38,
+      "id": 17,
       "userId": 10,
-      "imageUrl": "https://images.unsplash.com/photo-1593030761757-71bd90dbe3e4?w=600&h=800&fit=crop",
-      "description": "Spor şıklık.",
+      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
+      "description": "Yeni sezon parçaları denedim.",
       "category": "Özel Gün",
-      "timestamp": 1766149825757,
-      "likes": 6,
+      "location": "Nişantaşı, İstanbul",
+      "timestamp": 1766503679472,
+      "likes": 7,
+      "dislikes": 3
+    },
+    {
+      "id": 18,
+      "userId": 4,
+      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
+      "description": "Vintage ceketimi çok seviyorum.",
+      "category": "Vintage",
+      "location": "Çankaya, Ankara",
+      "timestamp": 1766508115252,
+      "likes": 14,
+      "dislikes": 3
+    },
+    {
+      "id": 19,
+      "userId": 8,
+      "imageUrl": "https://images.unsplash.com/photo-1550614000-4b9519e02d48?w=600&h=800&fit=crop",
+      "description": "Bu ayakkabılarla ne giyilir?",
+      "category": "Ofis",
+      "location": "Nişantaşı, İstanbul",
+      "timestamp": 1766508115252,
+      "likes": 8,
+      "dislikes": 2
+    },
+    {
+      "id": 20,
+      "userId": 9,
+      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
+      "description": "Sokak modası denemeleri.",
+      "category": "Ofis",
+      "location": "Bebek, İstanbul",
+      "timestamp": 1766508115252,
+      "likes": 1,
       "dislikes": 4
     },
     {
-      "id": 39,
+      "id": 21,
+      "userId": 10,
+      "imageUrl": "https://images.unsplash.com/photo-1617137968427-85924c809a29?w=600&h=800&fit=crop",
+      "description": "Yaz için bu renkler uygun mu?",
+      "category": "Spor",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766508115252,
+      "likes": 9,
+      "dislikes": 0
+    },
+    {
+      "id": 22,
+      "userId": 4,
+      "imageUrl": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&h=800&fit=crop",
+      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "category": "Vintage",
+      "location": "Karaköy, İstanbul",
+      "timestamp": 1766513340535,
+      "likes": 4,
+      "dislikes": 3
+    },
+    {
+      "id": 23,
+      "userId": 6,
+      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
+      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "category": "Vintage",
+      "location": "Bodrum, Muğla",
+      "timestamp": 1766513340535,
+      "likes": 7,
+      "dislikes": 1
+    },
+    {
+      "id": 24,
+      "userId": 8,
+      "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop",
+      "description": "Yeni sezon parçaları denedim.",
+      "category": "Özel Gün",
+      "location": "Karaköy, İstanbul",
+      "timestamp": 1766513340535,
+      "likes": 17,
+      "dislikes": 3
+    },
+    {
+      "id": 25,
+      "userId": 3,
+      "imageUrl": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&h=800&fit=crop",
+      "description": "Vintage ceketimi çok seviyorum.",
+      "category": "Spor",
+      "location": "Çankaya, Ankara",
+      "timestamp": 1766513340535,
+      "likes": 15,
+      "dislikes": 1
+    },
+    {
+      "id": 26,
+      "userId": 6,
+      "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop",
+      "description": "Yeni sezon parçaları denedim.",
+      "category": "Özel Gün",
+      "location": "Bağdat Caddesi, İstanbul",
+      "timestamp": 1766517010693,
+      "likes": 11,
+      "dislikes": 2
+    },
+    {
+      "id": 27,
       "userId": 4,
       "imageUrl": "https://images.unsplash.com/photo-1550614000-4b9519e02d48?w=600&h=800&fit=crop",
-      "description": "Sokak modası denemeleri.",
-      "category": "Diğer",
-      "timestamp": 1766149825757,
+      "description": "Hafta sonu rahatlığı.",
+      "category": "Özel Gün",
+      "location": "Çankaya, Ankara",
+      "timestamp": 1766517010693,
+      "likes": 4,
+      "dislikes": 0
+    },
+    {
+      "id": 28,
+      "userId": 5,
+      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop",
+      "description": "Yaz için bu renkler uygun mu?",
+      "category": "Özel Gün",
+      "location": "Çankaya, Ankara",
+      "timestamp": 1766517010693,
+      "likes": 13,
+      "dislikes": 4
+    },
+    {
+      "id": 29,
+      "userId": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&h=800&fit=crop",
+      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "category": "Özel Gün",
+      "location": "Kadıköy, İstanbul",
+      "timestamp": 1766517010693,
+      "likes": 0,
+      "dislikes": 1
+    },
+    {
+      "id": 30,
+      "userId": 5,
+      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
+      "description": "Bugünkü kombinim nasıl?",
+      "category": "Ofis",
+      "location": "Bağdat Caddesi, İstanbul",
+      "timestamp": 1766520665006,
+      "likes": 8,
+      "dislikes": 1
+    },
+    {
+      "id": 31,
+      "userId": 10,
+      "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop",
+      "description": "Yeni sezon parçaları denedim.",
+      "category": "Spor",
+      "location": "Alaçatı, İzmir",
+      "timestamp": 1766520665006,
+      "likes": 14,
+      "dislikes": 3
+    },
+    {
+      "id": 32,
+      "userId": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
+      "description": "Yaz için bu renkler uygun mu?",
+      "category": "Ofis",
+      "location": "Alaçatı, İzmir",
+      "timestamp": 1766520665006,
+      "likes": 15,
+      "dislikes": 0
+    },
+    {
+      "id": 33,
+      "userId": 9,
+      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
+      "description": "Yeni sezon parçaları denedim.",
+      "category": "Ofis",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766520665006,
+      "likes": 16,
+      "dislikes": 4
+    },
+    {
+      "id": 34,
+      "userId": 10,
+      "imageUrl": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&h=800&fit=crop",
+      "description": "Düğün için bu elbise fazla mı?",
+      "category": "Özel Gün",
+      "location": "Çankaya, Ankara",
+      "timestamp": 1766524322247,
       "likes": 9,
       "dislikes": 2
     },
     {
-      "id": 40,
-      "userId": 9,
-      "imageUrl": "https://images.unsplash.com/photo-1550614000-4b9519e02d48?w=600&h=800&fit=crop",
+      "id": 35,
+      "userId": 6,
+      "imageUrl": "https://images.unsplash.com/photo-1593030761757-71bd90dbe3e4?w=600&h=800&fit=crop",
+      "description": "Minimalist tarz.",
+      "category": "Diğer",
+      "location": "Bağdat Caddesi, İstanbul",
+      "timestamp": 1766524322247,
+      "likes": 8,
+      "dislikes": 4
+    },
+    {
+      "id": 36,
+      "userId": 10,
+      "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop",
+      "description": "Minimalist tarz.",
+      "category": "Vintage",
+      "location": "Karaköy, İstanbul",
+      "timestamp": 1766524322247,
+      "likes": 8,
+      "dislikes": 2
+    },
+    {
+      "id": 37,
+      "userId": 6,
+      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
+      "description": "Bu ayakkabılarla ne giyilir?",
+      "category": "Vintage",
+      "location": "Çankaya, Ankara",
+      "timestamp": 1766524322247,
+      "likes": 13,
+      "dislikes": 4
+    },
+    {
+      "id": 38,
+      "userId": 6,
+      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop",
+      "description": "Bu ayakkabılarla ne giyilir?",
+      "category": "Spor",
+      "location": "Karaköy, İstanbul",
+      "timestamp": 1766527981263,
+      "likes": 1,
+      "dislikes": 1
+    },
+    {
+      "id": 39,
+      "userId": 6,
+      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
       "description": "Ofis şıklığı diye buna derim!",
-      "category": "Özel Gün",
-      "timestamp": 1766151623753,
+      "category": "Vintage",
+      "location": "Nişantaşı, İstanbul",
+      "timestamp": 1766527981263,
+      "likes": 10,
+      "dislikes": 4
+    },
+    {
+      "id": 40,
+      "userId": 2,
+      "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=800&fit=crop",
+      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "category": "Ofis",
+      "location": "Nişantaşı, İstanbul",
+      "timestamp": 1766527981263,
       "likes": 1,
       "dislikes": 4
     },
     {
       "id": 41,
-      "userId": 4,
-      "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop",
-      "description": "Düğün için bu elbise fazla mı?",
-      "category": "Diğer",
-      "timestamp": 1766151623753,
-      "likes": 11,
-      "dislikes": 3
+      "userId": 10,
+      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
+      "description": "Sokak modası denemeleri.",
+      "category": "Özel Gün",
+      "location": "Karaköy, İstanbul",
+      "timestamp": 1766527981263,
+      "likes": 12,
+      "dislikes": 2
     },
     {
       "id": 42,
-      "userId": 4,
-      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
-      "description": "Ofis şıklığı diye buna derim!",
-      "category": "Sokak Modası",
-      "timestamp": 1766151623753,
-      "likes": 16,
+      "userId": 3,
+      "imageUrl": "https://images.unsplash.com/photo-1593030761757-71bd90dbe3e4?w=600&h=800&fit=crop",
+      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "category": "Ofis",
+      "location": "Bebek, İstanbul",
+      "timestamp": 1766532669174,
+      "likes": 8,
       "dislikes": 3
     },
     {
       "id": 43,
-      "userId": 4,
-      "imageUrl": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop",
-      "description": "Düğün için bu elbise fazla mı?",
+      "userId": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
+      "description": "Vintage ceketimi çok seviyorum.",
       "category": "Özel Gün",
-      "timestamp": 1766151623753,
-      "likes": 19,
-      "dislikes": 2
+      "location": "Bağdat Caddesi, İstanbul",
+      "timestamp": 1766532669174,
+      "likes": 4,
+      "dislikes": 4
     },
     {
       "id": 44,
-      "userId": 7,
-      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
-      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
-      "category": "Özel Gün",
-      "timestamp": 1766151623753,
-      "likes": 8,
+      "userId": 6,
+      "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop",
+      "description": "Düğün için bu elbise fazla mı?",
+      "category": "Vintage",
+      "location": "Bebek, İstanbul",
+      "timestamp": 1766532669174,
+      "likes": 17,
       "dislikes": 3
     },
     {
       "id": 45,
-      "userId": 1,
-      "imageUrl": "/uploads/1766152817781-508947629.png",
-      "description": "fiyatı 2000TL pahalı mı alınır mı kararsız kaldım.",
+      "userId": 7,
+      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop",
+      "description": "Sokak modası denemeleri.",
       "category": "Sokak Modası",
-      "timestamp": 1766152817790,
-      "likes": 11,
-      "dislikes": 1
+      "location": "Bebek, İstanbul",
+      "timestamp": 1766532669174,
+      "likes": 17,
+      "dislikes": 0
     },
     {
       "id": 46,
-      "userId": 10,
-      "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop",
-      "description": "Ofis şıklığı diye buna derim!",
+      "userId": 3,
+      "imageUrl": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&h=800&fit=crop",
+      "description": "Minimalist tarz.",
       "category": "Vintage",
-      "timestamp": 1766153423751,
-      "likes": 8,
-      "dislikes": 3
-    },
-    {
-      "id": 47,
-      "userId": 8,
-      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
-      "description": "Sokak modası denemeleri.",
-      "category": "Diğer",
-      "timestamp": 1766153423751,
-      "likes": 9,
+      "location": "Çankaya, Ankara",
+      "timestamp": 1766537166262,
+      "likes": 6,
       "dislikes": 1
     },
     {
+      "id": 47,
+      "userId": 3,
+      "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop",
+      "description": "Vintage ceketimi çok seviyorum.",
+      "category": "Vintage",
+      "location": "Çankaya, Ankara",
+      "timestamp": 1766537166262,
+      "likes": 7,
+      "dislikes": 3
+    },
+    {
       "id": 48,
-      "userId": 5,
-      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
+      "userId": 9,
+      "imageUrl": "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&h=800&fit=crop",
       "description": "Minimalist tarz.",
-      "category": "Diğer",
-      "timestamp": 1766153423751,
-      "likes": 3,
-      "dislikes": 2
+      "category": "Spor",
+      "location": "Bebek, İstanbul",
+      "timestamp": 1766537166262,
+      "likes": 9,
+      "dislikes": 0
     },
     {
       "id": 49,
-      "userId": 9,
-      "imageUrl": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop",
-      "description": "Düğün için bu elbise fazla mı?",
-      "category": "Sokak Modası",
-      "timestamp": 1766153423751,
-      "likes": 0,
-      "dislikes": 3
-    },
-    {
-      "id": 50,
-      "userId": 7,
+      "userId": 5,
       "imageUrl": "https://images.unsplash.com/photo-1593030761757-71bd90dbe3e4?w=600&h=800&fit=crop",
-      "description": "Bugünkü kombinim nasıl?",
-      "category": "Diğer",
-      "timestamp": 1766153423751,
-      "likes": 5,
-      "dislikes": 3
-    },
-    {
-      "id": 51,
-      "userId": 10,
-      "imageUrl": "https://images.unsplash.com/photo-1550614000-4b9519e02d48?w=600&h=800&fit=crop",
-      "description": "Ofis şıklığı diye buna derim!",
-      "category": "Diğer",
-      "timestamp": 1766155223753,
-      "likes": 10,
-      "dislikes": 0
-    },
-    {
-      "id": 52,
-      "userId": 1,
-      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
-      "description": "Vintage ceketimi çok seviyorum.",
-      "category": "Diğer",
-      "timestamp": 1766155223753,
-      "likes": 5,
-      "dislikes": 0
-    },
-    {
-      "id": 53,
-      "userId": 1,
-      "imageUrl": "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&h=800&fit=crop",
       "description": "Yeni sezon parçaları denedim.",
-      "category": "Ofis",
-      "timestamp": 1766155223753,
-      "likes": 9,
+      "category": "Sokak Modası",
+      "location": "Nişantaşı, İstanbul",
+      "timestamp": 1766537166262,
+      "likes": 16,
       "dislikes": 4
     },
     {
-      "id": 54,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
-      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "id": 50,
+      "userId": 2,
+      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop",
+      "description": "Ofis şıklığı diye buna derim!",
       "category": "Vintage",
-      "timestamp": 1766155223753,
-      "likes": 18,
+      "location": "Çankaya, Ankara",
+      "timestamp": 1766541806464,
+      "likes": 19,
+      "dislikes": 2
+    },
+    {
+      "id": 51,
+      "userId": 4,
+      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
+      "description": "Sokak modası denemeleri.",
+      "category": "Vintage",
+      "location": "Kadıköy, İstanbul",
+      "timestamp": 1766541806464,
+      "likes": 5,
+      "dislikes": 1
+    },
+    {
+      "id": 52,
+      "userId": 2,
+      "imageUrl": "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&h=800&fit=crop",
+      "description": "Sokak modası denemeleri.",
+      "category": "Sokak Modası",
+      "location": "Karaköy, İstanbul",
+      "timestamp": 1766541806464,
+      "likes": 3,
       "dislikes": 3
+    },
+    {
+      "id": 53,
+      "userId": 5,
+      "imageUrl": "https://images.unsplash.com/photo-1550614000-4b9519e02d48?w=600&h=800&fit=crop",
+      "description": "Vintage ceketimi çok seviyorum.",
+      "category": "Spor",
+      "location": "Alaçatı, İzmir",
+      "timestamp": 1766541806464,
+      "likes": 5,
+      "dislikes": 1
+    },
+    {
+      "id": 54,
+      "userId": 4,
+      "imageUrl": "https://images.unsplash.com/photo-1550614000-4b9519e02d48?w=600&h=800&fit=crop",
+      "description": "Bugünkü kombinim nasıl?",
+      "category": "Spor",
+      "location": "Alaçatı, İzmir",
+      "timestamp": 1766546283633,
+      "likes": 10,
+      "dislikes": 4
     },
     {
       "id": 55,
       "userId": 8,
-      "imageUrl": "https://images.unsplash.com/photo-1593030761757-71bd90dbe3e4?w=600&h=800&fit=crop",
-      "description": "Ofis şıklığı diye buna derim!",
-      "category": "Özel Gün",
-      "timestamp": 1766155223753,
-      "likes": 14,
-      "dislikes": 3
-    },
-    {
-      "id": 56,
-      "userId": 4,
       "imageUrl": "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&h=800&fit=crop",
-      "description": "Yeni sezon parçaları denedim.",
-      "category": "Vintage",
-      "timestamp": 1766157023749,
-      "likes": 6,
-      "dislikes": 3
-    },
-    {
-      "id": 57,
-      "userId": 8,
-      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
-      "description": "Hafta sonu rahatlığı.",
-      "category": "Özel Gün",
-      "timestamp": 1766157023749,
-      "likes": 19,
+      "description": "Vintage ceketimi çok seviyorum.",
+      "category": "Ofis",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766546283633,
+      "likes": 18,
       "dislikes": 4
     },
     {
-      "id": 58,
-      "userId": 7,
-      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
-      "description": "Minimalist tarz.",
-      "category": "Spor",
-      "timestamp": 1766157023749,
-      "likes": 16,
-      "dislikes": 1
+      "id": 56,
+      "userId": 8,
+      "imageUrl": "https://images.unsplash.com/photo-1593030761757-71bd90dbe3e4?w=600&h=800&fit=crop",
+      "description": "Ofis şıklığı diye buna derim!",
+      "category": "Ofis",
+      "location": "Nişantaşı, İstanbul",
+      "timestamp": 1766546283633,
+      "likes": 6,
+      "dislikes": 2
     },
     {
-      "id": 59,
+      "id": 57,
       "userId": 4,
-      "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=800&fit=crop",
-      "description": "Minimalist tarz.",
-      "category": "Spor",
-      "timestamp": 1766157023749,
-      "likes": 11,
+      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
+      "description": "Bu ayakkabılarla ne giyilir?",
+      "category": "Ofis",
+      "location": "Alaçatı, İzmir",
+      "timestamp": 1766546283633,
+      "likes": 17,
+      "dislikes": 2
+    },
+    {
+      "id": 58,
+      "userId": 2,
+      "imageUrl": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&h=800&fit=crop",
+      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "category": "Diğer",
+      "location": "Çankaya, Ankara",
+      "timestamp": 1766550899602,
+      "likes": 17,
       "dislikes": 3
     },
     {
-      "id": 60,
+      "id": 59,
       "userId": 7,
-      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
-      "description": "Yaz için bu renkler uygun mu?",
-      "category": "Spor",
-      "timestamp": 1766157023749,
-      "likes": 0,
+      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
+      "description": "Hafta sonu rahatlığı.",
+      "category": "Diğer",
+      "location": "Bağdat Caddesi, İstanbul",
+      "timestamp": 1766550899602,
+      "likes": 12,
+      "dislikes": 4
+    },
+    {
+      "id": 60,
+      "userId": 4,
+      "imageUrl": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop",
+      "description": "Yeni sezon parçaları denedim.",
+      "category": "Diğer",
+      "location": "Kadıköy, İstanbul",
+      "timestamp": 1766550899602,
+      "likes": 3,
       "dislikes": 4
     },
     {
       "id": 61,
-      "userId": 4,
-      "imageUrl": "https://images.unsplash.com/photo-1593030761757-71bd90dbe3e4?w=600&h=800&fit=crop",
-      "description": "Sokak modası denemeleri.",
-      "category": "Sokak Modası",
-      "timestamp": 1766158823746,
-      "likes": 18,
-      "dislikes": 3
-    },
-    {
-      "id": 62,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop",
-      "description": "Bu ayakkabılarla ne giyilir?",
+      "userId": 7,
+      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop",
+      "description": "Hafta sonu rahatlığı.",
       "category": "Ofis",
-      "timestamp": 1766158823746,
-      "likes": 16,
-      "dislikes": 0
-    },
-    {
-      "id": 63,
-      "userId": 3,
-      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
-      "description": "Spor şıklık.",
-      "category": "Diğer",
-      "timestamp": 1766158823746,
+      "location": "Bebek, İstanbul",
+      "timestamp": 1766550899602,
       "likes": 7,
       "dislikes": 0
     },
     {
+      "id": 62,
+      "userId": 9,
+      "imageUrl": "https://images.unsplash.com/photo-1617137968427-85924c809a29?w=600&h=800&fit=crop",
+      "description": "Spor şıklık.",
+      "category": "Özel Gün",
+      "location": "Alaçatı, İzmir",
+      "timestamp": 1766557864098,
+      "likes": 7,
+      "dislikes": 1
+    },
+    {
+      "id": 63,
+      "userId": 10,
+      "imageUrl": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&h=800&fit=crop",
+      "description": "Bu ayakkabılarla ne giyilir?",
+      "category": "Sokak Modası",
+      "location": "Bodrum, Muğla",
+      "timestamp": 1766557864098,
+      "likes": 19,
+      "dislikes": 3
+    },
+    {
       "id": 64,
-      "userId": 4,
+      "userId": 3,
       "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
-      "description": "Bugünkü kombinim nasıl?",
-      "category": "Vintage",
-      "timestamp": 1766158823746,
-      "likes": 14,
+      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "category": "Özel Gün",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766557864098,
+      "likes": 4,
       "dislikes": 1
     },
     {
       "id": 65,
-      "userId": 8,
-      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop",
-      "description": "Spor şıklık.",
-      "category": "Sokak Modası",
-      "timestamp": 1766158823746,
-      "likes": 17,
-      "dislikes": 4
+      "userId": 2,
+      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
+      "description": "Düğün için bu elbise fazla mı?",
+      "category": "Özel Gün",
+      "location": "Kadıköy, İstanbul",
+      "timestamp": 1766557864098,
+      "likes": 10,
+      "dislikes": 3
     },
     {
       "id": 66,
-      "userId": 8,
-      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop",
-      "description": "Sokak modası denemeleri.",
-      "category": "Vintage",
-      "timestamp": 1766160623739,
-      "likes": 10,
-      "dislikes": 4
+      "userId": 3,
+      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
+      "description": "Bu ayakkabılarla ne giyilir?",
+      "category": "Sokak Modası",
+      "location": "Çankaya, Ankara",
+      "timestamp": 1766561464087,
+      "likes": 3,
+      "dislikes": 0
     },
     {
       "id": 67,
-      "userId": 3,
-      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
-      "description": "Hafta sonu rahatlığı.",
-      "category": "Vintage",
-      "timestamp": 1766160623739,
-      "likes": 14,
+      "userId": 2,
+      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
+      "description": "Vintage ceketimi çok seviyorum.",
+      "category": "Ofis",
+      "location": "Nişantaşı, İstanbul",
+      "timestamp": 1766561464087,
+      "likes": 17,
       "dislikes": 3
     },
     {
       "id": 68,
-      "userId": 2,
-      "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop",
+      "userId": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
       "description": "Vintage ceketimi çok seviyorum.",
-      "category": "Özel Gün",
-      "timestamp": 1766160623739,
-      "likes": 12,
-      "dislikes": 4
+      "category": "Sokak Modası",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766561464087,
+      "likes": 3,
+      "dislikes": 0
     },
     {
       "id": 69,
-      "userId": 5,
-      "imageUrl": "https://images.unsplash.com/photo-1617137968427-85924c809a29?w=600&h=800&fit=crop",
-      "description": "Minimalist tarz.",
-      "category": "Vintage",
-      "timestamp": 1766160623739,
-      "likes": 6,
-      "dislikes": 4
+      "userId": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1550614000-4b9519e02d48?w=600&h=800&fit=crop",
+      "description": "Düğün için bu elbise fazla mı?",
+      "category": "Ofis",
+      "location": "Alaçatı, İzmir",
+      "timestamp": 1766561464087,
+      "likes": 11,
+      "dislikes": 1
     },
     {
       "id": 70,
-      "userId": 4,
-      "imageUrl": "https://images.unsplash.com/photo-1593030761757-71bd90dbe3e4?w=600&h=800&fit=crop",
-      "description": "Vintage ceketimi çok seviyorum.",
-      "category": "Ofis",
-      "timestamp": 1766160623739,
-      "likes": 18,
-      "dislikes": 1
-    },
-    {
-      "id": 71,
-      "userId": 5,
-      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
-      "description": "Düğün için bu elbise fazla mı?",
-      "category": "Özel Gün",
-      "timestamp": 1766412801504,
-      "likes": 17,
-      "dislikes": 4
-    },
-    {
-      "id": 72,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1550614000-4b9519e02d48?w=600&h=800&fit=crop",
-      "description": "Minimalist tarz.",
-      "category": "Diğer",
-      "timestamp": 1766412801504,
-      "likes": 11,
-      "dislikes": 3
-    },
-    {
-      "id": 73,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop",
-      "description": "Hafta sonu rahatlığı.",
-      "category": "Ofis",
-      "timestamp": 1766412801504,
-      "likes": 3,
-      "dislikes": 2
-    },
-    {
-      "id": 74,
-      "userId": 5,
-      "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop",
-      "description": "Sokak modası denemeleri.",
-      "category": "Diğer",
-      "timestamp": 1766412801504,
-      "likes": 4,
-      "dislikes": 2
-    },
-    {
-      "id": 75,
-      "userId": 2,
-      "imageUrl": "https://images.unsplash.com/photo-1593030761757-71bd90dbe3e4?w=600&h=800&fit=crop",
-      "description": "Düğün için bu elbise fazla mı?",
-      "category": "Vintage",
-      "timestamp": 1766412801504,
-      "likes": 12,
-      "dislikes": 2
-    },
-    {
-      "id": 76,
-      "userId": 7,
-      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
-      "description": "Hafta sonu rahatlığı.",
-      "category": "Spor",
-      "timestamp": 1766412919630,
-      "likes": 11,
-      "dislikes": 3
-    },
-    {
-      "id": 77,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&h=800&fit=crop",
-      "description": "Yeni sezon parçaları denedim.",
-      "category": "Sokak Modası",
-      "timestamp": 1766412919630,
-      "likes": 8,
-      "dislikes": 0
-    },
-    {
-      "id": 78,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
-      "description": "Spor şıklık.",
-      "category": "Ofis",
-      "timestamp": 1766412919630,
-      "likes": 5,
-      "dislikes": 1
-    },
-    {
-      "id": 79,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop",
-      "description": "Hafta sonu rahatlığı.",
-      "category": "Diğer",
-      "timestamp": 1766412919630,
-      "likes": 9,
-      "dislikes": 0
-    },
-    {
-      "id": 80,
-      "userId": 4,
-      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
-      "description": "Hafta sonu rahatlığı.",
-      "category": "Vintage",
-      "timestamp": 1766416517620,
-      "likes": 8,
-      "dislikes": 1
-    },
-    {
-      "id": 81,
-      "userId": 4,
-      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
-      "description": "Minimalist tarz.",
-      "category": "Sokak Modası",
-      "timestamp": 1766416517621,
-      "likes": 17,
-      "dislikes": 4
-    },
-    {
-      "id": 82,
-      "userId": 5,
-      "imageUrl": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop",
-      "description": "Hafta sonu rahatlığı.",
-      "category": "Diğer",
-      "timestamp": 1766416517621,
-      "likes": 5,
-      "dislikes": 3
-    },
-    {
-      "id": 83,
-      "userId": 4,
-      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
-      "description": "Bu ayakkabılarla ne giyilir?",
-      "category": "Ofis",
-      "timestamp": 1766416517621,
-      "likes": 3,
-      "dislikes": 4
-    },
-    {
-      "id": 84,
       "userId": 1,
-      "imageUrl": "/uploads/1766419749811-496365985.webp",
-      "description": "nasıl?",
-      "category": "Sokak Modası",
-      "timestamp": 1766419749816,
+      "imageUrl": "/uploads/1766562556830-57253782.mp4",
+      "mediaType": "video",
+      "description": "video olarak ekledim ne düşünürsünnüz ??",
+      "category": "Spor",
+      "location": "Eskişehir",
+      "timestamp": 1766562556839,
       "likes": 0,
       "dislikes": 0
     },
     {
-      "id": 85,
-      "userId": 10,
-      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
-      "description": "Yaz için bu renkler uygun mu?",
-      "category": "Vintage",
-      "timestamp": 1766420117605,
-      "likes": 13,
-      "dislikes": 3
-    },
-    {
-      "id": 86,
-      "userId": 3,
-      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
-      "description": "Yaz için bu renkler uygun mu?",
-      "category": "Diğer",
-      "timestamp": 1766420117605,
-      "likes": 16,
+      "id": 71,
+      "userId": 1,
+      "imageUrl": "/uploads/1766562673035-106138601.mp4",
+      "mediaType": "video",
+      "description": "asd",
+      "category": "Sokak Modası",
+      "location": "adasd",
+      "timestamp": 1766562673044,
+      "likes": 0,
       "dislikes": 0
     },
     {
-      "id": 87,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop",
-      "description": "Bu ayakkabılarla ne giyilir?",
-      "category": "Diğer",
-      "timestamp": 1766420117605,
-      "likes": 10,
-      "dislikes": 1
-    },
-    {
-      "id": 88,
-      "userId": 8,
-      "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop",
-      "description": "Yaz için bu renkler uygun mu?",
-      "category": "Spor",
-      "timestamp": 1766420117605,
-      "likes": 12,
-      "dislikes": 4
-    },
-    {
-      "id": 89,
-      "userId": 7,
-      "imageUrl": "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&h=800&fit=crop",
-      "description": "Hafta sonu rahatlığı.",
+      "id": 72,
+      "userId": 1,
+      "imageUrl": "/uploads/1766562735360-718104796.mp4",
+      "mediaType": "video",
+      "description": "adasda",
       "category": "Sokak Modası",
-      "timestamp": 1766423717594,
-      "likes": 3,
-      "dislikes": 3
+      "location": "sadasdadasd",
+      "timestamp": 1766562735366,
+      "likes": 0,
+      "dislikes": 0
     },
     {
-      "id": 90,
+      "id": 73,
+      "userId": 7,
+      "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=800&fit=crop",
+      "mediaType": "image",
+      "description": "Bugünkü kombinim nasıl?",
+      "category": "Özel Gün",
+      "location": "Bebek, İstanbul",
+      "timestamp": 1766562906591,
+      "likes": 17,
+      "dislikes": 2
+    },
+    {
+      "id": 74,
       "userId": 9,
-      "imageUrl": "https://images.unsplash.com/photo-1593030761757-71bd90dbe3e4?w=600&h=800&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
+      "mediaType": "image",
       "description": "Yeni sezon parçaları denedim.",
-      "category": "Vintage",
-      "timestamp": 1766423717594,
-      "likes": 1,
-      "dislikes": 3
-    },
-    {
-      "id": 91,
-      "userId": 9,
-      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
-      "description": "Vintage ceketimi çok seviyorum.",
-      "category": "Vintage",
-      "timestamp": 1766423717594,
-      "likes": 10,
-      "dislikes": 2
-    },
-    {
-      "id": 92,
-      "userId": 5,
-      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
-      "description": "Hafta sonu rahatlığı.",
-      "category": "Sokak Modası",
-      "timestamp": 1766423717594,
-      "likes": 17,
-      "dislikes": 4
-    },
-    {
-      "id": 93,
-      "userId": 9,
-      "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=800&fit=crop",
-      "description": "Bugünkü kombinim nasıl?",
-      "category": "Diğer",
-      "timestamp": 1766427317588,
-      "likes": 12,
-      "dislikes": 4
-    },
-    {
-      "id": 94,
-      "userId": 8,
-      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
-      "description": "Düğün için bu elbise fazla mı?",
-      "category": "Özel Gün",
-      "timestamp": 1766427317588,
-      "likes": 4,
-      "dislikes": 1
-    },
-    {
-      "id": 95,
-      "userId": 5,
-      "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop",
-      "description": "Düğün için bu elbise fazla mı?",
-      "category": "Özel Gün",
-      "timestamp": 1766427317588,
-      "likes": 11,
-      "dislikes": 1
-    },
-    {
-      "id": 96,
-      "userId": 3,
-      "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=800&fit=crop",
-      "description": "Hafta sonu rahatlığı.",
-      "category": "Sokak Modası",
-      "timestamp": 1766427317588,
-      "likes": 18,
-      "dislikes": 3
-    },
-    {
-      "id": 97,
-      "userId": 4,
-      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop",
-      "description": "Ofis şıklığı diye buna derim!",
-      "category": "Sokak Modası",
-      "timestamp": 1766430917580,
-      "likes": 7,
-      "dislikes": 1
-    },
-    {
-      "id": 98,
-      "userId": 9,
-      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop",
-      "description": "Ofis şıklığı diye buna derim!",
-      "category": "Sokak Modası",
-      "timestamp": 1766430917580,
-      "likes": 12,
-      "dislikes": 2
-    },
-    {
-      "id": 99,
-      "userId": 6,
-      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop",
-      "description": "Ofis şıklığı diye buna derim!",
-      "category": "Sokak Modası",
-      "timestamp": 1766430917580,
-      "likes": 6,
-      "dislikes": 1
-    },
-    {
-      "id": 100,
-      "userId": 3,
-      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop",
-      "description": "Sokak modası denemeleri.",
-      "category": "Spor",
-      "timestamp": 1766430917580,
-      "likes": 11,
-      "dislikes": 1
-    },
-    {
-      "id": 101,
-      "userId": 9,
-      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
-      "description": "Vintage ceketimi çok seviyorum.",
-      "category": "Sokak Modası",
-      "timestamp": 1766432712063,
-      "likes": 3,
-      "dislikes": 2
-    },
-    {
-      "id": 102,
-      "userId": 3,
-      "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop",
-      "description": "Hafta sonu rahatlığı.",
-      "category": "Diğer",
-      "timestamp": 1766432712063,
-      "likes": 3,
-      "dislikes": 0
-    },
-    {
-      "id": 103,
-      "userId": 2,
-      "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop",
-      "description": "Bu ayakkabılarla ne giyilir?",
-      "category": "Özel Gün",
-      "timestamp": 1766432712063,
-      "likes": 18,
-      "dislikes": 3
-    },
-    {
-      "id": 104,
-      "userId": 1,
-      "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop",
-      "description": "Yaz için bu renkler uygun mu?",
-      "category": "Sokak Modası",
-      "timestamp": 1766432712063,
-      "likes": 17,
-      "dislikes": 2
-    },
-    {
-      "id": 105,
-      "userId": 7,
-      "imageUrl": "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&h=800&fit=crop",
-      "description": "Spor şıklık.",
-      "category": "Özel Gün",
-      "timestamp": 1766433052918,
-      "likes": 12,
-      "dislikes": 2
-    },
-    {
-      "id": 106,
-      "userId": 9,
-      "imageUrl": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&h=800&fit=crop",
-      "description": "Sokak modası denemeleri.",
-      "category": "Vintage",
-      "timestamp": 1766433052918,
-      "likes": 8,
-      "dislikes": 4
-    },
-    {
-      "id": 107,
-      "userId": 5,
-      "imageUrl": "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&h=800&fit=crop",
-      "description": "Bugünkü kombinim nasıl?",
-      "category": "Diğer",
-      "timestamp": 1766433052918,
-      "likes": 2,
-      "dislikes": 3
-    },
-    {
-      "id": 108,
-      "userId": 7,
-      "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=800&fit=crop",
-      "description": "Ofis şıklığı diye buna derim!",
-      "category": "Sokak Modası",
-      "timestamp": 1766433052918,
-      "likes": 19,
-      "dislikes": 2
-    },
-    {
-      "id": 109,
-      "userId": 1,
-      "imageUrl": "/uploads/1766434007309-824456652.webp",
-      "description": "",
       "category": "Ofis",
-      "timestamp": 1766434007314,
-      "likes": 3,
+      "location": "Nişantaşı, İstanbul",
+      "timestamp": 1766562906591,
+      "likes": 10,
       "dislikes": 0
+    },
+    {
+      "id": 75,
+      "userId": 10,
+      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
+      "mediaType": "image",
+      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "category": "Vintage",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766562906591,
+      "likes": 10,
+      "dislikes": 0
+    },
+    {
+      "id": 76,
+      "userId": 5,
+      "imageUrl": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop",
+      "mediaType": "image",
+      "description": "Bu ayakkabılarla ne giyilir?",
+      "category": "Spor",
+      "location": "Bağdat Caddesi, İstanbul",
+      "timestamp": 1766562906591,
+      "likes": 19,
+      "dislikes": 4
+    },
+    {
+      "id": 77,
+      "userId": 6,
+      "imageUrl": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop",
+      "mediaType": "image",
+      "description": "Bugünkü kombinim nasıl?",
+      "category": "Diğer",
+      "location": "Bebek, İstanbul",
+      "timestamp": 1766562985710,
+      "likes": 5,
+      "dislikes": 0
+    },
+    {
+      "id": 78,
+      "userId": 2,
+      "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop",
+      "mediaType": "image",
+      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "category": "Spor",
+      "location": "Kadıköy, İstanbul",
+      "timestamp": 1766562985710,
+      "likes": 1,
+      "dislikes": 2
+    },
+    {
+      "id": 79,
+      "userId": 4,
+      "imageUrl": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop",
+      "mediaType": "image",
+      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "category": "Ofis",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766562985710,
+      "likes": 9,
+      "dislikes": 1
+    },
+    {
+      "id": 80,
+      "userId": 6,
+      "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop",
+      "mediaType": "image",
+      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "category": "Sokak Modası",
+      "location": "Bebek, İstanbul",
+      "timestamp": 1766562985710,
+      "likes": 11,
+      "dislikes": 4
     }
-  ],
-  "votes": []
+  ]
 }

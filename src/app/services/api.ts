@@ -14,8 +14,10 @@ export interface Post {
   id: number;
   userId: number;
   imageUrl: string;
+  mediaType?: 'image' | 'video';
   description: string;
   category: string;
+  location?: string;
   timestamp: number;
   likes: number;
   dislikes: number;
@@ -23,6 +25,7 @@ export interface Post {
   isActive?: boolean;
   commentCount?: number;
   userVote?: 'like' | 'dislike' | null;
+  isMuted?: boolean;
 }
 
 export interface Comment {

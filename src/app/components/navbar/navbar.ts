@@ -140,16 +140,15 @@ import { FormsModule } from '@angular/forms';
 
     <!-- Upload Modal -->
     @if (showModal) {
-      <div class="fixed inset-0 z-[60] overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+      <div class="fixed inset-0 z-[60] flex items-center justify-center p-4">
           <!-- Backdrop -->
           <div class="fixed inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-sm transition-opacity" (click)="closeModal()"></div>
 
-          <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
-            <!-- Modal Content -->
-            <div class="relative transform overflow-hidden bg-white dark:bg-gray-900 rounded-3xl w-full max-w-md p-5 sm:p-6 text-left shadow-2xl transition-all border border-gray-100 dark:border-gray-800 my-8">
+          <!-- Modal Content -->
+          <div class="bg-white dark:bg-gray-900 rounded-3xl w-full max-w-sm max-h-[85vh] flex flex-col relative z-10 shadow-2xl animate-slide-up border border-gray-100 dark:border-gray-800">
               
-              <div class="flex justify-between items-center mb-5 sm:mb-6">
-                  <h3 class="text-xl font-bold text-gray-900 dark:text-white">Yeni Paylaşım</h3>
+              <div class="flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-800 shrink-0">
+                  <h3 class="font-bold text-lg text-gray-900 dark:text-white">Yeni Paylaşım</h3>
                 <button
                   (click)="closeModal()"
                   class="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700
@@ -172,83 +171,102 @@ import { FormsModule } from '@angular/forms';
                 </button>
               </div>
 
-              <!-- Preview Area -->
-               <div class="mb-5 sm:mb-6">
-                  @if (!previewUrl) {
-                    <div (click)="fileInput.click()" class="w-full aspect-[4/5] bg-gray-50 dark:bg-gray-800 border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:border-purple-400 dark:hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors group">
-                        <div class="w-16 h-16 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center shadow-sm mb-3 group-hover:scale-110 transition-transform">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 dark:text-gray-500 group-hover:text-purple-500 dark:group-hover:text-purple-400"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+              <!-- Scrollable Content -->
+              <div class="flex-1 overflow-y-auto p-4 scrollbar-hide">
+                  <!-- Preview Area -->
+                  <div class="mb-5">
+                      @if (!previewUrl) {
+                        <div (click)="fileInput.click()" class="w-full aspect-[4/5] bg-gray-50 dark:bg-gray-800 border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:border-purple-400 dark:hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors group">
+                            <div class="w-16 h-16 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center shadow-sm mb-3 group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 dark:text-gray-500 group-hover:text-purple-500 dark:group-hover:text-purple-400"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                            </div>
+                            <span class="font-medium text-gray-500 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400">Fotoğraf Seç</span>
+                            <span class="text-xs text-gray-400 dark:text-gray-500 mt-1">veya sürükle bırak</span>
                         </div>
-                        <span class="font-medium text-gray-500 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400">Fotoğraf Seç</span>
-                        <span class="text-xs text-gray-400 dark:text-gray-500 mt-1">veya sürükle bırak</span>
-                    </div>
-                  }
-
-                 @if (previewUrl) {
-                   <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-md">
-                     <img [src]="previewUrl" class="w-full h-full object-cover">
-
-                     <button
-                       (click)="removeImage()"
-                       class="absolute top-3 right-3 w-8 h-8 bg-black/50 text-white rounded-full
-               hover:bg-red-500 transition-colors backdrop-blur-md
-               flex items-center justify-center">
-
-                       <svg xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round">
-                         <path d="M18 6 L6 18"/>
-                         <path d="M6 6 L18 18"/>
-                       </svg>
-
-                     </button>
-                   </div>
-                 }
-
-              </div>
-
-              <input #fileInput type="file" (change)="onFileSelected($event)" accept="image/*" class="hidden">
-
-              <!-- Description Input -->
-              <div class="mb-4">
-                  <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Açıklama</label>
-                  <textarea #descInput class="w-full p-4 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 resize-none text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500" rows="3" placeholder="Bu kombin hakkında ne düşünüyorsunuz?"></textarea>
-              </div>
-
-              <!-- Category Select -->
-              <div class="mb-6">
-                  <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Kategori</label>
-                  <div class="flex flex-wrap gap-2">
-                      @for (cat of categories; track cat) {
-                        <button
-                                (click)="selectedCategory = cat"
-                                [class.bg-purple-600]="selectedCategory === cat"
-                                [class.dark:bg-purple-500]="selectedCategory === cat"
-                                [class.text-white]="selectedCategory === cat"
-                                [class.bg-gray-100]="selectedCategory !== cat"
-                                [class.dark:bg-gray-800]="selectedCategory !== cat"
-                                [class.text-gray-600]="selectedCategory !== cat"
-                                [class.dark:text-gray-400]="selectedCategory !== cat"
-                                class="px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-purple-100 dark:hover:bg-purple-900/30 hover:text-purple-700 dark:hover:text-purple-300">
-                            {{ cat }}
-                        </button>
                       }
+
+                      @if (previewUrl) {
+                      <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-md bg-black">
+                        @if (previewType === 'video') {
+                            <video [src]="previewUrl" controls class="w-full h-full object-contain"></video>
+                        } @else {
+                            <img [src]="previewUrl" class="w-full h-full object-cover">
+                        }
+
+                        <button
+                          (click)="removeImage()"
+                          class="absolute top-3 right-3 w-8 h-8 bg-black/50 text-white rounded-full
+                  hover:bg-red-500 transition-colors backdrop-blur-md
+                  flex items-center justify-center z-10">
+
+                          <svg xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                            <path d="M18 6 L6 18"/>
+                            <path d="M6 6 L18 18"/>
+                          </svg>
+
+                        </button>
+                      </div>
+                    }
+                  </div>
+
+                  <input #fileInput type="file" (change)="onFileSelected($event)" accept="image/*,video/*" class="hidden">
+
+                  <!-- Description Input -->
+                  <div class="mb-4">
+                      <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Açıklama</label>
+                      <textarea #descInput class="w-full p-4 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 resize-none text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500" rows="3" placeholder="Bu kombin hakkında ne düşünüyorsunuz?"></textarea>
+                  </div>
+
+                  <!-- Location Input -->
+                  <div class="mb-4">
+                      <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Konum (İsteğe bağlı)</label>
+                      <div class="relative">
+                          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                          </div>
+                          <input [(ngModel)]="postLocation" name="postLocation" type="text" class="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500" placeholder="Örn: Nişantaşı, İstanbul">
+                      </div>
+                  </div>
+
+                  <!-- Category Select -->
+                  <div class="mb-6">
+                      <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Kategori</label>
+                      <div class="flex flex-wrap gap-2">
+                          @for (cat of categories; track cat) {
+                            <button
+                                    (click)="selectedCategory = cat"
+                                    [class.bg-purple-600]="selectedCategory === cat"
+                                    [class.dark:bg-purple-500]="selectedCategory === cat"
+                                    [class.text-white]="selectedCategory === cat"
+                                    [class.bg-gray-100]="selectedCategory !== cat"
+                                    [class.dark:bg-gray-800]="selectedCategory !== cat"
+                                    [class.text-gray-600]="selectedCategory !== cat"
+                                    [class.dark:text-gray-400]="selectedCategory !== cat"
+                                    class="px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-purple-100 dark:hover:bg-purple-900/30 hover:text-purple-700 dark:hover:text-purple-300">
+                                {{ cat }}
+                            </button>
+                          }
+                      </div>
                   </div>
               </div>
-
-              <button (click)="upload()" [disabled]="!selectedFile || uploading" class="w-full py-4 bg-black dark:bg-white text-white dark:text-black rounded-xl font-bold text-lg hover:bg-gray-800 dark:hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-xl shadow-purple-900/10 dark:shadow-white/10 flex items-center justify-center gap-2">
-                  @if (uploading) {
-                    <span class="w-5 h-5 border-2 border-white/30 dark:border-black/30 border-t-white dark:border-t-black rounded-full animate-spin"></span>
-                  }
-                  {{ uploading ? 'Yükleniyor...' : 'Paylaş' }}
-              </button>
-            </div>
+              
+              <!-- Footer Button -->
+              <div class="p-4 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 rounded-b-3xl shrink-0">
+                  <button (click)="upload()" [disabled]="!selectedFile || uploading" class="w-full py-4 bg-black dark:bg-white text-white dark:text-black rounded-xl font-bold text-lg hover:bg-gray-800 dark:hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-xl shadow-purple-900/10 dark:shadow-white/10 flex items-center justify-center gap-2">
+                      @if (uploading) {
+                        <span class="w-5 h-5 border-2 border-white/30 dark:border-black/30 border-t-white dark:border-t-black rounded-full animate-spin"></span>
+                      }
+                      {{ uploading ? 'Yükleniyor...' : 'Paylaş' }}
+                  </button>
+              </div>
           </div>
       </div>
     }
@@ -258,11 +276,13 @@ import { FormsModule } from '@angular/forms';
 export class Navbar {
   showModal = false;
   previewUrl: string | null = null;
+  previewType: 'image' | 'video' = 'image';
   selectedFile: File | null = null;
   uploading = false;
 
   @ViewChild('fileInput') fileInput!: ElementRef;
   @ViewChild('descInput') descInput!: ElementRef;
+  postLocation = '';
 
   categories = ['Sokak Modası', 'Ofis', 'Davet', 'Spor', 'Vintage', 'Diğer'];
   selectedCategory = 'Sokak Modası';
@@ -344,6 +364,8 @@ export class Navbar {
     const file = event.target.files[0];
     if (file) {
         this.selectedFile = file;
+        this.previewType = file.type.startsWith('video') ? 'video' : 'image';
+        
         const reader = new FileReader();
         reader.onload = (e) => {
             this.ngZone.run(() => {
@@ -364,6 +386,7 @@ export class Navbar {
   resetForm() {
     this.removeImage();
     if (this.descInput) this.descInput.nativeElement.value = '';
+    this.postLocation = '';
     this.selectedCategory = 'Sokak Modası';
   }
 
@@ -378,32 +401,47 @@ export class Navbar {
     if (!this.selectedFile) return;
 
     this.uploading = true;
-    const formData = new FormData();
-    formData.append('image', this.selectedFile);
-    // Use the current user ID
-    const currentUserId = this.api.currentUser()?.id;
-    if (currentUserId) {
-        formData.append('userId', currentUserId.toString());
-    } else {
-        // Fallback or error if no user logged in
-        alert("Lütfen önce giriş yapın (bir kullanıcı seçin)");
-        this.uploading = false;
-        return;
+
+    try {
+      const formData = new FormData();
+      formData.append('image', this.selectedFile);
+      // Use the current user ID
+      const currentUserId = this.api.currentUser()?.id;
+      if (currentUserId) {
+          formData.append('userId', currentUserId.toString());
+      } else {
+          // Fallback or error if no user logged in
+          alert("Lütfen önce giriş yapın (bir kullanıcı seçin)");
+          this.uploading = false;
+          return;
+      }
+
+      formData.append('description', this.descInput?.nativeElement?.value || '');
+      
+      // Use the bound model for location
+      formData.append('location', this.postLocation || '');
+
+      formData.append('category', this.selectedCategory);
+      
+      // Explicitly append mediaType for the frontend optimistic update or backend handling if needed
+      // Note: Backend infers this from the file mimetype, but sending it can be safer
+      formData.append('mediaType', this.previewType);
+
+      this.api.createPost(formData).subscribe({
+          next: (response) => {
+              this.uploading = false;
+              this.closeModal();
+          },
+          error: (err) => {
+              console.error('Upload failed:', err);
+              this.uploading = false;
+              alert('Yükleme başarısız oldu. Lütfen tekrar deneyin.');
+          }
+      });
+    } catch (error) {
+      console.error('Error preparing upload:', error);
+      this.uploading = false;
+      alert('Bir hata oluştu. Lütfen tekrar deneyin.');
     }
-
-    formData.append('description', this.descInput.nativeElement.value);
-    formData.append('category', this.selectedCategory);
-
-    this.api.createPost(formData).subscribe({
-        next: () => {
-            this.uploading = false;
-            this.closeModal();
-        },
-        error: (err) => {
-            console.error(err);
-            this.uploading = false;
-            alert('Yükleme başarısız oldu.');
-        }
-    });
   }
 }

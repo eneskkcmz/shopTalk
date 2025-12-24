@@ -136,25 +136,31 @@ app.get('/api/users/:id', (req, res) => {
     res.json({ user, posts: userPosts });
 });
 
-// POST /api/posts - Create new post with file upload
-app.post('/api/posts', upload.single('image'), (req, res) => {
-    const { userId, description, category } = req.body;
+    // POST /api/posts - Create new post with file upload
+    app.post('/api/posts', upload.single('image'), (req, res) => {
+    const { userId, description, category, location, mediaType } = req.body;
     
     if (!req.file || !userId) {
         return res.status(400).json({ error: "Missing image or userId" });
     }
 
+
     // Construct public URL for the image
     // Note: In production, this would be a full URL or relative path handled by frontend
     const imageUrl = `/uploads/${req.file.filename}`;
+    
+    // Determine media type based on explicit field OR mimetype
+    const finalMediaType = mediaType || (req.file.mimetype.startsWith('video') ? 'video' : 'image');
 
     const db = getDb();
     const newPost = {
         id: db.posts.length > 0 ? Math.max(...db.posts.map(p => p.id)) + 1 : 1,
         userId: parseInt(userId),
         imageUrl,
+        mediaType: finalMediaType,
         description: description || "",
         category: category || "Diğer",
+        location: location || "",
         timestamp: Date.now(),
         likes: 0,
         dislikes: 0
@@ -162,6 +168,8 @@ app.post('/api/posts', upload.single('image'), (req, res) => {
 
     db.posts.push(newPost);
     saveDb(db);
+    
+    console.log('Created new post:', newPost);
 
     res.status(201).json(newPost);
 });
@@ -339,6 +347,18 @@ const MOCK_DESCRIPTIONS = [
     "Yeni sezon parçaları denedim."
 ];
 
+const MOCK_LOCATIONS = [
+    "Nişantaşı, İstanbul",
+    "Karaköy, İstanbul",
+    "Bebek, İstanbul",
+    "Alsancak, İzmir",
+    "Çankaya, Ankara",
+    "Bağdat Caddesi, İstanbul",
+    "Bodrum, Muğla",
+    "Alaçatı, İzmir",
+    "Kadıköy, İstanbul"
+];
+
 const MOCK_CATEGORIES = ["Sokak Modası", "Ofis", "Vintage", "Spor", "Özel Gün", "Diğer"];
 
 
@@ -381,6 +401,7 @@ const generateRandomPosts = (count = 5) => {
         const randomImage = MOCK_IMAGES[Math.floor(Math.random() * MOCK_IMAGES.length)];
         const randomDesc = MOCK_DESCRIPTIONS[Math.floor(Math.random() * MOCK_DESCRIPTIONS.length)];
         const randomCategory = MOCK_CATEGORIES[Math.floor(Math.random() * MOCK_CATEGORIES.length)];
+        const randomLocation = MOCK_LOCATIONS[Math.floor(Math.random() * MOCK_LOCATIONS.length)];
         
         // Randomly assign some initial likes/dislikes
         const initialLikes = Math.floor(Math.random() * 20);
@@ -392,8 +413,10 @@ const generateRandomPosts = (count = 5) => {
             id: postId,
             userId: randomUser.id,
             imageUrl: randomImage,
+            mediaType: 'image', // Mock posts are always images for now
             description: randomDesc,
             category: randomCategory,
+            location: randomLocation,
             timestamp: Date.now(), // Fresh timestamp
             likes: initialLikes,
             dislikes: initialDislikes

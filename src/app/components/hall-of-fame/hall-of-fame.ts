@@ -21,7 +21,16 @@ import { Post } from '../../services/api';
             <div class="bg-white dark:bg-gray-900 rounded-2xl p-4 flex gap-4 items-center shadow-sm border border-gray-100 dark:border-gray-800 animate-slide-up" [style.animation-delay]="i * 100 + 'ms'">
                 <div class="flex-shrink-0 text-2xl font-bold w-10 text-center text-gray-300 dark:text-gray-700">#{{ i + 1 }}</div>
                 
-                <img [src]="getImageUrl(post.imageUrl)" class="w-20 h-24 object-cover rounded-xl bg-gray-100 dark:bg-gray-800">
+                @if (post.mediaType === 'video') {
+                    <video [src]="getImageUrl(post.imageUrl)" 
+                           muted
+                           class="w-20 h-24 object-cover rounded-xl bg-gray-100 dark:bg-gray-800"
+                           onmouseover="this.play()"
+                           onmouseout="this.pause(); this.currentTime = 0;">
+                    </video>
+                } @else {
+                    <img [src]="getImageUrl(post.imageUrl)" class="w-20 h-24 object-cover rounded-xl bg-gray-100 dark:bg-gray-800">
+                }
                 
                 <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-2 mb-1">

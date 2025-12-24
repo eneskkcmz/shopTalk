@@ -59,15 +59,39 @@ import { CommentsModal } from '../comments-modal/comments-modal';
            </div>
          }
   
-        <!-- Grid -->
+          <!-- Grid -->
         <div class="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-8">
           @for (post of posts; track post.id) {
             <div (click)="openComments(post)" class="relative group aspect-[4/5] bg-gray-100 dark:bg-gray-900 cursor-pointer overflow-hidden rounded-md md:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300">
                 <!-- Full URL handling -->
-                <img [src]="getImageUrl(post.imageUrl)" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                @if (post.mediaType === 'video') {
+                  <video [src]="getImageUrl(post.imageUrl)" 
+                         muted
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                         onmouseover="this.play()"
+                         onmouseout="this.pause(); this.currentTime = 0;">
+                  </video>
+                  
+                  <!-- Video Indicator Icon -->
+                  <div class="absolute top-2 right-2 bg-black/50 p-1.5 rounded-full backdrop-blur-sm z-10 group-hover:opacity-0 transition-opacity">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </div>
+                } @else {
+                  <img [src]="getImageUrl(post.imageUrl)" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                }
                 
                 <!-- Hover Overlay -->
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4 text-white font-bold backdrop-blur-sm">
+                  <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4 text-white font-bold backdrop-blur-sm pointer-events-none">
+                  
+                  @if (post.location) {
+                    <div class="absolute top-3 left-0 right-0 text-center px-2">
+                        <span class="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider bg-black/40 px-2 py-1 rounded-full backdrop-blur-md border border-white/20">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                             {{ post.location }}
+                        </span>
+                    </div>
+                  }
+
                   <div class="flex items-center gap-2 text-xl">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"/></svg>
                       {{ post.likes }}
