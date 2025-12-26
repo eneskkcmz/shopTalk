@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../../services/api';
+import { MediaViewer } from '../media-viewer/media-viewer';
 
 @Component({
   selector: 'app-hall-of-fame',
-  imports: [CommonModule],
+  imports: [CommonModule, MediaViewer],
   template: `
     <div class="max-w-2xl mx-auto py-8 px-4">
       <div class="text-center mb-10 animate-fade-in">
@@ -18,19 +19,27 @@ import { Post } from '../../services/api';
 
       <div class="grid gap-6">
         @for (post of posts; track post.id; let i = $index) {
-            <div class="bg-white dark:bg-gray-900 rounded-2xl p-4 flex gap-4 items-center shadow-sm border border-gray-100 dark:border-gray-800 animate-slide-up" [style.animation-delay]="i * 100 + 'ms'">
+            <div (click)="openMedia(post)" class="bg-white dark:bg-gray-900 rounded-2xl p-4 flex gap-4 items-center shadow-sm border border-gray-100 dark:border-gray-800 animate-slide-up cursor-pointer hover:shadow-md transition-all" [style.animation-delay]="i * 100 + 'ms'">
                 <div class="flex-shrink-0 text-2xl font-bold w-10 text-center text-gray-300 dark:text-gray-700">#{{ i + 1 }}</div>
                 
-                @if (post.mediaType === 'video') {
-                    <video [src]="getImageUrl(post.imageUrl)" 
-                           muted
-                           class="w-20 h-24 object-cover rounded-xl bg-gray-100 dark:bg-gray-800"
-                           onmouseover="this.play()"
-                           onmouseout="this.pause(); this.currentTime = 0;">
-                    </video>
-                } @else {
-                    <img [src]="getImageUrl(post.imageUrl)" class="w-20 h-24 object-cover rounded-xl bg-gray-100 dark:bg-gray-800">
-                }
+                <div class="relative w-20 h-24 flex-shrink-0">
+                    @if (post.mediaType === 'video' || post.imageUrl.endsWith('.mp4')) {
+                        <video [src]="getImageUrl(post.imageUrl)" 
+                            muted
+                            class="w-full h-full object-cover rounded-xl bg-gray-100 dark:bg-gray-800"
+                            onmouseover="this.play()"
+                            onmouseout="this.pause(); this.currentTime = 0;"
+                            (error)="onVideoError($event)">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="bg-black/30 p-1 rounded-full backdrop-blur-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                        </div>
+                    } @else {
+                        <img [src]="getImageUrl(post.imageUrl)" class="w-full h-full object-cover rounded-xl bg-gray-100 dark:bg-gray-800" (error)="onImageError($event)">
+                    }
+                </div>
                 
                 <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-2 mb-1">
@@ -53,6 +62,15 @@ import { Post } from '../../services/api';
             </div>
         }
       </div>
+      
+      <!-- Media Viewer -->
+      @if (viewingMedia) {
+        <app-media-viewer
+            [url]="viewingMedia.url"
+            [mediaType]="viewingMedia.type"
+            (close)="closeMedia()">
+        </app-media-viewer>
+      }
     </div>
   `,
   styles: `
@@ -65,6 +83,7 @@ import { Post } from '../../services/api';
 })
 export class HallOfFame implements OnInit {
   posts: Post[] = [];
+  viewingMedia: { url: string, type: 'image' | 'video' } | null = null;
 
   constructor(private http: HttpClient) {}
 
@@ -85,6 +104,28 @@ export class HallOfFame implements OnInit {
     if (hours < 24) return `${hours}sa önce`;
     const days = Math.floor(hours / 24);
     return `${days}g önce`;
+  }
+
+  openMedia(post: Post) {
+      // Strong check for video extension
+      const isVideo = post.mediaType === 'video' || post.imageUrl.endsWith('.mp4');
+      this.viewingMedia = {
+          url: this.getImageUrl(post.imageUrl),
+          type: isVideo ? 'video' : 'image'
+      };
+  }
+
+  closeMedia() {
+      this.viewingMedia = null;
+  }
+
+  onVideoError(event: any) {
+    console.error('Video loading error in hall of fame:', event);
+  }
+
+  onImageError(event: any) {
+    console.error('Image loading error in hall of fame:', event);
+    event.target.src = 'https://placehold.co/150x150?text=Yüklenemedi';
   }
 }
 

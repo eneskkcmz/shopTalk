@@ -3,9 +3,21 @@ const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
+const http = require('http');
+const { Server } = require("socket.io");
 
 const app = express();
 const port = 3000;
+
+// Create HTTP server and integrate Socket.io
+const server = http.createServer(app);
+const io = new Server(server, {
+    cors: {
+        origin: "http://localhost:4200",
+        methods: ["GET", "POST"]
+    }
+});
+
 const DB_PATH = path.join(__dirname, 'db.json');
 const UPLOADS_DIR = path.join(__dirname, '../public/uploads');
 
@@ -35,20 +47,180 @@ app.use('/uploads', express.static(UPLOADS_DIR));
 const getDb = () => JSON.parse(fs.readFileSync(DB_PATH, 'utf8'));
 const saveDb = (data) => fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2));
 
+// --- Socket.io Logic ---
+const connectedUsers = new Map(); // userId -> socketId
+
+io.on('connection', (socket) => {
+    console.log('A user connected:', socket.id);
+
+    // User identification
+    socket.on('identify', (userId) => {
+        connectedUsers.set(userId, socket.id);
+        console.log(`User identified: ${userId} -> ${socket.id}`);
+    });
+
+    // Send Message
+    socket.on('send_message', (data) => {
+        const { senderId, receiverId, text } = data;
+        const db = getDb();
+
+        if (!db.messages) {
+            db.messages = [];
+        }
+
+        const newMessage = {
+            id: Date.now(),
+            senderId,
+            receiverId,
+            text,
+            timestamp: Date.now(),
+            isRead: false
+        };
+
+        db.messages.push(newMessage);
+        saveDb(db);
+
+        // Emit to receiver if online
+        const receiverSocketId = connectedUsers.get(receiverId);
+        if (receiverSocketId) {
+            io.to(receiverSocketId).emit('receive_message', newMessage);
+        }
+        
+        // Emit back to sender (to update their UI with confirmed message)
+        socket.emit('message_sent', newMessage);
+    });
+    
+    // Typing indicator
+    socket.on('typing', (data) => {
+        const { senderId, receiverId } = data;
+        const receiverSocketId = connectedUsers.get(receiverId);
+        if (receiverSocketId) {
+             io.to(receiverSocketId).emit('user_typing', { senderId });
+        }
+    });
+
+    socket.on('stop_typing', (data) => {
+        const { senderId, receiverId } = data;
+        const receiverSocketId = connectedUsers.get(receiverId);
+         if (receiverSocketId) {
+             io.to(receiverSocketId).emit('user_stop_typing', { senderId });
+        }
+    });
+
+    socket.on('disconnect', () => {
+        // Remove user from map
+        for (const [userId, socketId] of connectedUsers.entries()) {
+            if (socketId === socket.id) {
+                connectedUsers.delete(userId);
+                console.log(`User ${userId} disconnected`);
+                break;
+            }
+        }
+    });
+});
+
 // Helper to check if post is active (within 1 hour)
 const isPostActive = (timestamp) => {
     const oneHour = 1000 * 60 * 60;
     return Date.now() - timestamp < oneHour;
 };
 
-// GET /api/feed - Only active posts
-app.get('/api/feed', (req, res) => {
-    const { category, userId } = req.query;
+// GET /api/messages/:userId/:otherId - Get conversation history
+app.get('/api/messages/:userId/:otherId', (req, res) => {
+    const userId = parseInt(req.params.userId);
+    const otherId = parseInt(req.params.otherId);
     const db = getDb();
     
-    let activePosts = db.posts
-        .filter(p => isPostActive(p.timestamp))
-        .map(p => {
+    if (!db.messages) return res.json([]);
+
+    const conversation = db.messages.filter(m => 
+        (m.senderId === userId && m.receiverId === otherId) ||
+        (m.senderId === otherId && m.receiverId === userId)
+    ).sort((a, b) => a.timestamp - b.timestamp);
+
+    res.json(conversation);
+});
+
+// GET /api/conversations/:userId - Get list of conversations
+app.get('/api/conversations/:userId', (req, res) => {
+    const userId = parseInt(req.params.userId);
+    const db = getDb();
+    
+    if (!db.messages) return res.json([]);
+
+    // Find all unique users communicated with
+    const conversationPartners = new Set();
+    db.messages.forEach(m => {
+        if (m.senderId === userId) conversationPartners.add(m.receiverId);
+        if (m.receiverId === userId) conversationPartners.add(m.senderId);
+    });
+
+    const conversations = Array.from(conversationPartners).map(partnerId => {
+        const partner = db.users.find(u => u.id === partnerId);
+        // Find last message
+        const messages = db.messages
+            .filter(m => (m.senderId === userId && m.receiverId === partnerId) || (m.senderId === partnerId && m.receiverId === userId))
+            .sort((a, b) => b.timestamp - a.timestamp);
+
+        const lastMessage = messages[0];
+        
+        // Count unread messages where I am the receiver
+        const unreadCount = messages.filter(m => m.receiverId === userId && !m.isRead).length;
+            
+        return {
+            user: partner,
+            lastMessage,
+            unreadCount
+        };
+    }).sort((a, b) => b.lastMessage.timestamp - a.lastMessage.timestamp);
+
+    res.json(conversations);
+});
+
+// POST /api/messages/mark-read - Mark messages as read
+app.post('/api/messages/mark-read', (req, res) => {
+    const { userId, otherId } = req.body; // userId is "me" (receiver), otherId is "sender"
+    const db = getDb();
+
+    if (!db.messages) return res.json({ success: true });
+
+    let updated = false;
+    db.messages.forEach(m => {
+        if (m.senderId === parseInt(otherId) && m.receiverId === parseInt(userId) && !m.isRead) {
+            m.isRead = true;
+            updated = true;
+        }
+    });
+
+    if (updated) {
+        saveDb(db);
+    }
+
+    res.json({ success: true });
+});
+
+// GET /api/feed - Only active posts
+app.get('/api/feed', (req, res) => {
+    const { category, userId, feedType } = req.query; // feedType: 'foryou' | 'following'
+    const db = getDb();
+    
+    // Default to all active posts
+    let activePosts = db.posts.filter(p => isPostActive(p.timestamp));
+
+    // Filter by "Following" if requested
+    if (feedType === 'following' && userId) {
+        const requesterId = parseInt(userId);
+        const follows = db.follows || [];
+        // Get list of IDs the user follows
+        const followedIds = follows
+            .filter(f => f.followerId === requesterId)
+            .map(f => f.followingId);
+        
+        // Include posts from followed users OR the user themselves
+        activePosts = activePosts.filter(p => followedIds.includes(p.userId) || p.userId === requesterId);
+    }
+
+    activePosts = activePosts.map(p => {
             const user = db.users.find(u => u.id === p.userId);
             // Safety check for comments array
             const commentCount = (db.comments || []).filter(c => c.postId === p.id).length;
@@ -133,7 +305,65 @@ app.get('/api/users/:id', (req, res) => {
         }))
         .sort((a, b) => b.timestamp - a.timestamp);
 
-    res.json({ user, posts: userPosts });
+    // Calculate dynamic follower/following counts
+    const follows = db.follows || [];
+    const followerCount = follows.filter(f => f.followingId === userId).length;
+    const followingCount = follows.filter(f => f.followerId === userId).length;
+
+    // Check if requesting user is following this profile
+    let isFollowing = false;
+    const requesterId = req.query.requesterId ? parseInt(req.query.requesterId) : null;
+    if (requesterId) {
+        isFollowing = follows.some(f => f.followerId === requesterId && f.followingId === userId);
+    }
+
+    // Override the static follower count with dynamic + static base (optional, but let's just use dynamic + base for realism or just dynamic)
+    // For now, let's add the dynamic count to the static base to preserve the "mock" high numbers, 
+    // or just return these as separate fields.
+    // Let's return a "stats" object.
+    
+    // Actually, let's just update the user object we send back with these computed values.
+    // We'll keep the static 'followers' from DB as a "base" and add real followers to it if we want, 
+    // OR just use the real count. Since we just wiped DB, real count is 0. 
+    // Let's stick to the static number for "simulation" feeling, BUT add a boolean 'isFollowing'.
+    // Better yet: User the static number as a base, and add any NEW real followers.
+    // Simplest approach for this prototype:
+    // Return `isFollowing` flag.
+    // Return `realFollowerCount` and `realFollowingCount`.
+    
+    res.json({ 
+        user: { ...user, followers: user.followers + followerCount }, // Simple hack: add real followers to static base
+        stats: {
+            followers: user.followers + followerCount,
+            following: 856 + followingCount // static base for following too
+        },
+        isFollowing,
+        posts: userPosts 
+    });
+});
+
+// POST /api/follow - Toggle follow status
+app.post('/api/follow', (req, res) => {
+    const { followerId, followingId } = req.body;
+    const db = getDb();
+
+    if (!db.follows) {
+        db.follows = [];
+    }
+
+    const existingIndex = db.follows.findIndex(f => f.followerId === followerId && f.followingId === followingId);
+
+    if (existingIndex !== -1) {
+        // Unfollow
+        db.follows.splice(existingIndex, 1);
+        saveDb(db);
+        res.json({ isFollowing: false });
+    } else {
+        // Follow
+        db.follows.push({ followerId, followingId, timestamp: Date.now() });
+        saveDb(db);
+        res.json({ isFollowing: true });
+    }
 });
 
     // POST /api/posts - Create new post with file upload
@@ -150,7 +380,8 @@ app.get('/api/users/:id', (req, res) => {
     const imageUrl = `/uploads/${req.file.filename}`;
     
     // Determine media type based on explicit field OR mimetype
-    const finalMediaType = mediaType || (req.file.mimetype.startsWith('video') ? 'video' : 'image');
+    const detectedMediaType = req.file.mimetype.startsWith('video') ? 'video' : 'image';
+    const finalMediaType = mediaType || detectedMediaType;
 
     const db = getDb();
     const newPost = {
@@ -361,6 +592,13 @@ const MOCK_LOCATIONS = [
 
 const MOCK_CATEGORIES = ["Sokak Modası", "Ofis", "Vintage", "Spor", "Özel Gün", "Diğer"];
 
+const MOCK_VIDEOS = [
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+];
+
 
 const MOCK_COMMENTS = [
     "Harika görünüyorsun!",
@@ -396,9 +634,25 @@ const generateRandomPosts = (count = 5) => {
     const newPosts = [];
     const newComments = [];
     
+    // Select a random index to guarantee at least one video in this batch
+    const guaranteedVideoIndex = Math.floor(Math.random() * count);
+
     for (let i = 0; i < count; i++) {
         const randomUser = db.users[Math.floor(Math.random() * db.users.length)];
-        const randomImage = MOCK_IMAGES[Math.floor(Math.random() * MOCK_IMAGES.length)];
+        
+        // Guarantee video at the selected index, otherwise 20% chance
+        const isVideo = (i === guaranteedVideoIndex) || (Math.random() < 0.2);
+        
+        let randomImage, mediaType;
+        
+        if (isVideo) {
+             randomImage = MOCK_VIDEOS[Math.floor(Math.random() * MOCK_VIDEOS.length)];
+             mediaType = 'video';
+        } else {
+             randomImage = MOCK_IMAGES[Math.floor(Math.random() * MOCK_IMAGES.length)];
+             mediaType = 'image';
+        }
+
         const randomDesc = MOCK_DESCRIPTIONS[Math.floor(Math.random() * MOCK_DESCRIPTIONS.length)];
         const randomCategory = MOCK_CATEGORIES[Math.floor(Math.random() * MOCK_CATEGORIES.length)];
         const randomLocation = MOCK_LOCATIONS[Math.floor(Math.random() * MOCK_LOCATIONS.length)];
@@ -413,7 +667,7 @@ const generateRandomPosts = (count = 5) => {
             id: postId,
             userId: randomUser.id,
             imageUrl: randomImage,
-            mediaType: 'image', // Mock posts are always images for now
+            mediaType: mediaType, 
             description: randomDesc,
             category: randomCategory,
             location: randomLocation,
@@ -507,6 +761,6 @@ setTimeout(() => {
 }, 2000); // Wait 2s after start
 setInterval(() => generateRandomPosts(4), GENERATOR_INTERVAL); // Create 4 posts every hour
 
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(`Wear Vote Server running at http://localhost:${port}`);
 });

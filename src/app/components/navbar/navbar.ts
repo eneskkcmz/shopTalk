@@ -1,4 +1,5 @@
-import { Component, ElementRef, ViewChild, ChangeDetectorRef, NgZone } from '@angular/core';
+import { ChatService } from '../../services/chat.service';
+import { Component, ElementRef, ViewChild, ChangeDetectorRef, NgZone, OnInit } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ApiService, User } from '../../services/api';
@@ -92,6 +93,16 @@ import { FormsModule } from '@angular/forms';
           <!-- Hall of Fame Link -->
           <a routerLink="/hall-of-fame" class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" title="Şeref Kürsüsü">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </a>
+
+          <!-- Chat Link -->
+          <a routerLink="/chat" class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative" title="Mesajlar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            @if (chatService.totalUnreadCount() > 0) {
+              <span class="absolute top-0 right-0 w-4 h-4 bg-red-500 text-white text-[10px] font-bold flex items-center justify-center rounded-full border border-white dark:border-black">
+                {{ chatService.totalUnreadCount() }}
+              </span>
+            }
           </a>
 
           <!-- Profile Link / User Switcher -->
@@ -273,7 +284,7 @@ import { FormsModule } from '@angular/forms';
   `,
   styles: ``
 })
-export class Navbar {
+export class Navbar implements OnInit {
   showModal = false;
   previewUrl: string | null = null;
   previewType: 'image' | 'video' = 'image';
@@ -297,11 +308,24 @@ export class Navbar {
   showUserMenu = false;
   allUsers: User[] = [];
 
-  constructor(public api: ApiService, private cdr: ChangeDetectorRef, private ngZone: NgZone, public themeService: ThemeService) {
+  unreadCount = 0;
+
+  constructor(
+      public api: ApiService, 
+      private cdr: ChangeDetectorRef, 
+      private ngZone: NgZone, 
+      public themeService: ThemeService,
+      public chatService: ChatService
+  ) {
       // Fetch users for the switcher
       this.api.getUsers().subscribe(users => {
           this.allUsers = users;
       });
+  }
+
+  ngOnInit() {
+      // Initial fetch of unread count
+      this.chatService.refreshConversations();
   }
 
   onSearch() {

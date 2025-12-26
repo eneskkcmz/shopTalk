@@ -1,0 +1,148 @@
+❯ Building...
+✔ Building...
+Application bundle generation failed. [1.019 seconds] - 2025-12-26T07:37:19.871Z
+
+▲ [WARNING] NG8113: RouterLink is not used within the template of ChatComponent [plugin angular-compiler]
+
+    src/app/components/chat/chat.ts:10:39:
+      10 │   imports: [CommonModule, FormsModule, RouterLink],
+         ╵                                        ~~~~~~~~~~
+
+
+▲ [WARNING] NG8113: RouterLink is not used within the template of Profile [plugin angular-compiler]
+
+    src/app/components/profile/profile.ts:10:54:
+      10 │   imports: [CommonModule, CommentsModal, MediaViewer, RouterLink],
+         ╵                                                       ~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/components/chat/chat.ts:85:22:
+      85 │                       </div>
+         ╵                       ~~~~~~
+
+
+✘ [ERROR] NG5002: Unexpected closing block. The block may have been closed earlier. If you meant to write the } character, you should use the "&#125;" HTML entity instead. [plugin angular-compiler]
+
+    src/app/components/chat/chat.ts:86:18:
+      86 │                   }
+         ╵                   ^
+
+
+✘ [ERROR] NG5002: Unexpected closing block. The block may have been closed earlier. If you meant to write the } character, you should use the "&#125;" HTML entity instead. [plugin angular-compiler]
+
+    src/app/components/chat/chat.ts:103:10:
+      103 │           } @else {
+          ╵           ^
+
+
+✘ [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/components/chat/chat.ts:110:6:
+      110 │       </div>
+          ╵       ~~~~~~
+
+
+✘ [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/components/chat/chat.ts:111:4:
+      111 │     </div>
+          ╵     ~~~~~~
+
+
+Watch mode enabled. Watching for file changes...
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.025 seconds] - 2025-12-26T08:16:52.066Z
+
+▲ [WARNING] NG8113: RouterLink is not used within the template of ChatComponent [plugin angular-compiler]
+
+    src/app/components/chat/chat.ts:10:39:
+      10 │   imports: [CommonModule, FormsModule, RouterLink],
+         ╵                                        ~~~~~~~~~~
+
+
+▲ [WARNING] NG8113: RouterLink is not used within the template of Profile [plugin angular-compiler]
+
+    src/app/components/profile/profile.ts:10:54:
+      10 │   imports: [CommonModule, CommentsModal, MediaViewer, RouterLink],
+         ╵                                                       ~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/components/chat/chat.ts:85:22:
+      85 │                       </div>
+         ╵                       ~~~~~~
+
+
+✘ [ERROR] NG5002: Unexpected closing block. The block may have been closed earlier. If you meant to write the } character, you should use the "&#125;" HTML entity instead. [plugin angular-compiler]
+
+    src/app/components/chat/chat.ts:86:18:
+      86 │                   }
+         ╵                   ^
+
+
+✘ [ERROR] NG5002: Unexpected closing block. The block may have been closed earlier. If you meant to write the } character, you should use the "&#125;" HTML entity instead. [plugin angular-compiler]
+
+    src/app/components/chat/chat.ts:103:10:
+      103 │           } @else {
+          ╵           ^
+
+
+✘ [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/components/chat/chat.ts:110:6:
+      110 │       </div>
+          ╵       ~~~~~~
+
+
+✘ [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/components/chat/chat.ts:111:4:
+      111 │     </div>
+          ╵     ~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+main.js              | main             | 257.91 kB | 
+styles.css           | styles           |  71.36 kB | 
+
+                     | Initial total    | 329.27 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      | 258.98 kB | 
+server.mjs           | server           |   1.81 kB | 
+polyfills.server.mjs | polyfills.server | 243 bytes | 
+
+Application bundle generation complete. [0.378 seconds] - 2025-12-26T08:17:40.769Z
+
+▲ [WARNING] NG8113: RouterLink is not used within the template of Profile [plugin angular-compiler]
+
+    src/app/components/profile/profile.ts:10:54:
+      10 │   imports: [CommonModule, CommentsModal, MediaViewer, RouterLink],
+         ╵                                                       ~~~~~~~~~~
+
+
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+11:17:40 AM [vite] (client) Re-optimizing dependencies because lockfile has changed
+11:17:40 AM [vite] (ssr) Re-optimizing dependencies because lockfile has changed
+An unhandled exception occurred: Port 4200 is already in use
+See "/private/var/folders/tj/rrrr_0qs759g1nknf9s6rhs40000gn/T/ng-okx7LT/angular-errors.log" for further details.
+/Users/eneskocamaz/Projects/wear-vote/node_modules/rxjs/dist/cjs/internal/util/reportUnhandledError.js:13
+            throw err;
+            ^
+
+Error: Port 4200 is already in use
+    at Server.onError$1 (file:///Users/eneskocamaz/Projects/wear-vote/node_modules/vite/dist/node/chunks/config.js:15569:28)
+    at Server.emit (node:events:508:28)
+    at emitErrorNT (node:net:1976:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+Node.js v24.11.1

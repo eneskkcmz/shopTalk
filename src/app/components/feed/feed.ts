@@ -4,17 +4,47 @@ import { RouterLink } from '@angular/router';
 import { ApiService, Post } from '../../services/api';
 import { interval, Subscription } from 'rxjs';
 import { CommentsModal } from '../comments-modal/comments-modal';
+import { MediaViewer } from '../media-viewer/media-viewer';
 
 @Component({
   selector: 'app-feed',
-  imports: [CommonModule, RouterLink, CommentsModal],
+  imports: [CommonModule, RouterLink, CommentsModal, MediaViewer],
   template: `
-    <div class="max-w-md mx-auto py-8 px-4 flex flex-col gap-8">
+    <div class="max-w-md mx-auto py-4 px-4 flex flex-col gap-6">
+
+      <!-- Feed Type Switcher (Sticky Header) -->
+      <div class="sticky top-0 z-30 bg-white/95 dark:bg-black/95 backdrop-blur-md pt-2 pb-2 -mx-4 px-4 border-b border-gray-100 dark:border-gray-800">
+          <div class="flex items-center justify-center gap-8">
+              <button (click)="switchFeedType('foryou')" 
+                      class="relative py-3 font-black text-sm tracking-wide transition-colors"
+                      [class.text-gray-900]="currentFeedType === 'foryou'"
+                      [class.dark:text-white]="currentFeedType === 'foryou'"
+                      [class.text-gray-400]="currentFeedType !== 'foryou'"
+                      [class.dark:text-gray-600]="currentFeedType !== 'foryou'">
+                  SANA ÖZEL
+                  @if (currentFeedType === 'foryou') {
+                      <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-600 dark:bg-purple-500 rounded-full animate-fade-in"></div>
+                  }
+              </button>
+              
+              <button (click)="switchFeedType('following')" 
+                      class="relative py-3 font-black text-sm tracking-wide transition-colors"
+                      [class.text-gray-900]="currentFeedType === 'following'"
+                      [class.dark:text-white]="currentFeedType === 'following'"
+                      [class.text-gray-400]="currentFeedType !== 'following'"
+                      [class.dark:text-gray-600]="currentFeedType !== 'following'">
+                  TAKİP EDİLENLER
+                  @if (currentFeedType === 'following') {
+                      <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-600 dark:bg-purple-500 rounded-full animate-fade-in"></div>
+                  }
+              </button>
+          </div>
+      </div>
 
       <!-- Category Filter -->
       <div class="relative group -mx-4 px-4">
         <!-- Scroll Left Button (Desktop/Hover) -->
-        <button (click)="scrollCategories('left')" 
+        <button (click)="scrollCategories('left')"
                 class="absolute left-2 top-[30%] -translate-y-1/2 z-20 bg-white/90 dark:bg-black/90 backdrop-blur-sm shadow-lg rounded-full p-2 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:scale-110 transition-all opacity-0 group-hover:opacity-100 border border-gray-100 dark:border-gray-800 hidden sm:flex">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
         </button>
@@ -22,9 +52,9 @@ import { CommentsModal } from '../comments-modal/comments-modal';
         <!-- Fade masks -->
         <div class="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-white dark:from-black to-transparent z-10 pointer-events-none"></div>
 
-        <div #scrollContainer 
+        <div #scrollContainer
              class="flex gap-2 overflow-x-auto pb-4 px-4 scrollbar-hide snap-x scroll-smooth">
-            <button (click)="filterCategory('Hepsi')" 
+            <button (click)="filterCategory('Hepsi')"
                     [class.bg-black]="currentCategory === 'Hepsi'"
                     [class.dark:bg-white]="currentCategory === 'Hepsi'"
                     [class.text-white]="currentCategory === 'Hepsi'"
@@ -37,7 +67,7 @@ import { CommentsModal } from '../comments-modal/comments-modal';
                 Hepsi
             </button>
             @for (cat of categories; track cat) {
-              <button 
+              <button
                       (click)="filterCategory(cat)"
                       [class.bg-black]="currentCategory === cat"
                       [class.dark:bg-white]="currentCategory === cat"
@@ -56,7 +86,7 @@ import { CommentsModal } from '../comments-modal/comments-modal';
         </div>
 
         <!-- Scroll Right Button (Desktop/Hover) -->
-        <button (click)="scrollCategories('right')" 
+        <button (click)="scrollCategories('right')"
                 class="absolute right-2 top-[30%] -translate-y-1/2 z-20 bg-white/90 dark:bg-black/90 backdrop-blur-sm shadow-lg rounded-full p-2 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:scale-110 transition-all opacity-0 group-hover:opacity-100 border border-gray-100 dark:border-gray-800 hidden sm:flex">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
         </button>
@@ -68,8 +98,17 @@ import { CommentsModal } from '../comments-modal/comments-modal';
           <div class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-300 dark:text-gray-600"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="12" x2="12" y1="8" y2="16"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Akış Boş</h3>
-          <p class="text-gray-500 dark:text-gray-400 max-w-xs mx-auto leading-relaxed">Şu an aktif bir oylama yok. İlk kombini sen paylaş!</p>
+          
+          @if (currentFeedType === 'following') {
+               <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Akış Boş</h3>
+               <p class="text-gray-500 dark:text-gray-400 max-w-xs mx-auto leading-relaxed mb-6">Henüz kimseyi takip etmiyorsunuz veya takip ettiklerin henüz bir şey paylaşmadı.</p>
+               <button (click)="switchFeedType('foryou')" class="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-full transition-colors">
+                   Keşfetmeye Başla
+               </button>
+          } @else {
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Akış Boş</h3>
+              <p class="text-gray-500 dark:text-gray-400 max-w-xs mx-auto leading-relaxed">Şu an aktif bir oylama yok. İlk kombini sen paylaş!</p>
+          }
         </div>
       }
 
@@ -77,7 +116,7 @@ import { CommentsModal } from '../comments-modal/comments-modal';
       @for (post of api.feedPosts(); track post.id) {
         <div class="relative group perspective animate-slide-up">
           <div class="bg-white dark:bg-black rounded-[2rem] shadow-xl shadow-gray-200/50 dark:shadow-gray-900/20 border border-gray-100 dark:border-gray-800 overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
-  
+
             <!-- Header -->
             <div class="p-5 flex items-center justify-between">
               <div class="flex items-center gap-3 cursor-pointer" [routerLink]="['/profile', post.userId]">
@@ -102,39 +141,44 @@ import { CommentsModal } from '../comments-modal/comments-modal';
                       </p>
                   </div>
               </div>
-  
+
               <button class="text-gray-300 dark:text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
               </button>
             </div>
-  
 
-             <!-- Image Container -->
+
+              <!-- Image Container -->
               <div class="relative w-full aspect-[4/5] bg-gray-100 dark:bg-gray-900 overflow-hidden group-hover:shadow-inner transition-all cursor-zoom-in"
                    (click)="openImageViewer(post.imageUrl, post.mediaType)">
                 <!-- Full URL handling -->
-                @if (post.mediaType === 'video') {
-                  <video [src]="getImageUrl(post.imageUrl)" 
+                @if (post.mediaType === 'video' || post.imageUrl.endsWith('.mp4')) {
+                  <video [src]="getImageUrl(post.imageUrl)"
                          [muted]="post.isMuted !== false"
-                         autoplay loop playsinline 
-                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                         autoplay loop playsinline
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                         (error)="onVideoError($event)">
                   </video>
                   <!-- Sound Toggle Button -->
-                   <button (click)="$event.stopPropagation(); toggleMute(post)" 
+                   <button (click)="$event.stopPropagation(); toggleMute(post)"
                            class="absolute top-4 right-4 z-20 p-2 bg-black/50 hover:bg-black/70 rounded-full text-white backdrop-blur-md transition-all opacity-0 group-hover:opacity-100">
                        @if (post.isMuted !== false) {
-                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" x2="1" y1="1" y2="23"/></svg>
-                       } @else {
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                           <polygon points="11,5 6,9 2,9 2,15 6,15 11,19" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+
+                           <line x1="17" y1="9" x2="22" y2="14" stroke-width="2"/>
+                           <line x1="22" y1="9" x2="17" y2="14" stroke-width="2"/>
+                         </svg>                       } @else {
                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
                        }
                    </button>
                 } @else {
-                  <img [src]="getImageUrl(post.imageUrl)" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                  <img [src]="getImageUrl(post.imageUrl)" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" (error)="onImageError($event)">
                 }
-   
+
                 <!-- Gradient Overlay -->
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 pointer-events-none"></div>
-   
+
                 <!-- Floating Description -->
                 <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 pointer-events-none">
                    <p class="text-white text-lg font-medium leading-snug drop-shadow-md">
@@ -142,15 +186,15 @@ import { CommentsModal } from '../comments-modal/comments-modal';
                    </p>
                 </div>
              </div>
-  
+
             <!-- Timer Bar -->
             <div class="h-1.5 w-full bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
               <div class="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-[60000ms] ease-linear" [style.width.%]="getTimerProgress(post.timestamp)"></div>
             </div>
-  
+
             <!-- Actions -->
             <div class="p-4 grid grid-cols-3 gap-3">
-              <button (click)="vote(post, 'dislike')" 
+              <button (click)="vote(post, 'dislike')"
                       [class.bg-red-50]="post.userVote === 'dislike'"
                       [class.dark:bg-red-900]="post.userVote === 'dislike'"
                       [class.text-red-600]="post.userVote === 'dislike'"
@@ -172,8 +216,8 @@ import { CommentsModal } from '../comments-modal/comments-modal';
                     }
                  </span>
               </button>
-  
-              <button (click)="vote(post, 'like')" 
+
+              <button (click)="vote(post, 'like')"
                       [class.bg-green-50]="post.userVote === 'like'"
                       [class.dark:bg-green-900]="post.userVote === 'like'"
                       [class.text-green-600]="post.userVote === 'like'"
@@ -184,74 +228,27 @@ import { CommentsModal } from '../comments-modal/comments-modal';
                  <span class="relative z-10 text-lg">{{ post.likes }}</span>
               </button>
             </div>
-  
+
           </div>
         </div>
       }
-  
+
       <!-- Footer Spacer -->
       <div class="h-12"></div>
     </div>
-  
+
     <!-- Image/Video Viewer Modal -->
     @if (viewingImage) {
-      <div class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-xl transition-all duration-300 animate-fade-in"
-           (click)="closeImageViewer()">
-           
-           <div class="relative w-full h-full flex items-center justify-center overflow-hidden" (click)="$event.stopPropagation()">
-              
-              <!-- Close Button -->
-              <button (click)="closeImageViewer()" class="absolute top-6 right-6 z-[110] p-3 text-white/90 hover:text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 rounded-full transition-all shadow-lg hover:rotate-90 duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
-              </button>
-  
-              <!-- Controls (Only for images) -->
-              @if (viewingMediaType !== 'video') {
-                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-[110] flex items-center gap-2 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-2xl animate-slide-up">
-                    <button (click)="zoomOut()" class="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" title="Uzaklaş">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
-                    </button>
-                    <span class="text-white/90 font-medium text-xs w-12 text-center select-none">{{ (scale * 100).toFixed(0) }}%</span>
-                    <button (click)="zoomIn()" class="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" title="Yakınlaş">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
-                    </button>
-                    <div class="w-px h-5 bg-white/20 mx-1"></div>
-                    <button (click)="rotateLeft()" class="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" title="Sola Döndür">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-                    </button>
-                    <button (click)="rotateRight()" class="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" title="Sağa Döndür">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
-                    </button>
-                </div>
-              }
-  
-              <!-- Content -->
-              <div class="w-full h-full flex items-center justify-center p-4 sm:p-10 transition-transform duration-200 ease-out cursor-move animate-zoom-in"
-                   (mousedown)="startDrag($event)"
-                   (mouseup)="stopDrag()"
-                   (mouseleave)="stopDrag()"
-                   (mousemove)="onDrag($event)">
-                  
-                  @if (viewingMediaType === 'video') {
-                     <video [src]="getImageUrl(viewingImage!)" 
-                            controls autoplay playsinline
-                            class="max-w-full max-h-full object-contain rounded-lg drop-shadow-2xl"
-                            (click)="$event.stopPropagation()">
-                     </video>
-                  } @else {
-                     <img [src]="getImageUrl(viewingImage!)" 
-                          class="max-w-full max-h-full object-contain transition-transform duration-200 drop-shadow-2xl rounded-lg select-none"
-                          [style.transform]="getTransformStyle()"
-                          (click)="$event.stopPropagation()">
-                  }
-              </div>
-           </div>
-      </div>
+        <app-media-viewer
+            [url]="getImageUrl(viewingImage)"
+            [mediaType]="viewingMediaType"
+            (close)="closeImageViewer()">
+        </app-media-viewer>
     }
 
     <!-- Comments Modal -->
     @if (showCommentsModal && selectedPost) {
-        <app-comments-modal 
+        <app-comments-modal
             [post]="selectedPost"
             (close)="closeComments()">
         </app-comments-modal>
@@ -261,7 +258,7 @@ import { CommentsModal } from '../comments-modal/comments-modal';
     @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slide-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes zoom-in { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-    
+
     .animate-fade-in { animation: fade-in 0.3s ease-out; }
     .animate-slide-up { animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
     .animate-zoom-in { animation: zoom-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
@@ -272,25 +269,26 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
   timerSub?: Subscription;
   categories = ['Sokak Modası', 'Ofis', 'Davet', 'Spor', 'Vintage', 'Diğer'];
   currentCategory = 'Hepsi';
+  currentFeedType: 'foryou' | 'following' = 'foryou';
   now = Date.now();
 
   // Image Viewer State
   viewingImage: string | null = null;
   viewingMediaType: 'image' | 'video' = 'image';
-  scale = 1;
-  rotation = 0;
-  isDragging = false;
-  dragStartX = 0;
-  dragStartY = 0;
-  translateX = 0;
-  translateY = 0;
 
   // Comments State
   showCommentsModal = false;
   selectedPost: Post | null = null;
 
   constructor(public api: ApiService, private cdr: ChangeDetectorRef) {}
-  
+
+  // Feed Switching Logic
+  switchFeedType(type: 'foryou' | 'following') {
+      if (this.currentFeedType === type) return;
+      this.currentFeedType = type;
+      this.refreshFeed();
+  }
+
   // Comments Methods
   openComments(post: Post) {
       this.selectedPost = post;
@@ -303,57 +301,19 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
   }
 
   // Image Viewer Methods
-  openImageViewer(url: string, mediaType: 'image' | 'video' = 'image') {
+  openImageViewer(url: string, mediaType: 'image' | 'video' | undefined = 'image') {
     this.viewingImage = url;
-    this.viewingMediaType = mediaType;
-    this.scale = 1;
-    this.rotation = 0;
-    this.translateX = 0;
-    this.translateY = 0;
-    document.body.style.overflow = 'hidden';
+    // Stronger detection: If it ends in .mp4, it IS a video, regardless of what mediaType argument says.
+    // This fixes issues where old DB data has mediaType: 'image' for video files.
+    if (url.endsWith('.mp4')) {
+        this.viewingMediaType = 'video';
+    } else {
+        this.viewingMediaType = mediaType || 'image';
+    }
   }
 
   closeImageViewer() {
     this.viewingImage = null;
-    document.body.style.overflow = '';
-  }
-
-  zoomIn() {
-    this.scale = Math.min(this.scale + 0.25, 4);
-  }
-
-  zoomOut() {
-    this.scale = Math.max(this.scale - 0.25, 0.5);
-  }
-
-  rotateLeft() {
-    this.rotation -= 90;
-  }
-
-  rotateRight() {
-    this.rotation += 90;
-  }
-
-  startDrag(event: MouseEvent) {
-    if (this.scale <= 1) return; // Only drag when zoomed in
-    this.isDragging = true;
-    this.dragStartX = event.clientX - this.translateX;
-    this.dragStartY = event.clientY - this.translateY;
-  }
-
-  stopDrag() {
-    this.isDragging = false;
-  }
-
-  onDrag(event: MouseEvent) {
-    if (!this.isDragging) return;
-    event.preventDefault();
-    this.translateX = event.clientX - this.dragStartX;
-    this.translateY = event.clientY - this.dragStartY;
-  }
-
-  getTransformStyle() {
-    return `scale(${this.scale}) rotate(${this.rotation}deg) translate(${this.translateX / this.scale}px, ${this.translateY / this.scale}px)`;
   }
 
   @HostListener('window:keydown.escape')
@@ -364,10 +324,10 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
 
   scrollCategories(direction: 'left' | 'right') {
     if (!this.scrollContainer) return;
-    
+
     const container = this.scrollContainer.nativeElement;
-    const scrollAmount = 200; 
-    
+    const scrollAmount = 200;
+
     if (direction === 'left') {
         container.scrollLeft -= scrollAmount;
     } else {
@@ -376,23 +336,30 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
   }
 
   ngOnInit() {
-    this.api.getFeed();
+    this.refreshFeed();
     // Update timer every second to keep the progress bar smooth and accurate
     this.timerSub = interval(1000).subscribe(() => {
          this.now = Date.now();
-         
+
          // Only fetch new feed data every 60 seconds (approx)
          if (Math.floor(this.now / 1000) % 60 === 0) {
-            this.api.getFeed(this.currentCategory !== 'Hepsi' ? this.currentCategory : undefined);
+            this.refreshFeed();
          }
-         
+
          this.cdr.detectChanges();
     });
   }
 
   filterCategory(cat: string) {
     this.currentCategory = cat;
-    this.api.getFeed(cat !== 'Hepsi' ? cat : undefined);
+    this.refreshFeed();
+  }
+  
+  refreshFeed() {
+      this.api.getFeed(
+          this.currentCategory !== 'Hepsi' ? this.currentCategory : undefined,
+          this.currentFeedType
+      );
   }
 
   ngAfterViewChecked() {
@@ -409,7 +376,18 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
 
   toggleMute(post: Post) {
       // Toggle muted state. Undefined/true means muted, false means unmuted.
-      post.isMuted = post.isMuted === false ? true : false;
+      const isMuting = post.isMuted === false;
+
+      // If we are unmuting this video, mute all other videos first
+      if (!isMuting) {
+          this.api.feedPosts().forEach(p => {
+              if (p.id !== post.id && p.mediaType === 'video') {
+                  p.isMuted = true;
+              }
+          });
+      }
+
+      post.isMuted = isMuting ? true : false;
   }
 
   getImageUrl(url: string): string {
@@ -428,7 +406,7 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
   getTimeLeft(timestamp: number): string {
     const age = this.now - timestamp;
     const oneHour = 1000 * 60 * 60; // 1 hour for posts
-    
+
     // For posts (countdown)
     const timeLeft = oneHour - age;
 
@@ -437,5 +415,16 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
     const minutes = Math.floor(timeLeft / 60000);
     if (minutes < 1) return '< 1 dk';
     return `${minutes} dk kaldı`;
+  }
+
+  onVideoError(event: any) {
+    console.error('Video loading error:', event);
+    // Fallback or UI indication could go here
+    // event.target.style.display = 'none';
+  }
+
+  onImageError(event: any) {
+    console.error('Image loading error:', event);
+    event.target.src = 'https://placehold.co/600x800?text=Resim+Yüklenemedi';
   }
 }

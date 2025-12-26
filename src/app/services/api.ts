@@ -60,8 +60,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getFeed(category?: string) {
-    const params: any = {};
+  getFeed(category?: string, feedType: 'foryou' | 'following' = 'foryou') {
+    const params: any = { feedType };
     if (category) params.category = category;
     
     // Pass current user ID to check vote status
@@ -89,8 +89,23 @@ export class ApiService {
       this.currentUserSignal.set(user);
   }
 
-  getUserProfile(id: number): Observable<{ user: User, posts: Post[] }> {
-    return this.http.get<{ user: User, posts: Post[] }>(`${this.apiUrl}/users/${id}`);
+  getUserProfile(id: number): Observable<{ user: User, posts: Post[], isFollowing: boolean, stats: { followers: number, following: number } }> {
+    const currentUser = this.currentUserSignal();
+    const params: any = {};
+    if (currentUser) {
+        params.requesterId = currentUser.id;
+    }
+    return this.http.get<{ user: User, posts: Post[], isFollowing: boolean, stats: { followers: number, following: number } }>(`${this.apiUrl}/users/${id}`, { params });
+  }
+
+  toggleFollow(followingId: number): Observable<{ isFollowing: boolean }> {
+      const currentUser = this.currentUserSignal();
+      if (!currentUser) return of({ isFollowing: false });
+
+      return this.http.post<{ isFollowing: boolean }>(`${this.apiUrl}/follow`, { 
+          followerId: currentUser.id, 
+          followingId 
+      });
   }
 
   searchUsers(query: string): Observable<User[]> {
