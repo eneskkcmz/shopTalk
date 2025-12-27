@@ -1,11 +1,11 @@
 services:
   backend:
-    build: 
+    build:
       context: ./backend
       dockerfile: Dockerfile
     container_name: wear-vote-backend
     ports:
-      - "3000:3000"
+      - "6701:3000"
     volumes:
       - ./backend/db.json:/app/db.json
       - ./public/uploads:/public/uploads
@@ -21,7 +21,8 @@ services:
       dockerfile: Dockerfile.frontend
     container_name: wear-vote-frontend
     ports:
-      - "80:80"
+      - "6702:80"
     depends_on:
       - backend
+    restart: always
     restart: always

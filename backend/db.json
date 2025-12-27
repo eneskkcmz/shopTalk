@@ -2080,6 +2080,20 @@
       "userId": 2,
       "text": "Ben pek beğenmedim maalesef.",
       "timestamp": 1766852240087
+    },
+    {
+      "id": 316,
+      "postId": 109,
+      "userId": 6,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766853318074
+    },
+    {
+      "id": 317,
+      "postId": 28,
+      "userId": 5,
+      "text": "Bence biraz daha farklı kombinlenebilirdi.",
+      "timestamp": 1766853318074
     }
   ],
   "posts": [
@@ -2520,7 +2534,7 @@
       "description": "fiyatı 2000TL pahalı mı alınır mı kararsız kaldım.",
       "category": "Sokak Modası",
       "timestamp": 1766152817790,
-      "likes": 11,
+      "likes": 12,
       "dislikes": 1
     },
     {
@@ -3833,7 +3847,7 @@
       "category": "Sokak Modası",
       "location": "",
       "timestamp": 1766492624761,
-      "likes": 2,
+      "likes": 3,
       "dislikes": 0
     },
     {
@@ -4633,6 +4647,16 @@
       "userId": 8,
       "postId": 213,
       "type": "like"
+    },
+    {
+      "userId": 4,
+      "postId": 176,
+      "type": "like"
+    },
+    {
+      "userId": 9,
+      "postId": 45,
+      "type": "like"
     }
   ],
   "messages": [
@@ -4762,6 +4786,38 @@
       "receiverId": 1,
       "text": "Kombinlerin çok iyi gidiyor.",
       "timestamp": 1766852240085,
+      "isRead": false
+    },
+    {
+      "id": 1766853138071,
+      "senderId": 9,
+      "receiverId": 1,
+      "text": "Merhaba!",
+      "timestamp": 1766853138071,
+      "isRead": false
+    },
+    {
+      "id": 1766853138074,
+      "senderId": 7,
+      "receiverId": 1,
+      "text": "Son paylaştığın fotoğraf harika!",
+      "timestamp": 1766853138073,
+      "isRead": false
+    },
+    {
+      "id": 1766853138075,
+      "senderId": 3,
+      "receiverId": 1,
+      "text": "Kombinlerin çok iyi gidiyor.",
+      "timestamp": 1766853138073,
+      "isRead": false
+    },
+    {
+      "id": 1766853138076,
+      "senderId": 2,
+      "receiverId": 1,
+      "text": "Selam Enes, nasılsın?",
+      "timestamp": 1766853138073,
       "isRead": false
     }
   ],
@@ -5174,6 +5230,46 @@
       "postId": 213,
       "text": "Donna Paulsen fotoğrafını beğendi.",
       "timestamp": 1766852240087,
+      "isRead": false
+    },
+    {
+      "id": 1766853318073,
+      "userId": 1,
+      "senderId": 4,
+      "type": "like",
+      "postId": 176,
+      "text": "Sarah Connor fotoğrafını beğendi.",
+      "timestamp": 1766853318073,
+      "isRead": false
+    },
+    {
+      "id": 1766853318075,
+      "userId": 1,
+      "senderId": 9,
+      "type": "like",
+      "postId": 45,
+      "text": "Louis Litt fotoğrafını beğendi.",
+      "timestamp": 1766853318074,
+      "isRead": false
+    },
+    {
+      "id": 1766853318076,
+      "userId": 1,
+      "senderId": 6,
+      "type": "comment",
+      "postId": 109,
+      "text": "Rachel Zane yorum yaptı: \"Saçınla çok güzel durmuş.\"",
+      "timestamp": 1766853318074,
+      "isRead": false
+    },
+    {
+      "id": 1766853318077,
+      "userId": 1,
+      "senderId": 5,
+      "type": "comment",
+      "postId": 28,
+      "text": "Mike Ross yorum yaptı: \"Bence biraz daha farklı kombinlenebilirdi.\"",
+      "timestamp": 1766853318074,
       "isRead": false
     }
   ]
