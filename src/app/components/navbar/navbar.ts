@@ -308,15 +308,8 @@ import { FormsModule } from '@angular/forms';
           <div class="relative">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             @if (chatService.totalUnreadCount() > 0) {
-              <span class="absolute -top-2 -right-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[9px] font-bold flex items-center justify-center border-2 border-white dark:border-black shadow-sm"
-                    [class.w-4]="chatService.totalUnreadCount() < 10"
-                    [class.h-4]="chatService.totalUnreadCount() < 10"
-                    [class.rounded-full]="chatService.totalUnreadCount() < 10"
-                    [class.px-1]="chatService.totalUnreadCount() >= 10"
-                    [class.py-0.5]="chatService.totalUnreadCount() >= 10"
-                    [class.rounded-full]="chatService.totalUnreadCount() >= 10"
-                    [class.min-w-[16px]]="chatService.totalUnreadCount() >= 10">
-                {{ chatService.totalUnreadCount() > 99 ? '99+' : chatService.totalUnreadCount() }}
+              <span class="absolute -top-2 -right-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[9px] font-bold min-w-[16px] h-4 flex items-center justify-center rounded-full border-2 border-white dark:border-black px-1">
+                {{ chatService.totalUnreadCount() }}
               </span>
             }
           </div>
