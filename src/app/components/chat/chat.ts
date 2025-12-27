@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, PLATFORM_ID, Inject, effect } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ChatService } from '../../services/chat.service';
@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-chat',
   imports: [CommonModule, FormsModule, RouterLink],
   template: `
-    <div class="max-w-screen-lg mx-auto h-[calc(100vh-80px)] flex bg-white dark:bg-black overflow-hidden border-x border-gray-100 dark:border-gray-800">
+    <div class="max-w-screen-lg mx-auto h-[calc(100vh-80px-5rem)] md:h-[calc(100vh-80px)] flex bg-white dark:bg-black overflow-hidden border-x border-gray-100 dark:border-gray-800 pb-safe">
       
       <!-- Left Sidebar: Conversations -->
       <div class="w-full md:w-80 flex flex-col border-r border-gray-100 dark:border-gray-800" [class.hidden]="activeChatUser && isMobile" [class.flex]="!activeChatUser || !isMobile">
@@ -27,17 +27,19 @@ import { FormsModule } from '@angular/forms';
                       <div class="flex-1 min-w-0">
                           <div class="flex justify-between items-baseline mb-1">
                               <h4 class="font-bold text-gray-900 dark:text-white truncate">{{ conv.user.name }}</h4>
-                              <span class="text-xs text-gray-400 font-medium whitespace-nowrap ml-2">{{ getTimeAgo(conv.lastMessage.timestamp) }}</span>
+                              <div class="flex flex-col items-end gap-1">
+                                  <span class="text-xs text-gray-400 font-medium whitespace-nowrap">{{ getTimeAgo(conv.lastMessage.timestamp) }}</span>
+                                  @if (conv.unreadCount > 0) {
+                                      <div class="w-5 h-5 bg-purple-600 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                                          {{ conv.unreadCount }}
+                                      </div>
+                                  }
+                              </div>
                           </div>
                           <p class="text-sm text-gray-500 dark:text-gray-400 truncate" [class.font-bold]="!conv.lastMessage.isRead && conv.lastMessage.receiverId === currentUser?.id">
                               {{ conv.lastMessage.senderId === currentUser?.id ? 'Sen: ' : '' }}{{ conv.lastMessage.text }}
                           </p>
                       </div>
-                      @if (conv.unreadCount > 0) {
-                          <div class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 bg-purple-600 text-white text-xs font-bold rounded-full flex items-center justify-center">
-                              {{ conv.unreadCount }}
-                          </div>
-                      }
                   </div>
               }
               @if (chatService.conversationsSignal().length === 0) {
@@ -69,9 +71,10 @@ import { FormsModule } from '@angular/forms';
               </div>
 
               <!-- Messages Area -->
-              <div class="flex-1 overflow-y-auto p-4 space-y-4" #scrollContainer>
+              <div class="flex-1 overflow-y-auto p-4 flex flex-col gap-4" #scrollContainer>
                   @for (msg of chatService.messagesSignal(); track msg.id) {
-                      <div class="flex gap-2 max-w-[80%]" [class.self-end]="msg.senderId === currentUser?.id" [class.self-start]="msg.senderId !== currentUser?.id">
+                      <div class="flex gap-2 max-w-[80%]" [class.self-end]="msg.senderId === currentUser?.id" [class.self-start]="msg.senderId !== currentUser?.id"
+                           [class.flex-row-reverse]="msg.senderId === currentUser?.id">
                           @if (msg.senderId !== currentUser?.id) {
                               <img [src]="activeChatUser.avatar" class="w-8 h-8 rounded-full self-start mb-1">
                           }
@@ -130,7 +133,15 @@ export class ChatComponent implements OnInit {
       private api: ApiService,
       private route: ActivatedRoute,
       @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) {
+    // Effect to scroll to bottom when messages change and we are in active chat
+    effect(() => {
+        const msgs = this.chatService.messagesSignal();
+        if (this.activeChatUser && msgs.length > 0) {
+             setTimeout(() => this.scrollToBottom(), 50);
+        }
+    });
+  }
 
   ngOnInit() {
       this.currentUser = this.api.currentUser();

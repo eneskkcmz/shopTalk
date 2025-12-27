@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, ChangeDetectorRef, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../../services/api';
 import { MediaViewer } from '../media-viewer/media-viewer';
@@ -8,23 +8,23 @@ import { MediaViewer } from '../media-viewer/media-viewer';
   selector: 'app-hall-of-fame',
   imports: [CommonModule, MediaViewer],
   template: `
-    <div class="max-w-2xl mx-auto py-8 px-4">
+    <div class="max-w-2xl mx-auto py-8 px-4 pb-24 md:pb-8">
       <div class="text-center mb-10 animate-fade-in">
         <div class="inline-flex w-20 h-20 bg-gradient-to-tr from-yellow-400 to-orange-500 rounded-full items-center justify-center mb-4 shadow-lg shadow-orange-500/30">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <h1 class="text-3xl font-black mb-2 text-gray-900 dark:text-white tracking-tight">Şeref Kürsüsü</h1>
-        <p class="text-gray-500 dark:text-gray-400 text-lg">Tüm zamanların en beğenilen kombinleri</p>
+        <h1 class="text-3xl font-black mb-2 text-gray-900 dark:text-white tracking-tight">Tüm Zamannların En Beğenilenleri</h1>
+        <p class="text-gray-500 dark:text-gray-400 text-lg">Tüm zamanların en beğenilen kombinleri...</p>
       </div>
 
       <div class="grid gap-6">
         @for (post of posts; track post.id; let i = $index) {
             <div (click)="openMedia(post)" class="bg-white dark:bg-gray-900 rounded-2xl p-4 flex gap-4 items-center shadow-sm border border-gray-100 dark:border-gray-800 animate-slide-up cursor-pointer hover:shadow-md transition-all" [style.animation-delay]="i * 100 + 'ms'">
                 <div class="flex-shrink-0 text-2xl font-bold w-10 text-center text-gray-300 dark:text-gray-700">#{{ i + 1 }}</div>
-                
+
                 <div class="relative w-20 h-24 flex-shrink-0">
                     @if (post.mediaType === 'video' || post.imageUrl.endsWith('.mp4')) {
-                        <video [src]="getImageUrl(post.imageUrl)" 
+                        <video [src]="getImageUrl(post.imageUrl)"
                             muted
                             class="w-full h-full object-cover rounded-xl bg-gray-100 dark:bg-gray-800"
                             onmouseover="this.play()"
@@ -40,7 +40,7 @@ import { MediaViewer } from '../media-viewer/media-viewer';
                         <img [src]="getImageUrl(post.imageUrl)" class="w-full h-full object-cover rounded-xl bg-gray-100 dark:bg-gray-800" (error)="onImageError($event)">
                     }
                 </div>
-                
+
                 <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-2 mb-1">
                          <img [src]="post.user?.avatar || 'https://i.pravatar.cc/150'" class="w-5 h-5 rounded-full">
@@ -62,7 +62,7 @@ import { MediaViewer } from '../media-viewer/media-viewer';
             </div>
         }
       </div>
-      
+
       <!-- Media Viewer -->
       @if (viewingMedia) {
         <app-media-viewer
@@ -76,7 +76,7 @@ import { MediaViewer } from '../media-viewer/media-viewer';
   styles: `
     @keyframes fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes slide-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    
+
     .animate-fade-in { animation: fade-in 0.6s ease-out; }
     .animate-slide-up { animation: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards; }
   `
@@ -85,12 +85,19 @@ export class HallOfFame implements OnInit {
   posts: Post[] = [];
   viewingMedia: { url: string, type: 'image' | 'video' } | null = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private cdr: ChangeDetectorRef,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit() {
-    this.http.get<Post[]>('http://localhost:3000/api/hall-of-fame').subscribe(posts => {
+    if (isPlatformBrowser(this.platformId)) {
+      this.http.get<Post[]>('http://localhost:3000/api/hall-of-fame').subscribe(posts => {
         this.posts = posts;
-    });
+        this.cdr.detectChanges(); // Force UI update
+      });
+    }
   }
 
   getImageUrl(url: string): string {

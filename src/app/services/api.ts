@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap, catchError, of } from 'rxjs';
+import { Observable, tap, catchError, of, Subject } from 'rxjs';
 
 export interface User {
   id: number;
@@ -58,7 +58,24 @@ export class ApiService {
   feedPosts = this.feedPostsSignal.asReadonly();
   currentUser = this.currentUserSignal.asReadonly();
 
-  constructor(private http: HttpClient) { }
+  // Subject for triggering scroll to top
+  private scrollToTopSubject = new Subject<void>();
+  scrollToTop$ = this.scrollToTopSubject.asObservable();
+
+  constructor(private http: HttpClient) {  
+      // Ensure we always have Enes as user for now
+      this.currentUserSignal.set({
+          id: 1,
+          name: 'Enes Kocamaz',
+          avatar: 'https://i.pravatar.cc/150?u=1',
+          bio: 'Fashion enthusiast | Minimalist style',
+          followers: 2423
+      });
+  }
+
+  triggerScrollToTop() {
+      this.scrollToTopSubject.next();
+  }
 
   getFeed(category?: string, feedType: 'foryou' | 'following' = 'foryou') {
     const params: any = { feedType };

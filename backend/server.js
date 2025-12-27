@@ -248,18 +248,27 @@ app.get('/api/feed', (req, res) => {
 app.get('/api/hall-of-fame', (req, res) => {
     const db = getDb();
     
-    // Filter for expired posts (older than 1 hour)
-    const expiredPosts = db.posts
-        .filter(p => !isPostActive(p.timestamp))
-        .map(p => {
-            const user = db.users.find(u => u.id === p.userId);
-            return { ...p, user };
-        });
+    // Get ALL posts that have some engagement (likes or dislikes)
+    // We don't filter by active/inactive because we want to see the best of all time/recent
+    // But we prioritize those with images
+    const allPosts = db.posts.map(p => {
+        const user = db.users.find(u => u.id === p.userId);
+        return { ...p, user };
+    });
 
-    // Sort by net score (likes - dislikes) or just likes
-    const bestPosts = expiredPosts
-        .sort((a, b) => (b.likes - b.dislikes) - (a.likes - a.dislikes))
-        .slice(0, 20); // Top 20
+    // Sort by engagement (likes - dislikes)
+    // If scores are equal, prefer newer posts
+    const bestPosts = allPosts
+        .sort((a, b) => {
+            const scoreA = (a.likes || 0) - (a.dislikes || 0);
+            const scoreB = (b.likes || 0) - (b.dislikes || 0);
+            
+            if (scoreA !== scoreB) {
+                return scoreB - scoreA; // Descending score
+            }
+            return b.timestamp - a.timestamp; // Tie-break with time
+        })
+        .slice(0, 10); // Top 10 only
     
     res.json(bestPosts);
 });
@@ -400,7 +409,7 @@ app.post('/api/follow', (req, res) => {
     db.posts.push(newPost);
     saveDb(db);
     
-    console.log('Created new post:', newPost);
+    // console.log('Created new post:', newPost);
 
     res.status(201).json(newPost);
 });
@@ -698,6 +707,9 @@ const generateRandomPosts = (count = 5) => {
     db.comments.push(...newComments);
     saveDb(db);
     console.log(`[Auto-Generator] Successfully added ${count} posts and ${newComments.length} comments.`);
+
+    // Emit event to all clients
+    io.emit('new_posts_available', { count: newPosts.length });
 };
 
 // Helper to seed comments to existing active posts (run on startup)
@@ -751,15 +763,266 @@ const seedActivePostComments = () => {
     }
 };
 
+// Helper to generate random messages to the main user (Enes Kocamaz - ID 1)
+const generateRandomMessages = (count = 5) => {
+    const db = getDb();
+    const TARGET_USER_ID = 1; // Enes Kocamaz
+
+    // Safety check
+    if (!db.users || db.users.length === 0) return;
+    if (!db.messages) db.messages = [];
+
+    // Pick a random sender (not Enes)
+    const potentialSenders = db.users.filter(u => u.id !== TARGET_USER_ID);
+    if (potentialSenders.length === 0) return;
+
+    let messagesAdded = 0;
+    console.log(`[Auto-Message] Generating ${count} messages...`);
+
+    for (let i = 0; i < count; i++) {
+        const randomSender = potentialSenders[Math.floor(Math.random() * potentialSenders.length)];
+        const randomText = [
+            "Selam, naber?",
+            "Son paylaştığın fotoğraf harika!",
+            "Bu hafta sonu müsait misin?",
+            "Kombinlerin çok iyi gidiyor.",
+            "Şu ceketi nereden aldın?",
+            "Merhaba!",
+            "Takip ettim, geri döner misin?",
+            "Fotoğraftaki mekan neresi?",
+            "Çok tarz giyiniyorsun 👍",
+            "Selam Enes, nasılsın?"
+        ][Math.floor(Math.random() * 10)];
+
+        const newMessage = {
+            id: Date.now() + i,
+            senderId: randomSender.id,
+            receiverId: TARGET_USER_ID,
+            text: randomText,
+            timestamp: Date.now(),
+            isRead: false
+        };
+
+        db.messages.push(newMessage);
+        messagesAdded++;
+
+        console.log(`[Auto-Message] New message from ${randomSender.name}: "${randomText}"`);
+
+        // Emit to Enes if he is connected
+        const receiverSocketId = connectedUsers.get(TARGET_USER_ID);
+        if (receiverSocketId) {
+            io.to(receiverSocketId).emit('receive_message', newMessage);
+        }
+    }
+
+    if (messagesAdded > 0) {
+        saveDb(db);
+    }
+};
+
+// Helper to generate random interactions (Likes/Comments) for a specific user's posts
+const generateRandomInteractions = (count = 5) => {
+    const db = getDb();
+    const TARGET_USER_ID = 1; // Enes Kocamaz
+
+    if (!db.posts || db.posts.length === 0) return;
+    if (!db.notifications) db.notifications = [];
+    if (!db.votes) db.votes = []; // Ensure votes exist
+    if (!db.comments) db.comments = []; // Ensure comments exist
+
+    // Find active posts belonging to Enes
+    const userPosts = db.posts.filter(p => p.userId === TARGET_USER_ID);
+    
+    if (userPosts.length === 0) return; // No active posts to interact with
+
+    const potentialSenders = db.users.filter(u => u.id !== TARGET_USER_ID);
+    if (potentialSenders.length === 0) return;
+
+    let interactionsAdded = 0;
+    console.log(`[Auto-Interaction] Generating ${count} interactions...`);
+
+    for (let i = 0; i < count; i++) {
+        // Pick a random post
+        const targetPost = userPosts[Math.floor(Math.random() * userPosts.length)];
+        
+        // Pick a random sender (not Enes)
+        const randomSender = potentialSenders[Math.floor(Math.random() * potentialSenders.length)];
+
+        // Decide: Like (70%) or Comment (30%)
+        const isLike = Math.random() > 0.3;
+        const type = isLike ? 'like' : 'comment';
+        
+        let notificationText = '';
+        let interactionSuccess = false;
+
+        if (isLike) {
+            // Add Like
+            const hasVoted = db.votes.some(v => v.postId === targetPost.id && v.userId === randomSender.id);
+            
+            if (!hasVoted) {
+                db.votes.push({ userId: randomSender.id, postId: targetPost.id, type: 'like' });
+                // Find post in main array and update count
+                const postIndex = db.posts.findIndex(p => p.id === targetPost.id);
+                if (postIndex !== -1) {
+                    db.posts[postIndex].likes++;
+                }
+                notificationText = `${randomSender.name} fotoğrafını beğendi.`;
+                interactionSuccess = true;
+            }
+        } else {
+            // Add Comment
+            const commentText = MOCK_COMMENTS[Math.floor(Math.random() * MOCK_COMMENTS.length)];
+            
+            const newComment = {
+                id: (db.comments.length > 0 ? Math.max(...db.comments.map(c => c.id)) : 0) + 1,
+                postId: targetPost.id,
+                userId: randomSender.id,
+                text: commentText,
+                timestamp: Date.now()
+            };
+            db.comments.push(newComment);
+            notificationText = `${randomSender.name} yorum yaptı: "${commentText}"`;
+            interactionSuccess = true;
+        }
+
+        if (interactionSuccess) {
+            // Create Notification
+            const newNotification = {
+                id: Date.now() + i,
+                userId: TARGET_USER_ID, // Receiver
+                senderId: randomSender.id, // Actor
+                type: type,
+                postId: targetPost.id,
+                text: notificationText,
+                timestamp: Date.now(),
+                isRead: false
+            };
+
+            db.notifications.push(newNotification);
+            interactionsAdded++;
+
+            console.log(`[Auto-Interaction] ${notificationText}`);
+
+            // Emit to Enes
+            const receiverSocketId = connectedUsers.get(TARGET_USER_ID);
+            if (receiverSocketId) {
+                io.to(receiverSocketId).emit('new_notification', newNotification);
+            }
+        }
+    }
+
+    if (interactionsAdded > 0) {
+        saveDb(db);
+    }
+};
+
+// Helper to cleanup old messages and notifications
+const cleanupOldData = () => {
+    const db = getDb();
+    let updated = false;
+
+    const ONE_HOUR = 60 * 60 * 1000;
+    const now = Date.now();
+
+    // Cleanup old messages (older than 1 hour)
+    if (db.messages && db.messages.length > 0) {
+        const initialCount = db.messages.length;
+        // Keep only messages from last hour
+        db.messages = db.messages.filter(m => now - m.timestamp < ONE_HOUR);
+        
+        // However, we should probably keep at least the last few messages for conversations to not look empty immediately?
+        // Requirement says "delete hourly", let's be strict but maybe keep very recent ones if needed.
+        // For now, strict 1 hour rule.
+        
+        if (db.messages.length !== initialCount) {
+             console.log(`[Cleanup] Removed ${initialCount - db.messages.length} old messages.`);
+             updated = true;
+        }
+    }
+
+    // Cleanup old notifications (older than 1 hour)
+    if (db.notifications && db.notifications.length > 0) {
+        const initialCount = db.notifications.length;
+        db.notifications = db.notifications.filter(n => now - n.timestamp < ONE_HOUR);
+        
+        if (db.notifications.length !== initialCount) {
+             console.log(`[Cleanup] Removed ${initialCount - db.notifications.length} old notifications.`);
+             updated = true;
+        }
+    }
+    
+    // Also cleanup old posts that are way too old? (Hall of fame handles > 1 hour, maybe delete > 24 hours?)
+    // Requirement was specifically about messages and notifications visuals being "too much".
+    
+    if (updated) {
+        saveDb(db);
+        // We might want to emit an event to frontend to refresh, but frontend polls/gets realtime updates.
+        // If we delete data, frontend might show old data until refresh.
+        // For now, let's assume page refresh handles it or next fetch.
+    }
+};
+
+
+// GET /api/notifications/:userId
+app.get('/api/notifications/:userId', (req, res) => {
+    const userId = parseInt(req.params.userId);
+    const db = getDb();
+    
+    if (!db.notifications) return res.json([]);
+
+    const notifications = db.notifications
+        .filter(n => n.userId === userId)
+        .sort((a, b) => b.timestamp - a.timestamp);
+        
+    // Enrich with sender info
+    const enriched = notifications.map(n => {
+        const sender = db.users.find(u => u.id === n.senderId);
+        return { ...n, sender };
+    });
+
+    res.json(enriched);
+});
+
+// POST /api/notifications/mark-read
+app.post('/api/notifications/mark-read', (req, res) => {
+    const { userId } = req.body;
+    const db = getDb();
+
+    if (!db.notifications) return res.json({ success: true });
+
+    let updated = false;
+    db.notifications.forEach(n => {
+        if (n.userId === parseInt(userId) && !n.isRead) {
+            n.isRead = true;
+            updated = true;
+        }
+    });
+
+    if (updated) saveDb(db);
+    res.json({ success: true });
+});
+
 // Start the generator
 // Run immediately on server start to ensure content
 // Then run every 60 minutes (3600000 ms) to keep feed alive
-const GENERATOR_INTERVAL = 60 * 60 * 1000; 
+const GENERATOR_INTERVAL = 10 * 60 * 1000; // Normal: 10 minutes
+// const MESSAGE_INTERVAL = 60 * 60 * 1000; // 1 hour
+const MESSAGE_INTERVAL = 15 * 60 * 1000; // Slower: 15 minutes (approx 4 per hour)
+const INTERACTION_INTERVAL = 6 * 60 * 1000; // Slower: 6 minutes (approx 10 per hour)
+const CLEANUP_INTERVAL = 60 * 60 * 1000; // 1 hour
+
 setTimeout(() => {
     generateRandomPosts(4);
-    seedActivePostComments(); // Also seed comments for existing active posts
-}, 2000); // Wait 2s after start
-setInterval(() => generateRandomPosts(4), GENERATOR_INTERVAL); // Create 4 posts every hour
+    seedActivePostComments(); 
+    generateRandomMessages(4); // Initial message
+    generateRandomInteractions(4); // Initial interaction
+    cleanupOldData(); // Initial cleanup check
+}, 2000); 
+
+setInterval(() => generateRandomPosts(4), GENERATOR_INTERVAL); 
+setInterval(() => generateRandomMessages(4), MESSAGE_INTERVAL); // Random message loop
+setInterval(() => generateRandomInteractions(4), INTERACTION_INTERVAL); // Random interaction loop
+setInterval(() => cleanupOldData(), CLEANUP_INTERVAL); // Hourly cleanup loop
 
 server.listen(port, () => {
     console.log(`Wear Vote Server running at http://localhost:${port}`);

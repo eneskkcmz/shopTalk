@@ -1,148 +1,1102 @@
 ❯ Building...
 ✔ Building...
-Application bundle generation failed. [1.019 seconds] - 2025-12-26T07:37:19.871Z
+Application bundle generation failed. [1.116 seconds] - 2025-12-26T09:10:43.549Z
 
-▲ [WARNING] NG8113: RouterLink is not used within the template of ChatComponent [plugin angular-compiler]
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
 
-    src/app/components/chat/chat.ts:10:39:
-      10 │   imports: [CommonModule, FormsModule, RouterLink],
-         ╵                                        ~~~~~~~~~~
-
-
-▲ [WARNING] NG8113: RouterLink is not used within the template of Profile [plugin angular-compiler]
-
-    src/app/components/profile/profile.ts:10:54:
-      10 │   imports: [CommonModule, CommentsModal, MediaViewer, RouterLink],
-         ╵                                                       ~~~~~~~~~~
+    src/app/components/navbar/navbar.ts:184:232:
+      184 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-✘ [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
 
-    src/app/components/chat/chat.ts:85:22:
-      85 │                       </div>
-         ╵                       ~~~~~~
-
-
-✘ [ERROR] NG5002: Unexpected closing block. The block may have been closed earlier. If you meant to write the } character, you should use the "&#125;" HTML entity instead. [plugin angular-compiler]
-
-    src/app/components/chat/chat.ts:86:18:
-      86 │                   }
-         ╵                   ^
-
-
-✘ [ERROR] NG5002: Unexpected closing block. The block may have been closed earlier. If you meant to write the } character, you should use the "&#125;" HTML entity instead. [plugin angular-compiler]
-
-    src/app/components/chat/chat.ts:103:10:
-      103 │           } @else {
-          ╵           ^
-
-
-✘ [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
-
-    src/app/components/chat/chat.ts:110:6:
-      110 │       </div>
-          ╵       ~~~~~~
-
-
-✘ [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
-
-    src/app/components/chat/chat.ts:111:4:
-      111 │     </div>
-          ╵     ~~~~~~
+    src/app/components/navbar/navbar.ts:234:232:
+      234 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Watch mode enabled. Watching for file changes...
 ❯ Changes detected. Rebuilding...
 ✔ Changes detected. Rebuilding...
-Application bundle generation failed. [0.025 seconds] - 2025-12-26T08:16:52.066Z
+Application bundle generation failed. [0.280 seconds] - 2025-12-26T09:11:01.283Z
 
-▲ [WARNING] NG8113: RouterLink is not used within the template of ChatComponent [plugin angular-compiler]
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
 
-    src/app/components/chat/chat.ts:10:39:
-      10 │   imports: [CommonModule, FormsModule, RouterLink],
-         ╵                                        ~~~~~~~~~~
-
-
-▲ [WARNING] NG8113: RouterLink is not used within the template of Profile [plugin angular-compiler]
-
-    src/app/components/profile/profile.ts:10:54:
-      10 │   imports: [CommonModule, CommentsModal, MediaViewer, RouterLink],
-         ╵                                                       ~~~~~~~~~~
+    src/app/components/navbar/navbar.ts:184:232:
+      184 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-✘ [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
 
-    src/app/components/chat/chat.ts:85:22:
-      85 │                       </div>
-         ╵                       ~~~~~~
-
-
-✘ [ERROR] NG5002: Unexpected closing block. The block may have been closed earlier. If you meant to write the } character, you should use the "&#125;" HTML entity instead. [plugin angular-compiler]
-
-    src/app/components/chat/chat.ts:86:18:
-      86 │                   }
-         ╵                   ^
+    src/app/components/navbar/navbar.ts:234:232:
+      234 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-✘ [ERROR] NG5002: Unexpected closing block. The block may have been closed earlier. If you meant to write the } character, you should use the "&#125;" HTML entity instead. [plugin angular-compiler]
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.100 seconds] - 2025-12-26T09:11:05.808Z
 
-    src/app/components/chat/chat.ts:103:10:
-      103 │           } @else {
-          ╵           ^
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
 
-
-✘ [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
-
-    src/app/components/chat/chat.ts:110:6:
-      110 │       </div>
-          ╵       ~~~~~~
+    src/app/components/navbar/navbar.ts:184:232:
+      184 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-✘ [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
 
-    src/app/components/chat/chat.ts:111:4:
-      111 │     </div>
-          ╵     ~~~~~~
+    src/app/components/navbar/navbar.ts:234:232:
+      234 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.095 seconds] - 2025-12-26T09:11:10.612Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:232:
+      184 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:234:232:
+      234 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.241 seconds] - 2025-12-26T09:11:39.029Z
+
+✘ [ERROR] TS2339: Property 'handleHomeClick' does not exist on type 'Navbar'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:39:
+      184 │ ...routerLink="/" (click)="handleHomeClick()" class="flex flex-co...
+          ╵                            ~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:260:
+      184 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'handleHomeClick' does not exist on type 'Navbar'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:234:39:
+      234 │ ...routerLink="/" (click)="handleHomeClick()" class="flex flex-co...
+          ╵                            ~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:234:260:
+      234 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.187 seconds] - 2025-12-26T09:11:43.171Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:260:
+      184 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:234:260:
+      234 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.171 seconds] - 2025-12-26T09:11:48.685Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:260:
+      184 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:234:260:
+      234 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.142 seconds] - 2025-12-26T09:12:36.987Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:260:
+      184 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:234:260:
+      234 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.017 seconds] - 2025-12-26T09:12:40.848Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:260:
+      184 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:234:260:
+      234 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.231 seconds] - 2025-12-26T09:13:54.709Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:260:
+      184 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:234:260:
+      234 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.201 seconds] - 2025-12-26T09:14:02.077Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:260:
+      184 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:234:260:
+      234 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.233 seconds] - 2025-12-26T09:14:14.979Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:260:
+      184 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:234:260:
+      234 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.032 seconds] - 2025-12-26T09:14:40.878Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:260:
+      184 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:234:260:
+      234 │ ...:text-white font-bold" [routerLinkActiveOptions]="{exact: true}">
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 ❯ Changes detected. Rebuilding...
 ✔ Changes detected. Rebuilding...
 Browser bundles     
 Initial chunk files  | Names            |  Raw size
-main.js              | main             | 257.91 kB | 
-styles.css           | styles           |  71.36 kB | 
+main.js              | main             | 293.62 kB | 
+styles.css           | styles           |  74.16 kB | 
 
-                     | Initial total    | 329.27 kB
+                     | Initial total    | 367.78 kB
 
 
 Server bundles      
 Initial chunk files  | Names            |  Raw size
-main.server.mjs      | main.server      | 258.98 kB | 
+main.server.mjs      | main.server      | 294.72 kB | 
 server.mjs           | server           |   1.81 kB | 
 polyfills.server.mjs | polyfills.server | 243 bytes | 
 
-Application bundle generation complete. [0.378 seconds] - 2025-12-26T08:17:40.769Z
-
-▲ [WARNING] NG8113: RouterLink is not used within the template of Profile [plugin angular-compiler]
-
-    src/app/components/profile/profile.ts:10:54:
-      10 │   imports: [CommonModule, CommentsModal, MediaViewer, RouterLink],
-         ╵                                                       ~~~~~~~~~~
-
+Application bundle generation complete. [0.292 seconds] - 2025-12-26T09:15:10.576Z
 
 NOTE: Raw file sizes do not reflect development server per-request transformations.
-11:17:40 AM [vite] (client) Re-optimizing dependencies because lockfile has changed
-11:17:40 AM [vite] (ssr) Re-optimizing dependencies because lockfile has changed
-An unhandled exception occurred: Port 4200 is already in use
-See "/private/var/folders/tj/rrrr_0qs759g1nknf9s6rhs40000gn/T/ng-okx7LT/angular-errors.log" for further details.
-/Users/eneskocamaz/Projects/wear-vote/node_modules/rxjs/dist/cjs/internal/util/reportUnhandledError.js:13
-            throw err;
-            ^
+  ➜  Local:   http://localhost:4201/
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+main.js              | main             | 293.62 kB | 
+styles.css           | styles           |  74.16 kB | 
 
-Error: Port 4200 is already in use
-    at Server.onError$1 (file:///Users/eneskocamaz/Projects/wear-vote/node_modules/vite/dist/node/chunks/config.js:15569:28)
-    at Server.emit (node:events:508:28)
-    at emitErrorNT (node:net:1976:8)
-    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+                     | Initial total    | 367.78 kB
 
-Node.js v24.11.1
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      | 294.72 kB | 
+server.mjs           | server           |   1.81 kB | 
+polyfills.server.mjs | polyfills.server | 243 bytes | 
+
+Application bundle generation complete. [0.148 seconds] - 2025-12-26T09:15:49.680Z
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        | 274.94 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+main.server.mjs     | main.server | 276.15 kB | 
+
+Application bundle generation complete. [0.231 seconds] - 2025-12-26T09:16:20.431Z
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+main.js              | main             | 274.94 kB | 
+styles.css           | styles           |  74.16 kB | 
+
+                     | Initial total    | 349.10 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      | 276.15 kB | 
+server.mjs           | server           |   1.81 kB | 
+polyfills.server.mjs | polyfills.server | 243 bytes | 
+
+Application bundle generation complete. [0.205 seconds] - 2025-12-26T09:16:41.051Z
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+main.js              | main             | 274.94 kB | 
+styles.css           | styles           |  74.16 kB | 
+
+                     | Initial total    | 349.10 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      | 276.15 kB | 
+server.mjs           | server           |   1.81 kB | 
+polyfills.server.mjs | polyfills.server | 243 bytes | 
+
+Application bundle generation complete. [0.168 seconds] - 2025-12-26T09:17:12.583Z
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+main.js              | main             | 274.94 kB | 
+styles.css           | styles           |  74.16 kB | 
+
+                     | Initial total    | 349.10 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      | 276.15 kB | 
+server.mjs           | server           |   1.81 kB | 
+polyfills.server.mjs | polyfills.server | 243 bytes | 
+
+Application bundle generation complete. [0.116 seconds] - 2025-12-26T09:18:03.621Z
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+main.js              | main             | 274.94 kB | 
+styles.css           | styles           |  74.16 kB | 
+
+                     | Initial total    | 349.10 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      | 276.15 kB | 
+server.mjs           | server           |   1.81 kB | 
+polyfills.server.mjs | polyfills.server | 243 bytes | 
+
+Application bundle generation complete. [0.044 seconds] - 2025-12-26T09:19:40.871Z
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.263 seconds] - 2025-12-26T09:19:57.844Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:110:
+      184 │ ...urple-400" [routerLinkActiveOptions]="{exact: true}" class="fl...
+          ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+main.js              | main             | 274.94 kB | 
+styles.css           | styles           |  74.26 kB | 
+
+                     | Initial total    | 349.20 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      | 276.15 kB | 
+server.mjs           | server           |   1.81 kB | 
+polyfills.server.mjs | polyfills.server | 243 bytes | 
+
+Application bundle generation complete. [0.200 seconds] - 2025-12-26T09:20:25.505Z
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.277 seconds] - 2025-12-26T09:21:45.588Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:110:
+      184 │ ...urple-400" [routerLinkActiveOptions]="{exact: true}" class="fl...
+          ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.378 seconds] - 2025-12-26T09:23:34.226Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:110:
+      184 │ ...urple-400" [routerLinkActiveOptions]="{exact: true}" class="fl...
+          ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+(node:56940) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Fetched posts: [
+  {
+    id: 238,
+    userId: 8,
+    imageUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+    mediaType: 'video',
+    description: 'Yeni sezon parçaları denedim.',
+    category: 'Spor',
+    location: 'Bağdat Caddesi, İstanbul',
+    timestamp: 1766740480539,
+    likes: 1,
+    dislikes: 3,
+    user: {
+      id: 8,
+      name: 'Donna Paulsen',
+      avatar: 'https://i.pravatar.cc/150?u=8',
+      bio: 'Bold colors',
+      followers: 2270
+    },
+    commentCount: 2,
+    userVote: null
+  },
+  {
+    id: 239,
+    userId: 9,
+    imageUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+    mediaType: 'video',
+    description: 'Sokak modası denemeleri.',
+    category: 'Ofis',
+    location: 'Karaköy, İstanbul',
+    timestamp: 1766740480539,
+    likes: 5,
+    dislikes: 3,
+    user: {
+      id: 9,
+      name: 'Louis Litt',
+      avatar: 'https://i.pravatar.cc/150?u=9',
+      bio: 'Mudding gear',
+      followers: 3367
+    },
+    commentCount: 2,
+    userVote: null
+  },
+  {
+    id: 240,
+    userId: 10,
+    imageUrl: 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Yeni sezon parçaları denedim.',
+    category: 'Özel Gün',
+    location: 'Bodrum, Muğla',
+    timestamp: 1766740480539,
+    likes: 14,
+    dislikes: 4,
+    user: {
+      id: 10,
+      name: 'Jessica Pearson',
+      avatar: 'https://i.pravatar.cc/150?u=10',
+      bio: 'Power dressing',
+      followers: 4722
+    },
+    commentCount: 2,
+    userVote: null
+  },
+  {
+    id: 241,
+    userId: 2,
+    imageUrl: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Hafta sonu rahatlığı.',
+    category: 'Vintage',
+    location: 'Karaköy, İstanbul',
+    timestamp: 1766740480539,
+    likes: 10,
+    dislikes: 4,
+    user: {
+      id: 2,
+      name: 'Jane Doe',
+      avatar: 'https://i.pravatar.cc/150?u=2',
+      bio: 'Streetwear lover',
+      followers: 3978
+    },
+    commentCount: 1,
+    userVote: null
+  },
+  {
+    id: 234,
+    userId: 4,
+    imageUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+    mediaType: 'video',
+    description: 'Bu ayakkabılarla ne giyilir?',
+    category: 'Sokak Modası',
+    location: 'Nişantaşı, İstanbul',
+    timestamp: 1766739880542,
+    likes: 0,
+    dislikes: 2,
+    user: {
+      id: 4,
+      name: 'Sarah Connor',
+      avatar: 'https://i.pravatar.cc/150?u=4',
+      bio: 'Cyberpunk fashion',
+      followers: 363
+    },
+    commentCount: 3,
+    userVote: null
+  },
+  {
+    id: 235,
+    userId: 10,
+    imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Sokak modası denemeleri.',
+    category: 'Sokak Modası',
+    location: 'Bebek, İstanbul',
+    timestamp: 1766739880542,
+    likes: 5,
+    dislikes: 4,
+    user: {
+      id: 10,
+      name: 'Jessica Pearson',
+      avatar: 'https://i.pravatar.cc/150?u=10',
+      bio: 'Power dressing',
+      followers: 4722
+    },
+    commentCount: 0,
+    userVote: null
+  },
+  {
+    id: 236,
+    userId: 2,
+    imageUrl: 'https://images.unsplash.com/photo-1550614000-4b9519e02d48?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Sokak modası denemeleri.',
+    category: 'Spor',
+    location: 'Bağdat Caddesi, İstanbul',
+    timestamp: 1766739880542,
+    likes: 0,
+    dislikes: 4,
+    user: {
+      id: 2,
+      name: 'Jane Doe',
+      avatar: 'https://i.pravatar.cc/150?u=2',
+      bio: 'Streetwear lover',
+      followers: 3978
+    },
+    commentCount: 2,
+    userVote: null
+  },
+  {
+    id: 237,
+    userId: 5,
+    imageUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+    mediaType: 'video',
+    description: 'Yeni sezon parçaları denedim.',
+    category: 'Vintage',
+    location: 'Alaçatı, İzmir',
+    timestamp: 1766739880542,
+    likes: 8,
+    dislikes: 3,
+    user: {
+      id: 5,
+      name: 'Mike Ross',
+      avatar: 'https://i.pravatar.cc/150?u=5',
+      bio: 'Formal wear only',
+      followers: 672
+    },
+    commentCount: 2,
+    userVote: null
+  },
+  {
+    id: 230,
+    userId: 8,
+    imageUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+    mediaType: 'video',
+    description: 'Yaz için bu renkler uygun mu?',
+    category: 'Ofis',
+    location: 'Bebek, İstanbul',
+    timestamp: 1766739282541,
+    likes: 8,
+    dislikes: 0,
+    user: {
+      id: 8,
+      name: 'Donna Paulsen',
+      avatar: 'https://i.pravatar.cc/150?u=8',
+      bio: 'Bold colors',
+      followers: 2270
+    },
+    commentCount: 2,
+    userVote: null
+  },
+  {
+    id: 231,
+    userId: 2,
+    imageUrl: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Spor şıklık.',
+    category: 'Diğer',
+    location: 'Bağdat Caddesi, İstanbul',
+    timestamp: 1766739282541,
+    likes: 13,
+    dislikes: 3,
+    user: {
+      id: 2,
+      name: 'Jane Doe',
+      avatar: 'https://i.pravatar.cc/150?u=2',
+      bio: 'Streetwear lover',
+      followers: 3978
+    },
+    commentCount: 3,
+    userVote: null
+  },
+  {
+    id: 232,
+    userId: 2,
+    imageUrl: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Sokak modası denemeleri.',
+    category: 'Sokak Modası',
+    location: 'Alaçatı, İzmir',
+    timestamp: 1766739282541,
+    likes: 7,
+    dislikes: 4,
+    user: {
+      id: 2,
+      name: 'Jane Doe',
+      avatar: 'https://i.pravatar.cc/150?u=2',
+      bio: 'Streetwear lover',
+      followers: 3978
+    },
+    commentCount: 4,
+    userVote: null
+  },
+  {
+    id: 233,
+    userId: 10,
+    imageUrl: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Sokak modası denemeleri.',
+    category: 'Ofis',
+    location: 'Bağdat Caddesi, İstanbul',
+    timestamp: 1766739282541,
+    likes: 9,
+    dislikes: 0,
+    user: {
+      id: 10,
+      name: 'Jessica Pearson',
+      avatar: 'https://i.pravatar.cc/150?u=10',
+      bio: 'Power dressing',
+      followers: 4722
+    },
+    commentCount: 3,
+    userVote: null
+  },
+  {
+    id: 227,
+    userId: 9,
+    imageUrl: 'https://images.unsplash.com/photo-1617137968427-85924c809a29?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Vintage ceketimi çok seviyorum.',
+    category: 'Ofis',
+    location: 'Alsancak, İzmir',
+    timestamp: 1766739189835,
+    likes: 1,
+    dislikes: 4,
+    user: {
+      id: 9,
+      name: 'Louis Litt',
+      avatar: 'https://i.pravatar.cc/150?u=9',
+      bio: 'Mudding gear',
+      followers: 3367
+    },
+    commentCount: 5,
+    userVote: null
+  },
+  {
+    id: 228,
+    userId: 9,
+    imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Yaz için bu renkler uygun mu?',
+    category: 'Ofis',
+    location: 'Nişantaşı, İstanbul',
+    timestamp: 1766739189835,
+    likes: 8,
+    dislikes: 3,
+    user: {
+      id: 9,
+      name: 'Louis Litt',
+      avatar: 'https://i.pravatar.cc/150?u=9',
+      bio: 'Mudding gear',
+      followers: 3367
+    },
+    commentCount: 3,
+    userVote: null
+  },
+  {
+    id: 229,
+    userId: 5,
+    imageUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+    mediaType: 'video',
+    description: 'Bu ayakkabılarla ne giyilir?',
+    category: 'Vintage',
+    location: 'Alsancak, İzmir',
+    timestamp: 1766739189835,
+    likes: 19,
+    dislikes: 4,
+    user: {
+      id: 5,
+      name: 'Mike Ross',
+      avatar: 'https://i.pravatar.cc/150?u=5',
+      bio: 'Formal wear only',
+      followers: 672
+    },
+    commentCount: 5,
+    userVote: null
+  },
+  {
+    id: 226,
+    userId: 1,
+    imageUrl: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Renk uyumu hakkında ne düşünüyorsunuz?',
+    category: 'Diğer',
+    location: 'Bağdat Caddesi, İstanbul',
+    timestamp: 1766739189834,
+    likes: 16,
+    dislikes: 0,
+    user: {
+      id: 1,
+      name: 'Enes Kocamaz',
+      avatar: 'https://i.pravatar.cc/150?u=1',
+      bio: 'Fashion enthusiast | Minimalist style',
+      followers: 2423
+    },
+    commentCount: 5,
+    userVote: null
+  },
+  {
+    id: 222,
+    userId: 1,
+    imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Yaz için bu renkler uygun mu?',
+    category: 'Sokak Modası',
+    location: 'Nişantaşı, İstanbul',
+    timestamp: 1766739163588,
+    likes: 4,
+    dislikes: 1,
+    user: {
+      id: 1,
+      name: 'Enes Kocamaz',
+      avatar: 'https://i.pravatar.cc/150?u=1',
+      bio: 'Fashion enthusiast | Minimalist style',
+      followers: 2423
+    },
+    commentCount: 4,
+    userVote: null
+  },
+  {
+    id: 223,
+    userId: 2,
+    imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Yeni sezon parçaları denedim.',
+    category: 'Diğer',
+    location: 'Bağdat Caddesi, İstanbul',
+    timestamp: 1766739163588,
+    likes: 1,
+    dislikes: 0,
+    user: {
+      id: 2,
+      name: 'Jane Doe',
+      avatar: 'https://i.pravatar.cc/150?u=2',
+      bio: 'Streetwear lover',
+      followers: 3978
+    },
+    commentCount: 3,
+    userVote: null
+  },
+  {
+    id: 224,
+    userId: 4,
+    imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Hafta sonu rahatlığı.',
+    category: 'Spor',
+    location: 'Kadıköy, İstanbul',
+    timestamp: 1766739163588,
+    likes: 9,
+    dislikes: 0,
+    user: {
+      id: 4,
+      name: 'Sarah Connor',
+      avatar: 'https://i.pravatar.cc/150?u=4',
+      bio: 'Cyberpunk fashion',
+      followers: 363
+    },
+    commentCount: 5,
+    userVote: null
+  },
+  {
+    id: 225,
+    userId: 10,
+    imageUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+    mediaType: 'video',
+    description: 'Spor şıklık.',
+    category: 'Özel Gün',
+    location: 'Alsancak, İzmir',
+    timestamp: 1766739163588,
+    likes: 3,
+    dislikes: 1,
+    user: {
+      id: 10,
+      name: 'Jessica Pearson',
+      avatar: 'https://i.pravatar.cc/150?u=10',
+      bio: 'Power dressing',
+      followers: 4722
+    },
+    commentCount: 4,
+    userVote: null
+  },
+  {
+    id: 218,
+    userId: 8,
+    imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Renk uyumu hakkında ne düşünüyorsunuz?',
+    category: 'Özel Gün',
+    location: 'Alaçatı, İzmir',
+    timestamp: 1766739120586,
+    likes: 12,
+    dislikes: 2,
+    user: {
+      id: 8,
+      name: 'Donna Paulsen',
+      avatar: 'https://i.pravatar.cc/150?u=8',
+      bio: 'Bold colors',
+      followers: 2270
+    },
+    commentCount: 3,
+    userVote: null
+  },
+  {
+    id: 219,
+    userId: 5,
+    imageUrl: 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Ofis şıklığı diye buna derim!',
+    category: 'Diğer',
+    location: 'Nişantaşı, İstanbul',
+    timestamp: 1766739120586,
+    likes: 7,
+    dislikes: 3,
+    user: {
+      id: 5,
+      name: 'Mike Ross',
+      avatar: 'https://i.pravatar.cc/150?u=5',
+      bio: 'Formal wear only',
+      followers: 672
+    },
+    commentCount: 3,
+    userVote: null
+  },
+  {
+    id: 220,
+    userId: 4,
+    imageUrl: 'https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Ofis şıklığı diye buna derim!',
+    category: 'Ofis',
+    location: 'Alsancak, İzmir',
+    timestamp: 1766739120586,
+    likes: 15,
+    dislikes: 1,
+    user: {
+      id: 4,
+      name: 'Sarah Connor',
+      avatar: 'https://i.pravatar.cc/150?u=4',
+      bio: 'Cyberpunk fashion',
+      followers: 363
+    },
+    commentCount: 3,
+    userVote: null
+  },
+  {
+    id: 221,
+    userId: 7,
+    imageUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+    mediaType: 'video',
+    description: 'Düğün için bu elbise fazla mı?',
+    category: 'Ofis',
+    location: 'Alaçatı, İzmir',
+    timestamp: 1766739120586,
+    likes: 19,
+    dislikes: 2,
+    user: {
+      id: 7,
+      name: 'Harvey Specter',
+      avatar: 'https://i.pravatar.cc/150?u=7',
+      bio: 'Luxury suits',
+      followers: 476
+    },
+    commentCount: 3,
+    userVote: null
+  },
+  {
+    id: 214,
+    userId: 7,
+    imageUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+    mediaType: 'video',
+    description: 'Bugünkü kombinim nasıl?',
+    category: 'Sokak Modası',
+    location: 'Alaçatı, İzmir',
+    timestamp: 1766738561692,
+    likes: 19,
+    dislikes: 2,
+    user: {
+      id: 7,
+      name: 'Harvey Specter',
+      avatar: 'https://i.pravatar.cc/150?u=7',
+      bio: 'Luxury suits',
+      followers: 476
+    },
+    commentCount: 3,
+    userVote: null
+  },
+  {
+    id: 215,
+    userId: 9,
+    imageUrl: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Bugünkü kombinim nasıl?',
+    category: 'Özel Gün',
+    location: 'Bebek, İstanbul',
+    timestamp: 1766738561692,
+    likes: 5,
+    dislikes: 0,
+    user: {
+      id: 9,
+      name: 'Louis Litt',
+      avatar: 'https://i.pravatar.cc/150?u=9',
+      bio: 'Mudding gear',
+      followers: 3367
+    },
+    commentCount: 3,
+    userVote: null
+  },
+  {
+    id: 216,
+    userId: 7,
+    imageUrl: 'https://images.unsplash.com/photo-1593030761757-71bd90dbe3e4?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Yeni sezon parçaları denedim.',
+    category: 'Diğer',
+    location: 'Karaköy, İstanbul',
+    timestamp: 1766738561692,
+    likes: 7,
+    dislikes: 4,
+    user: {
+      id: 7,
+      name: 'Harvey Specter',
+      avatar: 'https://i.pravatar.cc/150?u=7',
+      bio: 'Luxury suits',
+      followers: 476
+    },
+    commentCount: 3,
+    userVote: null
+  },
+  {
+    id: 217,
+    userId: 2,
+    imageUrl: 'https://images.unsplash.com/photo-1593030761757-71bd90dbe3e4?w=600&h=800&fit=crop',
+    mediaType: 'image',
+    description: 'Minimalist tarz.',
+    category: 'Spor',
+    location: 'Kadıköy, İstanbul',
+    timestamp: 1766738561692,
+    likes: 18,
+    dislikes: 1,
+    user: {
+      id: 2,
+      name: 'Jane Doe',
+      avatar: 'https://i.pravatar.cc/150?u=2',
+      bio: 'Streetwear lover',
+      followers: 3978
+    },
+    commentCount: 3,
+    userVote: null
+  }
+]
+New message received: {
+  id: 1766741080553,
+  senderId: 2,
+  receiverId: 1,
+  text: 'Bu hafta sonu müsait misin?',
+  timestamp: 1766741080553,
+  isRead: false
+}
+uncaughtException RuntimeError: NG0205: Injector has already been destroyed.
+    at assertNotDestroyed (/Users/eneskocamaz/Projects/wear-vote/.angular/cache/21.0.3/wear-vote/vite/deps_ssr/chunk-N7FNWCWJ.js:2631:11)
+    at runInInjectionContext (/Users/eneskocamaz/Projects/wear-vote/.angular/cache/21.0.3/wear-vote/vite/deps_ssr/chunk-N7FNWCWJ.js:2664:5)
+    at _HttpInterceptorHandler.eval (/Users/eneskocamaz/Projects/wear-vote/.angular/cache/21.0.3/wear-vote/vite/deps_ssr/chunk-S4Z3OLG5.js:1301:67)
+    at _HttpInterceptorHandler.handle (/Users/eneskocamaz/Projects/wear-vote/.angular/cache/21.0.3/wear-vote/vite/deps_ssr/chunk-S4Z3OLG5.js:1382:19)
+    at eval (/Users/eneskocamaz/Projects/wear-vote/.angular/cache/21.0.3/wear-vote/vite/deps_ssr/chunk-S4Z3OLG5.js:1504:106)
+    at doInnerSub (/Users/eneskocamaz/Projects/wear-vote/.angular/cache/21.0.3/wear-vote/vite/deps_ssr/chunk-P4GNISSK.js:4122:31)
+    at outerNext (/Users/eneskocamaz/Projects/wear-vote/.angular/cache/21.0.3/wear-vote/vite/deps_ssr/chunk-P4GNISSK.js:4116:38)
+    at OperatorSubscriber2.OperatorSubscriber2._this._next (/Users/eneskocamaz/Projects/wear-vote/.angular/cache/21.0.3/wear-vote/vite/deps_ssr/chunk-P4GNISSK.js:849:13)
+    at OperatorSubscriber2.Subscriber2.next (/Users/eneskocamaz/Projects/wear-vote/.angular/cache/21.0.3/wear-vote/vite/deps_ssr/chunk-P4GNISSK.js:472:16)
+    at Observable2.eval (/Users/eneskocamaz/Projects/wear-vote/.angular/cache/21.0.3/wear-vote/vite/deps_ssr/chunk-P4GNISSK.js:3032:22) {
+  code: 205
+}
+New notification received: {
+  id: 1766741080570,
+  userId: 1,
+  senderId: 2,
+  type: 'comment',
+  postId: 226,
+  text: 'Jane Doe yorum yaptı: "Renkler çok uyumlu olmuş."',
+  timestamp: 1766741080570,
+  isRead: false
+}
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.035 seconds] - 2025-12-26T09:24:40.942Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:110:
+      184 │ ...urple-400" [routerLinkActiveOptions]="{exact: true}" class="fl...
+          ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.291 seconds] - 2025-12-26T09:25:34.255Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:110:
+      184 │ ...urple-400" [routerLinkActiveOptions]="{exact: true}" class="fl...
+          ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.271 seconds] - 2025-12-26T09:26:33.528Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:110:
+      184 │ ...urple-400" [routerLinkActiveOptions]="{exact: true}" class="fl...
+          ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+New notification received: {
+  id: 1766741200576,
+  userId: 1,
+  senderId: 9,
+  type: 'like',
+  postId: 244,
+  text: 'Louis Litt fotoğrafını beğendi.',
+  timestamp: 1766741200576,
+  isRead: false
+}
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.031 seconds] - 2025-12-26T09:26:40.874Z
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/navbar/navbar.ts:184:110:
+      184 │ ...urple-400" [routerLinkActiveOptions]="{exact: true}" class="fl...
+          ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+

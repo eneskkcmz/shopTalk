@@ -22,3 +22,8 @@ body {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+
+/* Safe Area Utility */
+@utility pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+}

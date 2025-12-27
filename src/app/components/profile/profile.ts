@@ -15,8 +15,8 @@ import { MediaViewer } from '../media-viewer/media-viewer';
       </div>
     }
 
-    @if (!loading && user) {
-      <div class="max-w-screen-lg mx-auto px-4 py-8 animate-fade-in">
+@if (!loading && user) {
+      <div class="max-w-screen-lg mx-auto px-4 pt-8 pb-24 animate-fade-in">
 
         <!-- Header -->
         <div class="flex flex-col items-center text-center mb-12">

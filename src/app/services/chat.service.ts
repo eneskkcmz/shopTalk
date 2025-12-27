@@ -19,6 +19,18 @@ export interface Conversation {
     unreadCount: number;
 }
 
+export interface Notification {
+  id: number;
+  userId: number;
+  senderId: number;
+  type: 'like' | 'comment';
+  postId: number;
+  text: string;
+  timestamp: number;
+  isRead: boolean;
+  sender?: User;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -33,6 +45,10 @@ export class ChatService {
   // Computed total unread count
   public totalUnreadCount = signal<number>(0);
   
+  // Notifications
+  public notificationsSignal = signal<Notification[]>([]);
+  public unreadNotificationsCount = signal<number>(0);
+
   // Typing state
   public typingUsersSignal = signal<Set<number>>(new Set());
 
@@ -43,6 +59,7 @@ export class ChatService {
     const currentUser = this.api.currentUser();
     if (currentUser) {
         this.socket.emit('identify', currentUser.id);
+        this.fetchNotifications(); // Initial fetch
     }
 
     this.setupListeners();
@@ -56,6 +73,12 @@ export class ChatService {
           
           // Also update conversation list (to move this chat to top)
           this.refreshConversations();
+      });
+
+      this.socket.on('new_notification', (notification: Notification) => {
+          console.log('New notification received:', notification);
+          this.notificationsSignal.update(notes => [notification, ...notes]);
+          this.updateUnreadNotificationCount();
       });
 
       this.socket.on('message_sent', (message: Message) => {
@@ -123,6 +146,31 @@ export class ChatService {
       this.http.post(`${this.apiUrl}/messages/mark-read`, { userId: currentUser.id, otherId }).subscribe(() => {
           this.refreshConversations();
       });
+  }
+
+  fetchNotifications() {
+      const currentUser = this.api.currentUser();
+      if (!currentUser) return;
+      
+      this.http.get<Notification[]>(`${this.apiUrl}/notifications/${currentUser.id}`).subscribe(notes => {
+          this.notificationsSignal.set(notes);
+          this.updateUnreadNotificationCount();
+      });
+  }
+
+  markNotificationsAsRead() {
+      const currentUser = this.api.currentUser();
+      if (!currentUser) return;
+
+      this.http.post(`${this.apiUrl}/notifications/mark-read`, { userId: currentUser.id }).subscribe(() => {
+          this.notificationsSignal.update(notes => notes.map(n => ({ ...n, isRead: true })));
+          this.updateUnreadNotificationCount();
+      });
+  }
+
+  private updateUnreadNotificationCount() {
+      const count = this.notificationsSignal().filter(n => !n.isRead).length;
+      this.unreadNotificationsCount.set(count);
   }
 
   refreshConversations() {

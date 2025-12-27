@@ -5,6 +5,7 @@ import { ApiService, Post } from '../../services/api';
 import { interval, Subscription } from 'rxjs';
 import { CommentsModal } from '../comments-modal/comments-modal';
 import { MediaViewer } from '../media-viewer/media-viewer';
+import { io, Socket } from 'socket.io-client';
 
 @Component({
   selector: 'app-feed',
@@ -91,6 +92,16 @@ import { MediaViewer } from '../media-viewer/media-viewer';
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
         </button>
       </div>
+
+      <!-- New Posts Badge -->
+      @if (hasNewPosts) {
+          <div class="flex justify-center -mt-2 mb-2 animate-fade-in">
+              <button (click)="loadNewPosts()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2 transition-all hover:scale-105">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                  Yeni Gönderiler
+              </button>
+          </div>
+      }
 
       <!-- Empty State -->
       @if (api.feedPosts().length === 0) {
@@ -279,8 +290,60 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
   // Comments State
   showCommentsModal = false;
   selectedPost: Post | null = null;
+  
+  // Real-time Feed State
+  hasNewPosts = false;
+  private socket: Socket;
 
-  constructor(public api: ApiService, private cdr: ChangeDetectorRef) {}
+  constructor(public api: ApiService, private cdr: ChangeDetectorRef) {
+      this.socket = io('http://localhost:3000');
+  }
+
+  ngOnInit() {
+    this.refreshFeed();
+    this.setupSocketListeners();
+    
+    // Subscribe to scroll to top events
+    this.api.scrollToTop$.subscribe(() => {
+          // Always reset the new posts badge
+        this.hasNewPosts = false;
+        this.cdr.markForCheck(); // Ensure UI updates
+        
+        if (this.currentFeedType !== 'foryou') {
+             // If we are not on 'foryou', maybe switch to it? 
+             // Or just scroll to top of current feed. 
+             // Let's scroll to top and refresh.
+             window.scrollTo({ top: 0, behavior: 'smooth' });
+             this.refreshFeed();
+        } else {
+             window.scrollTo({ top: 0, behavior: 'smooth' });
+             this.refreshFeed();
+        }
+    });
+
+    // Update timer every second to keep the progress bar smooth and accurate
+    this.timerSub = interval(1000).subscribe(() => {
+         this.now = Date.now();
+         this.cdr.detectChanges();
+    });
+  }
+
+  setupSocketListeners() {
+      // Listen for new posts notification from server
+      this.socket.on('new_posts_available', (data: any) => {
+          console.log('New posts available:', data);
+          // Only show badge if we are not at the top or if the user prefers manual updates
+          // For now, let's always show the badge to be safe and interactive
+          this.hasNewPosts = true;
+          this.cdr.detectChanges();
+      });
+  }
+
+  loadNewPosts() {
+      this.refreshFeed();
+      this.hasNewPosts = false;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   // Feed Switching Logic
   switchFeedType(type: 'foryou' | 'following') {
@@ -335,21 +398,6 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
     }
   }
 
-  ngOnInit() {
-    this.refreshFeed();
-    // Update timer every second to keep the progress bar smooth and accurate
-    this.timerSub = interval(1000).subscribe(() => {
-         this.now = Date.now();
-
-         // Only fetch new feed data every 60 seconds (approx)
-         if (Math.floor(this.now / 1000) % 60 === 0) {
-            this.refreshFeed();
-         }
-
-         this.cdr.detectChanges();
-    });
-  }
-
   filterCategory(cat: string) {
     this.currentCategory = cat;
     this.refreshFeed();
@@ -368,6 +416,7 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
 
   ngOnDestroy() {
     this.timerSub?.unsubscribe();
+    this.socket.disconnect();
   }
 
   vote(post: Post, type: 'like' | 'dislike') {
