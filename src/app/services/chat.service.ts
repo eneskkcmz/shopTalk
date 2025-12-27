@@ -36,7 +36,7 @@ export interface Notification {
 })
 export class ChatService {
   private socket: Socket;
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = '/api';
 
   // State management for current chat
   public messagesSignal = signal<Message[]>([]);
@@ -53,7 +53,7 @@ export class ChatService {
   public typingUsersSignal = signal<Set<number>>(new Set());
 
   constructor(private api: ApiService, private http: HttpClient) {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('/', { path: '/socket.io' });
     
     // Identify user when connected
     const currentUser = this.api.currentUser();

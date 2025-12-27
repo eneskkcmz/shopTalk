@@ -41,7 +41,7 @@ export interface Comment {
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = '/api';
 
   // Signals for state management
   private feedPostsSignal = signal<Post[]>([]);

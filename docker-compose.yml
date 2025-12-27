@@ -1,0 +1,26 @@
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: wear-vote-backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend/db.json:/app/db.json
+      - ./public/uploads:/public/uploads
+    environment:
+      - PORT=3000
+      - CORS_ORIGIN=http://localhost
+    restart: always
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: wear-vote-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always

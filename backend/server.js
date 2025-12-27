@@ -7,13 +7,13 @@ const http = require('http');
 const { Server } = require("socket.io");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Create HTTP server and integrate Socket.io
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:4200",
+        origin: process.env.CORS_ORIGIN || "http://localhost:4200",
         methods: ["GET", "POST"]
     }
 });

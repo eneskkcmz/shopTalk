@@ -1625,6 +1625,97 @@
       "userId": 6,
       "text": "Fiyatı nedir?",
       "timestamp": 1766850901081
+    },
+    {
+      "id": 249,
+      "postId": 215,
+      "userId": 8,
+      "text": "Bence biraz daha farklı kombinlenebilirdi.",
+      "timestamp": 1766851176309
+    },
+    {
+      "id": 250,
+      "postId": 216,
+      "userId": 8,
+      "text": "Ayakkabılar efsane.",
+      "timestamp": 1766851098387
+    },
+    {
+      "id": 252,
+      "postId": 216,
+      "userId": 10,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766850812482
+    },
+    {
+      "id": 254,
+      "postId": 216,
+      "userId": 9,
+      "text": "Bu tarz sana çok yakışıyor.",
+      "timestamp": 1766851195331
+    },
+    {
+      "id": 253,
+      "postId": 217,
+      "userId": 9,
+      "text": "Çok şık.",
+      "timestamp": 1766851187974
+    },
+    {
+      "id": 255,
+      "postId": 190,
+      "userId": 2,
+      "text": "Biraz daha aksesuar eklenebilir.",
+      "timestamp": 1766851261080
+    },
+    {
+      "id": 256,
+      "postId": 160,
+      "userId": 5,
+      "text": "Mükemmel uyum.",
+      "timestamp": 1766851621082
+    },
+    {
+      "id": 257,
+      "postId": 219,
+      "userId": 7,
+      "text": "Ben pek beğenmedim maalesef.",
+      "timestamp": 1766851683327
+    },
+    {
+      "id": 259,
+      "postId": 219,
+      "userId": 3,
+      "text": "Renkler çok uyumlu olmuş.",
+      "timestamp": 1766851459429
+    },
+    {
+      "id": 261,
+      "postId": 219,
+      "userId": 10,
+      "text": "Harika görünüyorsun!",
+      "timestamp": 1766851280789
+    },
+    {
+      "id": 260,
+      "postId": 220,
+      "userId": 5,
+      "text": "Renkler çok uyumlu olmuş.",
+      "timestamp": 1766851763106
+    },
+    {
+      "id": 261,
+      "postId": 221,
+      "userId": 3,
+      "text": "Bayıldım! 😍",
+      "timestamp": 1766851680831
+    },
+    {
+      "id": 262,
+      "postId": 218,
+      "userId": 10,
+      "text": "Saçınla çok güzel durmuş.",
+      "timestamp": 1766851981079
     }
   ],
   "posts": [
@@ -1634,7 +1725,7 @@
       "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
       "description": "Bu deri ceket nasıl? Kış için düşünüyorum.",
       "timestamp": 1766057000000,
-      "likes": 12,
+      "likes": 13,
       "dislikes": 2
     },
     {
@@ -2656,7 +2747,7 @@
       "description": "Yaz için bu renkler uygun mu?",
       "category": "Sokak Modası",
       "timestamp": 1766432712063,
-      "likes": 17,
+      "likes": 18,
       "dislikes": 2
     },
     {
@@ -3378,7 +3469,7 @@
       "category": "Sokak Modası",
       "location": "",
       "timestamp": 1766492624761,
-      "likes": 1,
+      "likes": 2,
       "dislikes": 0
     },
     {
@@ -3400,7 +3491,7 @@
       "category": "Spor",
       "location": "",
       "timestamp": 1766492666267,
-      "likes": 1,
+      "likes": 2,
       "dislikes": 0
     },
     {
@@ -3433,7 +3524,7 @@
       "category": "Ofis",
       "location": "",
       "timestamp": 1766492999690,
-      "likes": 1,
+      "likes": 2,
       "dislikes": 0
     },
     {
@@ -3444,7 +3535,7 @@
       "category": "Sokak Modası",
       "location": "",
       "timestamp": 1766493012140,
-      "likes": 0,
+      "likes": 1,
       "dislikes": 0
     },
     {
@@ -3813,7 +3904,115 @@
       "category": "Ofis",
       "location": "Alsancak, İzmir",
       "timestamp": 1766850661068,
-      "likes": 16,
+      "likes": 18,
+      "dislikes": 3
+    },
+    {
+      "id": 214,
+      "userId": 6,
+      "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop",
+      "mediaType": "image",
+      "description": "Sokak modası denemeleri.",
+      "category": "Sokak Modası",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766851261067,
+      "likes": 11,
+      "dislikes": 4
+    },
+    {
+      "id": 215,
+      "userId": 7,
+      "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop",
+      "mediaType": "image",
+      "description": "Yaz için bu renkler uygun mu?",
+      "category": "Spor",
+      "location": "Alaçatı, İzmir",
+      "timestamp": 1766851261067,
+      "likes": 2,
+      "dislikes": 2
+    },
+    {
+      "id": 216,
+      "userId": 8,
+      "imageUrl": "https://images.unsplash.com/photo-1548246713-1b43f9a91e52?w=600&h=800&fit=crop",
+      "mediaType": "image",
+      "description": "Düğün için bu elbise fazla mı?",
+      "category": "Spor",
+      "location": "Karaköy, İstanbul",
+      "timestamp": 1766851261067,
+      "likes": 4,
+      "dislikes": 2
+    },
+    {
+      "id": 217,
+      "userId": 8,
+      "imageUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "mediaType": "video",
+      "description": "Hafta sonu rahatlığı.",
+      "category": "Vintage",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766851261067,
+      "likes": 1,
+      "dislikes": 4
+    },
+    {
+      "id": 218,
+      "userId": 1,
+      "imageUrl": "/uploads/1766851736593-130213498.mp4",
+      "mediaType": "video",
+      "description": "iş",
+      "category": "Sokak Modası",
+      "location": "İstanbul, Kadıköy",
+      "timestamp": 1766851736610,
+      "likes": 1,
+      "dislikes": 0
+    },
+    {
+      "id": 219,
+      "userId": 7,
+      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop",
+      "mediaType": "image",
+      "description": "Spor şıklık.",
+      "category": "Vintage",
+      "location": "Bebek, İstanbul",
+      "timestamp": 1766851861067,
+      "likes": 6,
+      "dislikes": 2
+    },
+    {
+      "id": 220,
+      "userId": 5,
+      "imageUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "mediaType": "video",
+      "description": "Hafta sonu rahatlığı.",
+      "category": "Diğer",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766851861067,
+      "likes": 13,
+      "dislikes": 4
+    },
+    {
+      "id": 221,
+      "userId": 7,
+      "imageUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "mediaType": "video",
+      "description": "Vintage ceketimi çok seviyorum.",
+      "category": "Diğer",
+      "location": "Alsancak, İzmir",
+      "timestamp": 1766851861067,
+      "likes": 13,
+      "dislikes": 0
+    },
+    {
+      "id": 222,
+      "userId": 8,
+      "imageUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "mediaType": "video",
+      "description": "Renk uyumu hakkında ne düşünüyorsunuz?",
+      "category": "Sokak Modası",
+      "location": "Bebek, İstanbul",
+      "timestamp": 1766851861067,
+      "likes": 4,
       "dislikes": 3
     }
   ],
@@ -3962,41 +4161,54 @@
       "userId": 5,
       "postId": 11,
       "type": "like"
+    },
+    {
+      "userId": 9,
+      "postId": 213,
+      "type": "like"
+    },
+    {
+      "userId": 10,
+      "postId": 213,
+      "type": "like"
+    },
+    {
+      "userId": 9,
+      "postId": 104,
+      "type": "like"
+    },
+    {
+      "userId": 7,
+      "postId": 176,
+      "type": "like"
+    },
+    {
+      "userId": 6,
+      "postId": 181,
+      "type": "like"
+    },
+    {
+      "userId": 2,
+      "postId": 1,
+      "type": "like"
+    },
+    {
+      "userId": 5,
+      "postId": 182,
+      "type": "like"
+    },
+    {
+      "userId": 2,
+      "postId": 178,
+      "type": "like"
+    },
+    {
+      "userId": 7,
+      "postId": 218,
+      "type": "like"
     }
   ],
   "messages": [
-    {
-      "id": 1766847522225,
-      "senderId": 9,
-      "receiverId": 1,
-      "text": "Kombinlerin çok iyi gidiyor.",
-      "timestamp": 1766847522225,
-      "isRead": false
-    },
-    {
-      "id": 1766847522226,
-      "senderId": 7,
-      "receiverId": 1,
-      "text": "Fotoğraftaki mekan neresi?",
-      "timestamp": 1766847522225,
-      "isRead": false
-    },
-    {
-      "id": 1766847522227,
-      "senderId": 10,
-      "receiverId": 1,
-      "text": "Çok tarz giyiniyorsun 👍",
-      "timestamp": 1766847522225,
-      "isRead": false
-    },
-    {
-      "id": 1766847522228,
-      "senderId": 3,
-      "receiverId": 1,
-      "text": "Fotoğraftaki mekan neresi?",
-      "timestamp": 1766847522225,
-      "isRead": false
-    },
     {
       "id": 1766847663062,
       "senderId": 9,
@@ -4124,49 +4336,41 @@
       "text": "Merhaba!",
       "timestamp": 1766850361065,
       "isRead": false
+    },
+    {
+      "id": 1766851261063,
+      "senderId": 2,
+      "receiverId": 1,
+      "text": "Bu hafta sonu müsait misin?",
+      "timestamp": 1766851261063,
+      "isRead": false
+    },
+    {
+      "id": 1766851261065,
+      "senderId": 2,
+      "receiverId": 1,
+      "text": "Selam, naber?",
+      "timestamp": 1766851261064,
+      "isRead": false
+    },
+    {
+      "id": 1766851261066,
+      "senderId": 10,
+      "receiverId": 1,
+      "text": "Bu hafta sonu müsait misin?",
+      "timestamp": 1766851261064,
+      "isRead": false
+    },
+    {
+      "id": 1766851261067,
+      "senderId": 5,
+      "receiverId": 1,
+      "text": "Fotoğraftaki mekan neresi?",
+      "timestamp": 1766851261064,
+      "isRead": false
     }
   ],
   "notifications": [
-    {
-      "id": 1766847522227,
-      "userId": 1,
-      "senderId": 5,
-      "type": "like",
-      "postId": 175,
-      "text": "Mike Ross fotoğrafını beğendi.",
-      "timestamp": 1766847522227,
-      "isRead": false
-    },
-    {
-      "id": 1766847522228,
-      "userId": 1,
-      "senderId": 3,
-      "type": "like",
-      "postId": 136,
-      "text": "Alex Smith fotoğrafını beğendi.",
-      "timestamp": 1766847522227,
-      "isRead": false
-    },
-    {
-      "id": 1766847522229,
-      "userId": 1,
-      "senderId": 3,
-      "type": "like",
-      "postId": 184,
-      "text": "Alex Smith fotoğrafını beğendi.",
-      "timestamp": 1766847522227,
-      "isRead": false
-    },
-    {
-      "id": 1766847522230,
-      "userId": 1,
-      "senderId": 4,
-      "type": "like",
-      "postId": 53,
-      "text": "Sarah Connor fotoğrafını beğendi.",
-      "timestamp": 1766847522227,
-      "isRead": false
-    },
     {
       "id": 1766847663064,
       "userId": 1,
@@ -4515,6 +4719,126 @@
       "postId": 31,
       "text": "Rachel Zane yorum yaptı: \"Fiyatı nedir?\"",
       "timestamp": 1766850901081,
+      "isRead": false
+    },
+    {
+      "id": 1766851261079,
+      "userId": 1,
+      "senderId": 9,
+      "type": "like",
+      "postId": 213,
+      "text": "Louis Litt fotoğrafını beğendi.",
+      "timestamp": 1766851261079,
+      "isRead": false
+    },
+    {
+      "id": 1766851261081,
+      "userId": 1,
+      "senderId": 10,
+      "type": "like",
+      "postId": 213,
+      "text": "Jessica Pearson fotoğrafını beğendi.",
+      "timestamp": 1766851261080,
+      "isRead": false
+    },
+    {
+      "id": 1766851261082,
+      "userId": 1,
+      "senderId": 9,
+      "type": "like",
+      "postId": 104,
+      "text": "Louis Litt fotoğrafını beğendi.",
+      "timestamp": 1766851261080,
+      "isRead": false
+    },
+    {
+      "id": 1766851261083,
+      "userId": 1,
+      "senderId": 2,
+      "type": "comment",
+      "postId": 190,
+      "text": "Jane Doe yorum yaptı: \"Biraz daha aksesuar eklenebilir.\"",
+      "timestamp": 1766851261080,
+      "isRead": false
+    },
+    {
+      "id": 1766851621081,
+      "userId": 1,
+      "senderId": 7,
+      "type": "like",
+      "postId": 176,
+      "text": "Harvey Specter fotoğrafını beğendi.",
+      "timestamp": 1766851621081,
+      "isRead": false
+    },
+    {
+      "id": 1766851621083,
+      "userId": 1,
+      "senderId": 5,
+      "type": "comment",
+      "postId": 160,
+      "text": "Mike Ross yorum yaptı: \"Mükemmel uyum.\"",
+      "timestamp": 1766851621082,
+      "isRead": false
+    },
+    {
+      "id": 1766851621084,
+      "userId": 1,
+      "senderId": 6,
+      "type": "like",
+      "postId": 181,
+      "text": "Rachel Zane fotoğrafını beğendi.",
+      "timestamp": 1766851621082,
+      "isRead": false
+    },
+    {
+      "id": 1766851621086,
+      "userId": 1,
+      "senderId": 2,
+      "type": "like",
+      "postId": 1,
+      "text": "Jane Doe fotoğrafını beğendi.",
+      "timestamp": 1766851621083,
+      "isRead": false
+    },
+    {
+      "id": 1766851981079,
+      "userId": 1,
+      "senderId": 10,
+      "type": "comment",
+      "postId": 218,
+      "text": "Jessica Pearson yorum yaptı: \"Saçınla çok güzel durmuş.\"",
+      "timestamp": 1766851981079,
+      "isRead": false
+    },
+    {
+      "id": 1766851981081,
+      "userId": 1,
+      "senderId": 5,
+      "type": "like",
+      "postId": 182,
+      "text": "Mike Ross fotoğrafını beğendi.",
+      "timestamp": 1766851981080,
+      "isRead": false
+    },
+    {
+      "id": 1766851981082,
+      "userId": 1,
+      "senderId": 2,
+      "type": "like",
+      "postId": 178,
+      "text": "Jane Doe fotoğrafını beğendi.",
+      "timestamp": 1766851981080,
+      "isRead": false
+    },
+    {
+      "id": 1766851981083,
+      "userId": 1,
+      "senderId": 7,
+      "type": "like",
+      "postId": 218,
+      "text": "Harvey Specter fotoğrafını beğendi.",
+      "timestamp": 1766851981080,
       "isRead": false
     }
   ]
