@@ -19,7 +19,7 @@ const io = new Server(server, {
 });
 
 const DB_PATH = path.join(__dirname, 'db.json');
-const UPLOADS_DIR = path.join(__dirname, '../public/uploads');
+const UPLOADS_DIR = process.env.UPLOADS_DIR || path.join(__dirname, '../public/uploads');
 
 // Ensure uploads directory exists
 if (!fs.existsSync(UPLOADS_DIR)) {
