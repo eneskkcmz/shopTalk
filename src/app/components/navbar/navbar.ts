@@ -117,7 +117,7 @@ import { FormsModule } from '@angular/forms';
             <button (click)="toggleNotifications()" class="p-2 text-gray-500 dark:text-gray-400 relative">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
                 @if (chatService.unreadNotificationsCount() > 0) {
-                    <span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-red-500 rounded-full border border-white dark:border-black"></span>
+                    <span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border border-white dark:border-black"></span>
                 }
             </button>
              @if (showNotifications) {
@@ -190,8 +190,15 @@ import { FormsModule } from '@angular/forms';
               <button (click)="toggleNotifications()" class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative" title="Bildirimler">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
                 @if (chatService.unreadNotificationsCount() > 0) {
-                  <span class="absolute top-0 right-0 w-4 h-4 bg-red-500 text-white text-[10px] font-bold flex items-center justify-center rounded-full border border-white dark:border-black">
-                    {{ chatService.unreadNotificationsCount() }}
+                  <span class="absolute -top-1 -right-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-bold flex items-center justify-center border-2 border-white dark:border-black shadow-sm"
+                        [class.w-5]="chatService.unreadNotificationsCount() < 10"
+                        [class.h-5]="chatService.unreadNotificationsCount() < 10"
+                        [class.rounded-full]="chatService.unreadNotificationsCount() < 10"
+                        [class.px-1.5]="chatService.unreadNotificationsCount() >= 10"
+                        [class.py-0.5]="chatService.unreadNotificationsCount() >= 10"
+                        [class.rounded-full]="chatService.unreadNotificationsCount() >= 10"
+                        [class.min-w-[20px]]="chatService.unreadNotificationsCount() >= 10">
+                    {{ chatService.unreadNotificationsCount() > 99 ? '99+' : chatService.unreadNotificationsCount() }}
                   </span>
                 }
               </button>
@@ -245,8 +252,15 @@ import { FormsModule } from '@angular/forms';
           <a routerLink="/chat" class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative" title="Mesajlar">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             @if (chatService.totalUnreadCount() > 0) {
-              <span class="absolute top-0 right-0 w-4 h-4 bg-red-500 text-white text-[10px] font-bold flex items-center justify-center rounded-full border border-white dark:border-black">
-                {{ chatService.totalUnreadCount() }}
+              <span class="absolute -top-1 -right-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-bold flex items-center justify-center border-2 border-white dark:border-black shadow-sm"
+                    [class.w-5]="chatService.totalUnreadCount() < 10"
+                    [class.h-5]="chatService.totalUnreadCount() < 10"
+                    [class.rounded-full]="chatService.totalUnreadCount() < 10"
+                    [class.px-1.5]="chatService.totalUnreadCount() >= 10"
+                    [class.py-0.5]="chatService.totalUnreadCount() >= 10"
+                    [class.rounded-full]="chatService.totalUnreadCount() >= 10"
+                    [class.min-w-[20px]]="chatService.totalUnreadCount() >= 10">
+                {{ chatService.totalUnreadCount() > 99 ? '99+' : chatService.totalUnreadCount() }}
               </span>
             }
           </a>
@@ -294,8 +308,15 @@ import { FormsModule } from '@angular/forms';
           <div class="relative">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             @if (chatService.totalUnreadCount() > 0) {
-              <span class="absolute -top-2 -right-2 bg-red-500 text-white text-[9px] font-bold min-w-[16px] h-4 flex items-center justify-center rounded-full border-2 border-white dark:border-black px-1">
-                {{ chatService.totalUnreadCount() }}
+              <span class="absolute -top-2 -right-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[9px] font-bold flex items-center justify-center border-2 border-white dark:border-black shadow-sm"
+                    [class.w-4]="chatService.totalUnreadCount() < 10"
+                    [class.h-4]="chatService.totalUnreadCount() < 10"
+                    [class.rounded-full]="chatService.totalUnreadCount() < 10"
+                    [class.px-1]="chatService.totalUnreadCount() >= 10"
+                    [class.py-0.5]="chatService.totalUnreadCount() >= 10"
+                    [class.rounded-full]="chatService.totalUnreadCount() >= 10"
+                    [class.min-w-[16px]]="chatService.totalUnreadCount() >= 10">
+                {{ chatService.totalUnreadCount() > 99 ? '99+' : chatService.totalUnreadCount() }}
               </span>
             }
           </div>
