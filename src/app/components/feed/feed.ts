@@ -296,7 +296,7 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
   private socket: Socket;
 
   constructor(public api: ApiService, private cdr: ChangeDetectorRef) {
-      this.socket = io('http://localhost:3000');
+      this.socket = io('/', { path: '/socket.io' });
   }
 
   ngOnInit() {
@@ -441,7 +441,7 @@ export class Feed implements OnInit, OnDestroy, AfterViewChecked {
 
   getImageUrl(url: string): string {
     if (url.startsWith('http')) return url;
-    return `http://localhost:3000${url}`;
+    return url; // Relative path handled by proxy/nginx
   }
 
   getTimerProgress(timestamp: number): number {

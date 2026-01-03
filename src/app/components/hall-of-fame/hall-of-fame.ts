@@ -93,7 +93,7 @@ export class HallOfFame implements OnInit {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      this.http.get<Post[]>('http://localhost:3000/api/hall-of-fame').subscribe(posts => {
+      this.http.get<Post[]>('/api/hall-of-fame').subscribe(posts => {
         this.posts = posts;
         this.cdr.detectChanges(); // Force UI update
       });
@@ -102,7 +102,7 @@ export class HallOfFame implements OnInit {
 
   getImageUrl(url: string): string {
     if (url.startsWith('http')) return url;
-    return `http://localhost:3000${url}`;
+    return url; // Relative path handled by proxy/nginx
   }
 
   getTimeAgo(timestamp: number): string {

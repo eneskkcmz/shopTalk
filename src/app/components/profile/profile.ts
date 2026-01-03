@@ -279,7 +279,7 @@ export class Profile implements OnInit {
 
   getImageUrl(url: string): string {
     if (url.startsWith('http')) return url;
-    return `http://localhost:3000${url}`;
+    return url; // Relative path handled by proxy/nginx
   }
 
   onVideoError(event: any) {
