@@ -448,6 +448,30 @@ import { FormsModule } from '@angular/forms';
                           }
                       </div>
                   </div>
+
+                  <!-- Height & Weight Inputs -->
+                  <div class="grid grid-cols-2 gap-4 mb-6">
+                      <!-- Height -->
+                      <div>
+                          <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Boy (cm) <span class="text-gray-400 font-normal text-xs">(İsteğe bağlı)</span></label>
+                          <input
+                                  type="number"
+                                  [(ngModel)]="postHeight"
+                                  placeholder="175"
+                                  class="w-full p-3 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+                          >
+                      </div>
+                      <!-- Weight -->
+                      <div>
+                          <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Kilo (kg) <span class="text-gray-400 font-normal text-xs">(İsteğe bağlı)</span></label>
+                          <input
+                                  type="number"
+                                  [(ngModel)]="postWeight"
+                                  placeholder="70"
+                                  class="w-full p-3 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+                          >
+                      </div>
+                  </div>
               </div>
 
               <!-- Footer Button -->
@@ -475,6 +499,8 @@ export class Navbar implements OnInit {
   @ViewChild('fileInput') fileInput!: ElementRef;
   @ViewChild('descInput') descInput!: ElementRef;
   postLocation = '';
+  postHeight: number | null = null;
+  postWeight: number | null = null;
 
   categories = ['Sokak Modası', 'Ofis', 'Davet', 'Spor', 'Vintage', 'Diğer'];
   selectedCategory = 'Sokak Modası';
@@ -607,6 +633,8 @@ export class Navbar implements OnInit {
     this.removeImage();
     if (this.descInput) this.descInput.nativeElement.value = '';
     this.postLocation = '';
+    this.postHeight = null;
+    this.postWeight = null;
     this.selectedCategory = 'Sokak Modası';
   }
 
@@ -640,6 +668,13 @@ export class Navbar implements OnInit {
 
       // Use the bound model for location
       formData.append('location', this.postLocation || '');
+
+      if (this.postHeight) {
+        formData.append('height', this.postHeight.toString());
+      }
+      if (this.postWeight) {
+        formData.append('weight', this.postWeight.toString());
+      }
 
       formData.append('category', this.selectedCategory);
 

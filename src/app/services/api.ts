@@ -26,6 +26,8 @@ export interface Post {
   commentCount?: number;
   userVote?: 'like' | 'dislike' | null;
   isMuted?: boolean;
+  height?: number;
+  weight?: number;
 }
 
 export interface Comment {

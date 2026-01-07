@@ -106,7 +106,7 @@ import { MediaViewer } from '../media-viewer/media-viewer';
                   <img [src]="getImageUrl(post.imageUrl)" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" (error)="onImageError($event)">
                 }
 
-                <!-- Hover Overlay -->
+                  <!-- Hover Overlay -->
                   <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4 text-white font-bold backdrop-blur-sm">
 
                   @if (post.location) {
@@ -116,6 +116,15 @@ import { MediaViewer } from '../media-viewer/media-viewer';
                              {{ post.location }}
                         </span>
                     </div>
+                  }
+
+                  <!-- Height/Weight Indicator -->
+                  @if (post.height || post.weight) {
+                      <div class="absolute top-10 left-0 right-0 text-center px-2 pointer-events-none mt-1">
+                          <span class="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider bg-purple-600/60 px-2 py-1 rounded-full backdrop-blur-md border border-white/20">
+                              {{ post.height ? post.height + 'cm' : '' }}{{ post.height && post.weight ? ' / ' : '' }}{{ post.weight ? post.weight + 'kg' : '' }}
+                          </span>
+                      </div>
                   }
 
                   <!-- View Fullscreen Button -->

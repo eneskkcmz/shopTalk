@@ -88,6 +88,44 @@ io.on('connection', (socket) => {
         
         // Emit back to sender (to update their UI with confirmed message)
         socket.emit('message_sent', newMessage);
+
+        // --- AUTO-REPLY LOGIC (Simulate conversation) ---
+        // If the SENDER is the main user (Enes, ID 1), then the RECEIVER should "reply"
+        // after a short random delay.
+        if (senderId === 1) { // Assuming Enes is ID 1
+            setTimeout(() => {
+                const db = getDb(); // Re-read DB
+                const replyText = [
+                    "Tamamdır, anlaştık.",
+                    "Harika, çok sevindim!",
+                    "Sonra konuşalım mı?",
+                    "Buna bayıldım!",
+                    "Teşekkürler :)",
+                    "Aynen öyle düşünüyorum.",
+                    "Hahaha çok iyi!",
+                    "Görüşürüz.",
+                    "Belki daha sonra.",
+                    "Süper fikir."
+                ][Math.floor(Math.random() * 10)];
+
+                const replyMessage = {
+                    id: Date.now(),
+                    senderId: receiverId, // The person Enes messaged is now replying
+                    receiverId: senderId, // Enes is receiving
+                    text: replyText,
+                    timestamp: Date.now(),
+                    isRead: false
+                };
+
+                db.messages.push(replyMessage);
+                saveDb(db);
+
+                // Emit to Enes (he is online since he just sent a message)
+                socket.emit('receive_message', replyMessage);
+                console.log(`[Auto-Reply] User ${receiverId} replied to Enes: "${replyText}"`);
+
+            }, Math.floor(Math.random() * 5000) + 2000); // 2-7 seconds delay
+        }
     });
     
     // Typing indicator
@@ -377,7 +415,7 @@ app.post('/api/follow', (req, res) => {
 
     // POST /api/posts - Create new post with file upload
     app.post('/api/posts', upload.single('image'), (req, res) => {
-    const { userId, description, category, location, mediaType } = req.body;
+    const { userId, description, category, location, mediaType, height, weight } = req.body;
     
     if (!req.file || !userId) {
         return res.status(400).json({ error: "Missing image or userId" });
@@ -398,12 +436,15 @@ app.post('/api/follow', (req, res) => {
         userId: parseInt(userId),
         imageUrl,
         mediaType: finalMediaType,
-        description: description || "",
-        category: category || "Diğer",
-        location: location || "",
+        description: description || '',
+        category: category || 'Diğer',
+        location: location || '',
         timestamp: Date.now(),
         likes: 0,
-        dislikes: 0
+        dislikes: 0,
+        commentCount: 0,
+        height: height ? parseInt(height) : null,
+        weight: weight ? parseInt(weight) : null
     };
 
     db.posts.push(newPost);
@@ -670,6 +711,15 @@ const generateRandomPosts = (count = 5) => {
         const initialLikes = Math.floor(Math.random() * 20);
         const initialDislikes = Math.floor(Math.random() * 5);
 
+        // Generate random Height (150-200) and Weight (45-100) with 80% probability
+        let randomHeight = null;
+        let randomWeight = null;
+        
+        if (Math.random() < 0.8) {
+             randomHeight = Math.floor(Math.random() * (200 - 150 + 1)) + 150;
+             randomWeight = Math.floor(Math.random() * (100 - 45 + 1)) + 45;
+        }
+
         const postId = (db.posts.length > 0 ? Math.max(...db.posts.map(p => p.id)) + 1 : 1) + i;
 
         const newPost = {
@@ -682,7 +732,9 @@ const generateRandomPosts = (count = 5) => {
             location: randomLocation,
             timestamp: Date.now(), // Fresh timestamp
             likes: initialLikes,
-            dislikes: initialDislikes
+            dislikes: initialDislikes,
+            height: randomHeight,
+            weight: randomWeight
         };
         newPosts.push(newPost);
 
@@ -954,6 +1006,11 @@ const cleanupOldData = () => {
     // Also cleanup old posts that are way too old? (Hall of fame handles > 1 hour, maybe delete > 24 hours?)
     // Requirement was specifically about messages and notifications visuals being "too much".
     
+    // Auto-reply to new messages sent by user (Enes)
+    // If Enes sends a message, reply after a short delay
+    // This logic needs to be in the send_message handler, not cleanup.
+    // Moving on.
+
     if (updated) {
         saveDb(db);
         // We might want to emit an event to frontend to refresh, but frontend polls/gets realtime updates.

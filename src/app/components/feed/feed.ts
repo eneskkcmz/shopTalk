@@ -147,6 +147,12 @@ import { io, Socket } from 'socket.io-client';
                                 {{ post.location }}
                             </span>
                           }
+                          @if (post.height || post.weight) {
+                              <span>•</span>
+                              <span class="text-gray-500 dark:text-gray-400 text-[10px] font-mono">
+                                  {{ post.height ? post.height + 'cm' : '' }}{{ post.height && post.weight ? ' / ' : '' }}{{ post.weight ? post.weight + 'kg' : '' }}
+                              </span>
+                          }
                           <span>•</span>
                           {{ getTimeLeft(post.timestamp) }}
                       </p>
